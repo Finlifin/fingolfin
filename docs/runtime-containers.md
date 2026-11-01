@@ -31,3 +31,67 @@ slot/tag 为 u32，计数/key/value 为 u64，sample 为 i64。Host 配置在执
 ## 参考与验证
 
 构建与 API 细节见 [C runtime](../runtime/README.md)。Rust 的 `src/util/containers.rs` 和 `src/state.rs` 是参考工具实现；`cargo run --example bounded_state` 演示该参考实现。目标侧契约和测试以 C 头文件及 `runtime/tests/containers.c`、`host.c` 为准。
+
+## 选择哪种存储
+
+按索引保存定长采样结果用 Vec；按标量键累计值用 Map；只关心是否出现过用 Set；按到达顺序消费记录用 Queue；统计分布用 Histogram；按程序和对象生命周期隔离任意定长状态用 StateStore。Map 采用有序数组，适合容量可控的观测状态；它不是可无限增长的通用哈希表。
+
+容量应按最坏同时存活对象/键数量计算。队列容量按消费者两次排空之间可能产生的记录数计算，而不是按 hook 数量计算。一个 hook 可执行多次，一次入口也可 emit 多条。满载策略要显式选择：拒绝新元素、明确 overwrite，或在更高层标记批次失败；容器不会悄悄扩容。
+
+## C API 示例：固定向量
+
+```c
+#include "fingolfin/containers.h"
+#include <assert.h>
+#include <stdint.h>
+
+void vector_example(void) {
+    FgVec *v = NULL;
+    uint64_t input = 7, output = 0;
+    assert(fg_vec_create(2, sizeof(input), _Alignof(uint64_t), NULL, &v) == FG_STATUS_OK);
+    assert(fg_vec_push(v, &input) == FG_STATUS_OK);
+    assert(fg_vec_length(v) == 1);
+    assert(*(uint64_t *)fg_vec_at(v, 0) == 7);
+    assert(fg_vec_pop(v, &output) == FG_STATUS_OK && output == 7);
+    fg_vec_destroy(v);
+}
+```
+
+NULL allocator 使用默认分配器。create 复制 allocator 描述，失败时 out 为 NULL。元素的外部指针只会被复制；若元素持有资源，调用方必须在清理容器前逐个处理，不能指望 destroy 调用元素析构。
+
+## Map 与 Set 的比较器
+
+比较器返回负数、零、正数，必须定义稳定全序。对 u64 不要写 `return a - b` 再截断成 int，应比较大小返回 -1/0/1。`fg_map_put` 对已有键替换 value，即使 map 已满也允许；对新键才检查容量。可用 `inserted` 区分插入与替换。`fg_map_at` 按键序遍历，不能假设插入顺序。
+
+Set 通过零字节 value 实现，使用 map 的 put/find/remove 并按头文件约定传 NULL value 参数。它仍按字节存储 key，带指针的 key 的有效期和比较语义由调用方保证。
+
+## Histogram 的边界例子
+
+对 bounds `[0,10]`，分别加入 `(-1,2)`、`(0,3)`、`(10,4)`，结果为 counts `[2,3,4]`、total 9。每个括号是 `(sample,weight)`，不是次数和区间。边界必须严格递增，所需桶数为边界数加一；`max_buckets` 至少为 3。样本可为负数，权重为 u64。
+
+溢出检查同时考虑目标桶和 total，任何一项溢出都拒绝该操作并保持原有 histogram。borrowed counts 只在无修改、无销毁时可读；并发读取仍需调用方同步。
+
+## `.fg` 聚合的完整输入
+
+[aggregate.fg](../integration/aggregate-helpers/aggregate.fg) 将 key 的 weight 累加到 map，并将相同 weight 写入 sample 所属桶。配置文件为：
+
+```json
+{"maps":[{"slot":0,"capacity":2}],"histograms":[{"slot":0,"bounds":[0,10],"max_buckets":3}]}
+```
+
+```sh
+target/debug/fingolfin eval integration/aggregate-helpers/aggregate.fg \
+  --model models/fixture --function program::aggregate \
+  --args '[{"Integer":7},{"Integer":-1},{"Integer":2}]' \
+  --host-config integration/aggregate-helpers/config.json
+```
+
+应看到 key 7 的累计值 2，histogram 第一个桶为 2、其余为 0、total 为 2。每次独立启动 eval 都重新创建参考 Host，因此重复执行此命令不会变成 4。要验证持久累加，应像 [C 教程](c-walkthrough.md) 一样在同一个 Mount 上执行多次。
+
+C 对应配置使用 `FgMapConfig{slot,capacity}`、`FgHistogramConfig{slot,bounds,bound_count,max_buckets}` 放入 FgHostConfig，并设置 version/struct_bytes；Host 创建时复制边界并分配存储。各类型拥有独立 slot 空间，counter 0 与 map 0 可以共存，同类型重复 slot 不合法。
+
+## StateStore 的清理粒度
+
+FgStateKey 的六部分为 program/configuration/run/launch/slot/generation。按 program 清理适合卸载完整程序；按 configuration 清理适合退役配置；按 object 清理必须包含完整对象代际；按 launch 清理处理整批结束。删除状态前应排空仍可能访问它的 lease。
+
+复用 slot 时 generation 必须改变，不能将旧对象状态迁给新对象。StateStore 只执行指定键的存储与删除，不替模型分配 run/launch，也不自动识别配置迁移。需要迁移时由控制器定义转换过程并在发布前完成。

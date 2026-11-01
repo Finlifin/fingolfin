@@ -21,3 +21,5 @@
 | 编译器 | [声明](declaration-checking.md)、[函数体](body-checking.md)、[ABI](abi-codegen.md)、[C 生成](native-codegen.md)、[BPF](bpf-codegen.md) |
 
 其他文件是逐步开发时留下的历史证据。它们可能准确记录当时尚未实现的功能；当前用法与能力边界请以 [正式文档](../docs/README.md) 为准。
+
+- [手册扩充与示例验证](documentation-handbook.md)：新增 C 教程、文档代码块和链接/格式校验；沿用历史模型验证证据。

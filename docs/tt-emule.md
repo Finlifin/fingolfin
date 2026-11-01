@@ -48,3 +48,54 @@ python3 integration/tt-emule/dynamic-model-runtime/build.py \
 ## 报告与限制
 
 [报告索引](../reports/README.md) 提供已保存的证据。对象树、属性和双设备隔离已验证；并发独立 launch、跨设备数据传输、可变状态属性和完整硬件枚举不在当前支持范围。
+
+## 观测点与验证报告的详细参考
+
+[39 点完整目录](tt-emule-hooks.md) 列出每个 hook 的参数宽度和上游位置；[报告阅读指南](tt-emule-reports.md) 逐项解释对象树、dispatch、records、filtered、属性检查和场景覆盖。先读这两页，可以避免把“API 被命中”当作“所有参数和硬件行为都被验证”。
+
+## 准备工作的检查表
+
+| 输入 | 锁定 revision / 要求 |
+| --- | --- |
+| tt-metal | `d48d09dee19de51f694a52fdf75d569950d38ceb` |
+| tt-emule | `07f1bd8301544403c8bc1faa4038f6cbf69909f1` |
+| uBPF | `8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521`，另需 scratch patch |
+| 宿主 build | CMAKE_HOME_DIRECTORY 对应传入 metal；TT_EMULE_PATH 对应 emule；启用 emule |
+| 编译器 | 本次源码构建的 fingolfin 可执行文件 |
+| 输出路径 | 新目录，避免混入旧 package/adapter/结果 |
+
+补丁按以下依赖准备：observability 探针和兼容修正 → NOC/compute/layout/multicast 场景 → lifecycle launch/repeated/exception → multidevice 场景。具体 apply 命令位于各专项 README。新 prepare 已处理 tilize 计数修正；旧安装需核对修正是否存在。已有探针不应重复运行带 `--apply` 的准备步骤。
+
+`verify.py` 从已经配置好的外部环境开始；它会核验和重建，但不负责从零下载 tt-metal 依赖或代替宿主 CMake 初始化。仓库里的历史 `/tmp` 路径仅说明上次验证输入，不是用户机器上必然存在的安装路径。
+
+## 完成一轮验证后保留什么
+
+保留完整输出目录，特别是 stages、inputs、catalog、provenance、外部 working-tree patch 和新生成的探针头。仅保存 HTML 会丢失复现所需的命令和输入；仅保存 git revision 会丢失工作树补丁。归档时同时记录 Fingolfin 提交与编译器哈希。
+
+如果只改文档，可运行链接检查和文档示例；改模型类型、probe ABI、provider 或生成 adapter 时，应重新构建相关 package/adapter，并执行对应真实场景。旧报告不会自动证明新源码有效。
+
+## 设备 1 策略：从源码到验收
+
+策略源码的关键部分为：
+
+```fg
+use tt_emule.types.{Observation, Core};
+fn observe on tt_emule.device.core.cb.cb_push_back(
+    call: Observation, core: Core, cb_id: u32, n: u32
+)
+where tt_emule: { device: { id: 1 } }
+{}
+```
+
+使用本页前面的 build 命令生成 `/tmp/fg-device1-new` 后，完整验收命令为：
+
+```sh
+python3 integration/tt-emule/multidevice/run.py \
+  --artifacts /tmp/fg-device1-new --metal /path/to/tt-metal \
+  --build /path/to/tt-metal-build --output /tmp/fg-device1-results-new \
+  --property-gate --expected-device 1
+```
+
+运行器设置门控环境并分别执行首次/缓存路径。expected-device 是测试 oracle，不参与生成谓词；因此把它改成 1 不能替代编译 device 1 策略。真正的条件来自 policy 文件、生成的 collect/predicate 和 C provider 返回的身份事实。
+
+默认观测主体可能仍包含 `core.device == 0` 的参数条件，其 matched_context 不会随门控策略自动改成 1。gate 控制“是否进入程序”，body 条件控制“进入后做什么”，必须分别读懂。

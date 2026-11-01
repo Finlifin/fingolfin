@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.20)
+project(fingolfin_walkthrough LANGUAGES C)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(FG_WALKTHROUGH_FIXTURES
+    ""
+    CACHE PATH "Directory produced by integration/c-runtime/prepare.py")
+if(NOT EXISTS "${FG_WALKTHROUGH_FIXTURES}/record.adapter.h")
+  message(FATAL_ERROR "Generate fixtures and set FG_WALKTHROUGH_FIXTURES")
+endif()
+if(NOT FG_WITH_PACKAGE OR NOT FG_WITH_UBPF)
+  message(FATAL_ERROR "Tutorial requires FG_WITH_PACKAGE and FG_WITH_UBPF")
+endif()
+add_subdirectory(../../runtime runtime)
+add_executable(fg-walkthrough main.c)
+target_include_directories(fg-walkthrough PRIVATE "${FG_WALKTHROUGH_FIXTURES}")
+target_link_libraries(fg-walkthrough PRIVATE fingolfin_agent)
+target_compile_options(fg-walkthrough PRIVATE -Wall -Wextra -Wpedantic -Werror -UNDEBUG)
