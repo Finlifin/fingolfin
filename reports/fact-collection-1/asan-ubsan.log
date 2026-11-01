@@ -1,0 +1,51 @@
+Start testing: Nov 01 20:37 CST
+----------------------------------------------------------
+1/19 Testing: facts
+1/19 Test: facts
+Command: "/tmp/fg-c-vm-asan-1/facts_test"
+Directory: /tmp/fg-c-vm-asan-1
+"facts" start time: Nov 01 20:37 CST
+Output:
+----------------------------------------------------------
+C facts: i128 bounds, typed comparisons, UTF-8/NUL, unknown, budget and unaligned snapshots passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"facts" end time: Nov 01 20:37 CST
+"facts" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/19 Testing: gated_binding
+15/19 Test: gated_binding
+Command: "/tmp/fg-c-vm-asan-1/gated_binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"gated_binding" start time: Nov 01 20:37 CST
+Output:
+----------------------------------------------------------
+gated binding: false skips factory/VM; unknown/stale/budget/invalid allow; copied facts and old leases passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"gated_binding" end time: Nov 01 20:37 CST
+"gated_binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/19 Testing: generated_adapter
+16/19 Test: generated_adapter
+Command: "/tmp/fg-c-vm-asan-1/generated_adapter_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"generated_adapter" start time: Nov 01 20:37 CST
+Output:
+----------------------------------------------------------
+compiler-generated native frame/encoder -> SDK route -> Attachment -> C VM passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"generated_adapter" end time: Nov 01 20:37 CST
+"generated_adapter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:37 CST

@@ -1,0 +1,29 @@
+--- a/include/jit_hw/api/cb_api.h
++++ b/include/jit_hw/api/cb_api.h
+@@ -292,2 +292,26 @@
+ 
++// Host kernels use size_t (uint64_t here) for CB counts. Preserve the 32-bit
++// device API range explicitly instead of ambiguous uint32_t/int32_t conversion.
++inline uint32_t __fg_cb_checked_wide_count(uint64_t n) {
++    if (n > UINT32_MAX) {
++        fprintf(stderr, "tt-emule: CB page count exceeds uint32_t range\n");
++        abort();
++    }
++    return static_cast<uint32_t>(n);
++}
++inline void cb_reserve_back(uint32_t cb_id, uint64_t n,
++    const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {
++    cb_reserve_back(cb_id, __fg_cb_checked_wide_count(n), site_file, site_line);
++}
++inline void cb_push_back(uint32_t cb_id, uint64_t n) {
++    cb_push_back(cb_id, __fg_cb_checked_wide_count(n));
++}
++inline void cb_wait_front(uint32_t cb_id, uint64_t n,
++    const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {
++    cb_wait_front(cb_id, __fg_cb_checked_wide_count(n), site_file, site_line);
++}
++inline void cb_pop_front(uint32_t cb_id, uint64_t n) {
++    cb_pop_front(cb_id, __fg_cb_checked_wide_count(n));
++}
++
+ // ---- Pointer accessors ----

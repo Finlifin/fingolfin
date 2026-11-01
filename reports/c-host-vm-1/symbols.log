@@ -1,0 +1,70 @@
+
+util.c.o:
+                 U __stack_chk_fail
+                 U aligned_alloc
+                 U free
+
+containers.c.o:
+                 U __stack_chk_fail
+                 U fg_allocator_default
+                 U fg_size_add
+                 U fg_size_align
+                 U fg_size_mul
+                 U memcpy
+                 U memmove
+                 U memset
+
+state.c.o:
+                 U __stack_chk_fail
+                 U fg_allocator_default
+                 U fg_map_at
+                 U fg_map_create
+                 U fg_map_destroy
+                 U fg_map_find
+                 U fg_map_length
+                 U fg_map_put
+                 U fg_map_remove
+
+host.c.o:
+                 U __stack_chk_fail
+                 U fg_allocator_default
+                 U fg_counter_add
+                 U fg_histogram_add
+                 U fg_histogram_counts
+                 U fg_histogram_create
+                 U fg_histogram_destroy
+                 U fg_histogram_total
+                 U fg_map_at
+                 U fg_map_create
+                 U fg_map_destroy
+                 U fg_map_find
+                 U fg_map_length
+                 U fg_map_put
+                 U fg_queue_create
+                 U fg_queue_destroy
+                 U fg_queue_length
+                 U fg_queue_pop
+                 U fg_queue_push
+                 U memcpy
+                 U memset
+
+vm.c.o:
+                 U __stack_chk_fail
+                 U calloc
+                 U fg_host_invoke
+                 U fg_size_add
+                 U fg_status_string
+                 U free
+                 U malloc
+                 U memcpy
+                 U memset
+                 U snprintf
+                 U ubpf_create
+                 U ubpf_destroy
+                 U ubpf_exec
+                 U ubpf_load_elf_ex
+                 U ubpf_register_external_dispatcher
+                 U ubpf_register_safe_helper
+                 U ubpf_set_error_print
+                 U ubpf_set_execution_profile
+                 U ubpf_set_instruction_limit

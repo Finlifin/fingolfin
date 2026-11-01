@@ -1,0 +1,4 @@
+batch mount: 64 subscribers, atomic preparation, isolation, independent gates and partial errors passed
+mount selection: generations, old leases, disable/resume state and bounded retirement passed
+mount concurrent selection: 500 publications / 4000 observations, counters and output agree
+mount: generated adapter, registry independence, detach with live lease, output drain and cleanup passed

@@ -1,0 +1,13 @@
+use fixture.types.{ObsCall, CbHandle};
+
+fn watch_push on fixture.device.core.cb.post_push(call: *ObsCall, cb: CbHandle, pages: u32)
+where fixture: { device: { id: 0, core: { x: 0, y: 0, cb: { id: 16 as cb_id } } } }
+{
+    emit_pages(call, cb_id, pages);
+}
+
+fn watch_pop on fixture.device.core.cb.post_pop(call: *ObsCall, cb: CbHandle, pages: u32)
+where fixture: { device: { id: 0, core: { x: 0, y: 0, cb: { id: 16 as cb_id } } } }
+{
+    emit_pages(call, cb_id, pages);
+}

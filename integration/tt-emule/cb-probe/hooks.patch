@@ -1,0 +1,30 @@
+diff --git a/include/jit_hw/api/cb_api.h b/include/jit_hw/api/cb_api.h
+index 781f5b1..78e138f 100644
+--- a/include/jit_hw/api/cb_api.h
++++ b/include/jit_hw/api/cb_api.h
+@@ -23,6 +23,9 @@
+ // runner-set globals (read by unmodified upstream); cb_api.h is pulled by the
+ // preamble before they're declared there, so re-declare them locally.
+ #include "jit_hw/internal/emule_thread_ctx.h"
++// Fingolfin M0 probe: optional host symbol shared by all JIT DSOs.
++extern "C" void fg_tt_cb_event(uint32_t hook, uint32_t cb, uint32_t pages,
++                               uint32_t x, uint32_t y) __attribute__((weak));
+ extern thread_local uint8_t my_x[2];
+ extern thread_local uint8_t my_y[2];
+ 
+@@ -216,6 +219,7 @@ inline void cb_push_back(uint32_t cb_id, uint32_t n) {
+         }
+         iface.wr_entry_idx += n;
+     }
++    if (fg_tt_cb_event) fg_tt_cb_event(1, cb_id, n, __emule_self->core->logical_x, __emule_self->core->logical_y);
+ }
+ 
+ inline void cb_wait_front(
+@@ -272,6 +276,7 @@ inline void cb_pop_front(uint32_t cb_id, uint32_t n) {
+         iface.rd_entry_idx += n;
+         iface.tc_idx = (iface.tc_idx + 1) % iface.num_tcs_to_rr;
+     }
++    if (fg_tt_cb_event) fg_tt_cb_event(2, cb_id, n, __emule_self->core->logical_x, __emule_self->core->logical_y);
+ }
+ 
+ // ---- int32_t overloads (D2M int32 support emits int32_t tile counts) ----

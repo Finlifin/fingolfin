@@ -1,0 +1,18 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "results": [
+    {
+      "filter": "MeshDeviceFixture.Fingolfin_MulticastTwoReceivers_Observed",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.Fingolfin_MulticastTwoReceivers_Observed",
+        "--gtest_output=xml:/tmp/fg-lifecycle-suite-1/multicast-test/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 0.5645417090017872,
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

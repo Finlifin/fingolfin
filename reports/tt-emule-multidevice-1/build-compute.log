@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/compute-model-runtime/build.py", "--compiler", "/home/fin/apps/fingolfin/target/debug/fingolfin", "--runtime-build", "/tmp/fg-multidevice-full-1/runtime-build", "--ubpf-build", "/tmp/fg-multidevice-full-1/ubpf-build", "--catalog", "/tmp/fg-multidevice-full-1/catalog.json", "--output", "/tmp/fg-multidevice-full-1/compute"]
+/tmp/fg-multidevice-full-1/compute

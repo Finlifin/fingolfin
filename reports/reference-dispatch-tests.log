@@ -1,0 +1,161 @@
+   Compiling fingolfin v0.1.0 (/home/fin/apps/fingolfin)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.47s
+     Running unittests src/lib.rs (target/debug/build/fingolfin/5aa18c9ac5bfc17a/out/fingolfin-5aa18c9ac5bfc17a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/build/fingolfin/907b3b51f3a04e44/out/fingolfin-907b3b51f3a04e44)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/abi_codegen.rs (target/debug/build/fingolfin/5e35651e2bde0c27/out/abi_codegen-5e35651e2bde0c27)
+
+running 3 tests
+test encoding_is_collision_free_and_emission_is_deterministic ... ok
+test direct_array_arguments_are_not_silently_decayed_to_pointers ... ok
+test generated_header_agrees_with_c_cpp_and_rust_and_preserves_field_order ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests/cli.rs (target/debug/build/fingolfin/ff97e560985a4e9a/out/cli-ff97e560985a4e9a)
+
+running 9 tests
+test missing_file_and_unknown_command_fail ... ok
+test inspect_types_checks_fixture_declarations ... ok
+test check_does_not_invent_an_output_helper ... ok
+test dispatch_cli_executes_fixture_entry_with_pattern_binding ... ok
+test inspect_bodies_checks_real_function_errors ... ok
+test parse_and_inspect_emit_machine_readable_ast ... ok
+test reference_eval_cli_executes_and_reports_budget_failures ... ok
+test check_program_and_enforce_exact_model_pin ... ok
+test abi_command_writes_compilable_model_header ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/compiler.rs (target/debug/build/fingolfin/874dc657da3fd12f/out/compiler-874dc657da3fd12f)
+
+running 5 tests
+test program_cannot_inject_schema_or_replace_model_types ... ok
+test private_model_symbols_remain_private ... ok
+test standalone_program_retains_model_identity_and_typechecks_bindings ... ok
+test qualified_model_function_keeps_its_own_lexical_scope ... ok
+test model_helpers_cannot_capture_program_names ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dispatch.rs (target/debug/build/fingolfin/2db92a4499c7eded/out/dispatch-2db92a4499c7eded)
+
+running 5 tests
+test pointer_and_array_values_are_opaque_and_shape_checked ... ok
+test dispatch_routes_entries_and_deduplicates_binding_rows ... ok
+test malformed_snapshot_and_arguments_do_not_become_nonmatches ... ok
+test unknown_snapshot_keeps_known_matches_and_reports_incomplete ... ok
+test snapshot_matching_and_all_entries_share_budget ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/eval.rs (target/debug/build/fingolfin/2f27485d3aa16aaa/out/eval-2f27485d3aa16aaa)
+
+running 5 tests
+test budgets_and_call_depth_bound_execution ... ok
+test width_overflow_and_invalid_inputs_are_errors ... ok
+test short_circuit_does_not_execute_failing_rhs ... ok
+test structs_and_enums_validate_at_boundary_and_preserve_values ... ok
+test calls_branches_assignment_shadowing_and_early_return ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pattern.rs (target/debug/build/fingolfin/3286d7925a4e95e7/out/pattern-3286d7925a4e95e7)
+
+running 5 tests
+test unknown_is_not_false_and_negation_does_not_export ... ok
+test known_false_dominates_unknown_in_conjunction ... ok
+test range_bounds_bind_exact_snapshot_values ... ok
+test or_unions_distinct_rows_and_deduplicates_identical_bindings ... ok
+test nested_bindings_are_local_and_budget_and_type_errors_are_visible ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/resolve_types.rs (target/debug/build/fingolfin/74619d0f6264f49e/out/resolve_types-74619d0f6264f49e)
+
+running 9 tests
+test import_errors_are_batched_and_cycles_terminate ... ok
+test pending_relative_alias_does_not_fall_back_to_root ... ok
+test forward_references_across_modules_and_scan_order ... ok
+test collisions_include_aliases_and_logical_hook_owners ... ok
+test layout_padding_enum_width_and_pointer_recursion ... ok
+test reexports_share_identity_and_imports_invalidate_transitively ... ok
+test invalid_types_layouts_and_discriminants_fail ... ok
+test entry_signatures_compare_canonical_types_and_passing_modes ... ok
+test thirty_modules_match_single_file_layouts ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/sdk_abi.rs (target/debug/build/fingolfin/c463e65ffada485c/out/sdk_abi-c463e65ffada485c)
+
+running 1 test
+test c_cpp_rust_layout_calling_convention_and_guard ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/sema.rs (target/debug/build/fingolfin/d4f145570d27256c/out/sema-d4f145570d27256c)
+
+running 8 tests
+test undeclared_pattern_objects_never_silently_pass ... ok
+test nested_patterns_bind_typed_values_into_helpers ... ok
+test typed_calls_mutation_and_total_returns ... ok
+test independent_errors_are_batched_and_branch_locals_do_not_escape ... ok
+test direct_and_mutual_recursion_fail ... ok
+test enum_context_struct_reads_and_signed_minimum ... ok
+test pattern_branches_and_bindings_are_checked ... ok
+test invalid_bodies_are_rejected ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/source.rs (target/debug/build/fingolfin/3b6dbc78067944b5/out/source-3b6dbc78067944b5)
+
+running 4 tests
+test rejects_source_escape_unknown_manifest_and_missing_root ... ok
+test rejects_symlink_sources ... ok
+test reports_conflicts_and_multiple_syntax_errors ... ok
+test deterministic_content_identity_and_module_names ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/syntax.rs (target/debug/build/fingolfin/e3314388401d202e/out/syntax-e3314388401d202e)
+
+running 9 tests
+test paths_ignore_trivia_and_integers_cover_signed_boundary ... ok
+test precedence_and_associativity ... ok
+test declarations_and_types ... ok
+test patterns_ranges_or_not_and_binding ... ok
+test comments_keyword_prefixes_and_unicode_spans ... ok
+test control_flow_and_unary ... ok
+test keywords_cannot_be_glued_to_identifiers ... ok
+test invalid_inputs_have_valid_spans ... ok
+test plan_example_parses_with_independent_entries ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/util.rs (target/debug/build/fingolfin/1b3de0d1387ad652/out/util-1b3de0d1387ad652)
+
+running 6 tests
+test artifact_failure_preserves_destination_and_cleans_temporary_files ... ok
+test budget_handles_exact_limits_and_overflow_without_replenishing ... ok
+test unicode_positions_crlf_eof_and_invalid_offsets ... ok
+test artifact_replaces_symlink_without_modifying_target ... ok
+test content_hashes_have_stable_framing_and_known_digest ... ok
+test concurrent_artifact_writers_publish_whole_files ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+   Doc-tests fingolfin
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

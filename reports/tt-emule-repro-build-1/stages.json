@@ -1,0 +1,244 @@
+[
+  {
+    "stage": "catalog",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/observability/catalog.py",
+      "--emule",
+      "/tmp/fingolfin-tt-emule",
+      "--output",
+      "/tmp/fg-repro-verify-2/catalog.json"
+    ],
+    "exit_code": 0,
+    "seconds": 0.05214261899891426,
+    "log": "catalog.log"
+  },
+  {
+    "stage": "configure-ubpf",
+    "command": [
+      "cmake",
+      "-S",
+      "/tmp/fg-ubpf-scratch-1",
+      "-B",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUBPF_ENABLE_TESTS=OFF",
+      "-DUBPF_SKIP_EXTERNAL=ON",
+      "-DUBPF_INSTALL_GIT_HOOKS=OFF"
+    ],
+    "exit_code": 0,
+    "seconds": 0.221045286001754,
+    "log": "configure-ubpf.log"
+  },
+  {
+    "stage": "build-ubpf",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 1.0653556709985423,
+    "log": "build-ubpf.log"
+  },
+  {
+    "stage": "configure-runtime",
+    "command": [
+      "cmake",
+      "-S",
+      "/home/fin/apps/fingolfin/runtime",
+      "-B",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF",
+      "-DFG_WITH_PACKAGE=ON",
+      "-DFG_WITH_UBPF=ON",
+      "-DFG_UBPF_SCRATCH=ON",
+      "-DFG_UBPF_ROOT=/tmp/fg-ubpf-scratch-1",
+      "-DFG_UBPF_BUILD=/tmp/fg-repro-verify-2/ubpf-build"
+    ],
+    "exit_code": 0,
+    "seconds": 0.13444966400129488,
+    "log": "configure-runtime.log"
+  },
+  {
+    "stage": "build-runtime",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 0.871010032002232,
+    "log": "build-runtime.log"
+  },
+  {
+    "stage": "build-cb",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/cb-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "--output",
+      "/tmp/fg-repro-verify-2/cb"
+    ],
+    "exit_code": 0,
+    "seconds": 0.4196845400001621,
+    "log": "build-cb.log"
+  },
+  {
+    "stage": "build-compute",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/compute-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "--catalog",
+      "/tmp/fg-repro-verify-2/catalog.json",
+      "--output",
+      "/tmp/fg-repro-verify-2/compute"
+    ],
+    "exit_code": 0,
+    "seconds": 1.21431281599871,
+    "log": "build-compute.log"
+  },
+  {
+    "stage": "build-noc",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "--catalog",
+      "/tmp/fg-repro-verify-2/catalog.json",
+      "--output",
+      "/tmp/fg-repro-verify-2/noc"
+    ],
+    "exit_code": 0,
+    "seconds": 0.9778183870002977,
+    "log": "build-noc.log"
+  },
+  {
+    "stage": "build-dynamic",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/build.py",
+      "--cb",
+      "/tmp/fg-repro-verify-2/cb",
+      "--compute",
+      "/tmp/fg-repro-verify-2/compute",
+      "--noc",
+      "/tmp/fg-repro-verify-2/noc",
+      "--runtime-build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "--output",
+      "/tmp/fg-repro-verify-2/dynamic"
+    ],
+    "exit_code": 0,
+    "seconds": 0.56246222000118,
+    "log": "build-dynamic.log"
+  },
+  {
+    "stage": "build-host-tests",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--target",
+      "unit_tests_api",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 0.04345326600014232,
+    "log": "build-host-tests.log"
+  },
+  {
+    "stage": "reference",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/observability/run.py",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--catalog",
+      "/tmp/fg-repro-verify-2/catalog.json",
+      "--output",
+      "/tmp/fg-repro-verify-2/reference"
+    ],
+    "exit_code": 0,
+    "seconds": 6.868271761999495,
+    "log": "reference.log"
+  },
+  {
+    "stage": "dynamic-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/run.py",
+      "--artifacts",
+      "/tmp/fg-repro-verify-2/dynamic",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--reference",
+      "/tmp/fg-repro-verify-2/reference",
+      "--output",
+      "/tmp/fg-repro-verify-2/results"
+    ],
+    "exit_code": 0,
+    "seconds": 8.467871546999959,
+    "log": "dynamic-tests.log"
+  },
+  {
+    "stage": "recovery-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/check-recovery.py",
+      "--artifacts",
+      "/tmp/fg-repro-verify-2/dynamic",
+      "--runtime-build",
+      "/tmp/fg-repro-verify-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-repro-verify-2/ubpf-build",
+      "--output",
+      "/tmp/fg-repro-verify-2/results/recovery"
+    ],
+    "exit_code": 0,
+    "seconds": 0.14770747399961692,
+    "log": "recovery-tests.log"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/report.py",
+      "--results",
+      "/tmp/fg-repro-verify-2/results"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02677165199929732,
+    "log": "report.log"
+  }
+]

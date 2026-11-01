@@ -1,0 +1,50 @@
+{
+  "ubpf_revision": "8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521",
+  "results": [
+    {
+      "function": "add",
+      "cases": 39,
+      "status": "passed"
+    },
+    {
+      "function": "mul",
+      "cases": 39,
+      "status": "passed"
+    },
+    {
+      "function": "div",
+      "cases": 41,
+      "status": "passed"
+    },
+    {
+      "function": "rem",
+      "cases": 41,
+      "status": "passed"
+    },
+    {
+      "function": "branch",
+      "cases": 39,
+      "status": "passed"
+    },
+    {
+      "function": "smul",
+      "cases": 41,
+      "status": "passed"
+    },
+    {
+      "function": "sadd",
+      "cases": 41,
+      "status": "passed"
+    },
+    {
+      "function": "sub",
+      "cases": 41,
+      "status": "passed"
+    },
+    {
+      "function": "short",
+      "cases": 41,
+      "status": "passed"
+    }
+  ]
+}

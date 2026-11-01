@@ -1,0 +1,73 @@
+TEST_F(MeshDeviceFixture, Fingolfin_ArithmeticAndActivation_Observed) {
+    auto *device = this->devices_.at(0)->get_devices()[0];
+    CoreCoord core = {0, 0};
+    Program program = CreateProgram();
+    for (uint32_t cb : {0u, 1u, 16u}) {
+        CreateCircularBuffer(
+            program, core,
+            CircularBufferConfig(2048, {{cb, tt::DataFormat::Float16_b}}).set_page_size(cb, 2048));
+    }
+    std::string producer = R"(
+        #include "api/dataflow/dataflow_api.h"
+        void kernel_main() {
+            for (uint32_t cb = 0; cb < 2; cb++) {
+                cb_reserve_back(cb, uint32_t(1));
+                auto* p = reinterpret_cast<volatile uint16_t*>(get_write_ptr(cb));
+                for (uint32_t i = 0; i < 1024; i++) p[i] = 0x3f80; // bfloat16 1.0
+                cb_push_back(cb, uint32_t(1));
+            }
+            const uint16_t expected[10] = {0x4000, 0, 0x3f80, 0x402e, 0x3f80,
+                                           0x3f80, 0x3f80, 0x3f00, 0x3f80, 0x3f80};
+            for (uint32_t op = 0; op < 10; op++) {
+                cb_wait_front(16, uint32_t(1));
+                auto* p = reinterpret_cast<volatile uint16_t*>(get_read_ptr(16));
+                for (uint32_t i = 0; i < 1024; i++) {
+                    uint16_t value = p[i];
+                    if (op == 3) { if (value < 0x402d || value > 0x402f) __builtin_trap(); }
+                    else if (value != expected[op]) __builtin_trap();
+                }
+                cb_pop_front(16, uint32_t(1));
+            }
+        }
+    )";
+    std::string compute = R"(
+        #include "api/compute/eltwise_binary.h"
+        #include "api/compute/tile_move_copy.h"
+        #include "api/compute/eltwise_unary/exp.h"
+        #include "api/compute/eltwise_unary/recip.h"
+        #include "api/compute/eltwise_unary/sqrt.h"
+        #include "api/compute/eltwise_unary/relu.h"
+        void kernel_main() {
+            binary_op_init_common(0, 1, 16);
+            cb_wait_front(0, uint32_t(1)); cb_wait_front(1, uint32_t(1));
+            for (uint32_t op = 0; op < 10; op++) {
+                cb_reserve_back(16, uint32_t(1));
+                tile_regs_acquire();
+                if (op == 0) add_tiles(0, 1, 0, 0, 0);
+                else if (op == 1) sub_tiles(0, 1, 0, 0, 0);
+                else if (op == 2) mul_tiles(0, 1, 0, 0, 0);
+                else {
+                    copy_tile(0, 0, 0);
+                    if (op == 3) { exp_tile_init(); exp_tile(0); }
+                    if (op == 4) { recip_tile_init(); recip_tile(0); }
+                    if (op == 5) { sqrt_tile_init(); sqrt_tile(0); }
+                    if (op == 6) relu_tile(0);
+                    if (op == 7) relu_max_tile(0, 0x3f000000);
+                    if (op == 8) relu_min_tile(0, 0x3f000000);
+                    if (op == 9) leaky_relu_tile(0, 0x3e000000);
+                }
+                tile_regs_commit(); tile_regs_wait();
+                if (op == 0) pack_tile_block(0, 16, 1);
+                else pack_tile(0, 16);
+                tile_regs_release(); cb_push_back(16, uint32_t(1));
+            }
+            cb_pop_front(0, uint32_t(1)); cb_pop_front(1, uint32_t(1));
+        }
+    )";
+    CreateKernelFromString(program, producer, core,
+                           DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
+                                              .noc = NOC::RISCV_0_default});
+    CreateKernelFromString(program, compute, core, ComputeConfig{});
+    detail::LaunchProgram(device, program);
+    SUCCEED(); // Ten output tiles checked elementwise by the consumer kernel.
+}

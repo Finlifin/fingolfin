@@ -1,0 +1,4 @@
+pub object fixture { id: u32 }
+pub object fixture.device { id: u32 }
+pub object fixture.device.core { x: u32, y: u32 }
+pub object fixture.device.core.cb { id: u32, pages: u32 }

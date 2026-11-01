@@ -1,0 +1,14 @@
+/tmp/fg-c-vm-build-1/elf_test
+/tmp/fg-packaged-bpf-run-1/add/program.o
+/tmp/fg-packaged-bpf-run-1/branch/program.o
+/tmp/fg-packaged-bpf-run-1/div/program.o
+/tmp/fg-packaged-bpf-run-1/mul/program.o
+/tmp/fg-packaged-bpf-run-1/rem/program.o
+/tmp/fg-packaged-bpf-run-1/sadd/program.o
+/tmp/fg-packaged-bpf-run-1/short/program.o
+/tmp/fg-packaged-bpf-run-1/smul/program.o
+/tmp/fg-packaged-bpf-run-1/sub/program.o
+/tmp/fg-c-vm-fixtures-1/record.o
+/tmp/fg-c-vm-fixtures-1/aggregate.o
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+PASS: 11 external generated ELF files

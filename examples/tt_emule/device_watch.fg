@@ -1,0 +1,8 @@
+use tt_emule.types.{Observation, Core};
+-- A typed device-local observation. The runtime supplies Core.device from the fiber.
+fn watch on tt_emule.device.core.cb.cb_push_back(call: Observation, core: Core, cb_id: u32, n: u32) {
+    if core.device == 1 && cb_id == 0 && call.phase == 0 {
+        builtin.counter_add(0, 1);
+        builtin.emit(call.phase, core.device);
+    }
+}

@@ -1,0 +1,311 @@
+[
+  {
+    "hook": 21,
+    "name": "tile_regs_acquire",
+    "params": [],
+    "slots": []
+  },
+  {
+    "hook": 22,
+    "name": "tile_regs_commit",
+    "params": [],
+    "slots": []
+  },
+  {
+    "hook": 23,
+    "name": "tile_regs_wait",
+    "params": [],
+    "slots": []
+  },
+  {
+    "hook": 24,
+    "name": "tile_regs_release",
+    "params": [],
+    "slots": []
+  },
+  {
+    "hook": 25,
+    "name": "add_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 26,
+    "name": "sub_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 27,
+    "name": "mul_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 28,
+    "name": "pack_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ]
+  },
+  {
+    "hook": 29,
+    "name": "pack_tile_block",
+    "params": [
+      [
+        "ifrom_dst",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 30,
+    "name": "copy_tile",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "itile",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 31,
+    "name": "tilize_block",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 32,
+    "name": "untilize_block",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ]
+  },
+  {
+    "hook": 33,
+    "name": "exp_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ]
+  },
+  {
+    "hook": 34,
+    "name": "recip_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ]
+  },
+  {
+    "hook": 35,
+    "name": "sqrt_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ]
+  },
+  {
+    "hook": 36,
+    "name": "relu_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ]
+  },
+  {
+    "hook": 37,
+    "name": "relu_max_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "param0",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ]
+  },
+  {
+    "hook": 38,
+    "name": "relu_min_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "param0",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ]
+  },
+  {
+    "hook": 39,
+    "name": "leaky_relu_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "slope",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      2
+    ]
+  }
+]

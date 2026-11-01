@@ -1,0 +1,64 @@
+TEST_F(MeshDeviceFixture, Fingolfin_LayoutRoundTrip_Observed) {
+    auto *device = this->devices_.at(0)->get_devices()[0];
+    CoreCoord core = {0, 0};
+    Program program = CreateProgram();
+    for (uint32_t cb : {0u, 2u, 3u, 16u}) {
+        CreateCircularBuffer(
+            program, core,
+            CircularBufferConfig(4096, {{cb, tt::DataFormat::Float16_b}}).set_page_size(cb, 2048));
+    }
+    std::string producer = R"(
+        #include "api/dataflow/dataflow_api.h"
+        // Distinct finite BF16 bit patterns make row, face and tile swaps visible.
+        uint16_t expected(uint32_t row, uint32_t col) {
+            return uint16_t(0x3800 + row * 64 + col);
+        }
+        void kernel_main() {
+            cb_reserve_back(0, uint32_t(2));
+            auto* input = reinterpret_cast<volatile uint16_t*>(get_write_ptr(0));
+            for (uint32_t r = 0; r < 32; r++)
+                for (uint32_t c = 0; c < 64; c++) input[r*64+c] = expected(r,c);
+            cb_push_back(0, uint32_t(2));
+            cb_wait_front(2, uint32_t(2));
+            auto* tiled = reinterpret_cast<volatile uint16_t*>(get_read_ptr(2));
+            for (uint32_t t = 0; t < 2; t++)
+                for (uint32_t r = 0; r < 32; r++)
+                    for (uint32_t c = 0; c < 32; c++) {
+                        uint32_t face = (r/16)*2+c/16;
+                        uint32_t index = t*1024+face*256+(r%16)*16+c%16;
+                        if (tiled[index] != expected(r,t*32+c)) __builtin_trap();
+                    }
+            // A token releases compute only after the intermediate layout is checked.
+            cb_reserve_back(3, uint32_t(1)); cb_push_back(3, uint32_t(1));
+            cb_wait_front(16, uint32_t(2));
+            auto* output = reinterpret_cast<volatile uint16_t*>(get_read_ptr(16));
+            for (uint32_t r = 0; r < 32; r++)
+                for (uint32_t c = 0; c < 64; c++)
+                    if (output[r*64+c] != expected(r,c)) __builtin_trap();
+            cb_pop_front(16, uint32_t(2));
+        }
+    )";
+    std::string compute = R"(
+        #include "api/compute/tile_move_copy.h"
+        #include "api/compute/tilize.h"
+        #include "api/compute/untilize.h"
+        void kernel_main() {
+            cb_wait_front(0, uint32_t(2)); cb_reserve_back(2, uint32_t(2));
+            tilize_init(0, 2, 2); tilize_block(0, 2, 2); tilize_uninit();
+            cb_push_back(2, uint32_t(2)); cb_pop_front(0, uint32_t(2));
+            cb_wait_front(3, uint32_t(1)); cb_pop_front(3, uint32_t(1));
+            cb_wait_front(2, uint32_t(2)); cb_reserve_back(16, uint32_t(2));
+            untilize_init(2, 16);
+            tile_regs_acquire(); untilize_block(2, 2, 16);
+            tile_regs_commit(); tile_regs_wait(); tile_regs_release();
+            untilize_uninit();
+            cb_push_back(16, uint32_t(2)); cb_pop_front(2, uint32_t(2));
+        }
+    )";
+    CreateKernelFromString(program, producer, core,
+                           DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
+                                              .noc = NOC::RISCV_0_default});
+    CreateKernelFromString(program, compute, core, ComputeConfig{});
+    detail::LaunchProgram(device, program);
+    SUCCEED(); // Independently checks both intermediate face layout and round trip.
+}

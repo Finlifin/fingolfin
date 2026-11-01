@@ -1,0 +1,97 @@
+Running main() from gmock_main.cc
+Note: Google Test filter = MeshDeviceFixture.TensixTestSingleCoreMultiTileBankedDramReaderDataCopyDramWriter
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MeshDeviceFixture
+[ RUN      ] MeshDeviceFixture.TensixTestSingleCoreMultiTileBankedDramReaderDataCopyDramWriter
+2026-11-01 22:25:22.932 | info     |           Metal | Disabling multi-erisc mode with simulator/emule target device (rtoptions.cpp:363)
+2026-11-01 22:25:22.932 | info     |          Device | Opening user mode device driver (tt_cluster.cpp:228)
+2026-11-01 22:25:22.932 | warning  |          Device | Using emulated device mode with memory-backed I/O (tt_cluster.cpp:254)
+2026-11-01 22:25:22.932 | info     |             UMD | Cluster constructor started. (cluster.cpp:378)
+2026-11-01 22:25:22.933 | info     |             UMD | Cluster constructor completed. (cluster.cpp:574)
+2026-11-01 22:25:22.933 | info     |             UMD | Starting devices in cluster (cluster.cpp:1092)
+2026-11-01 22:25:22.933 | info     |             UMD | Starting devices in cluster completed. (cluster.cpp:1100)
+2026-11-01 22:25:22.933 | info     |     Distributed | Using auto discovery to generate mesh graph. (metal_env.cpp:423)
+2026-11-01 22:25:22.933 | info     |     Distributed | Constructing control plane using auto-discovery (no mesh graph descriptor). (metal_env.cpp:485)
+2026-11-01 22:25:22.934 | info     |          Fabric | Logical multi-mesh adjacency: intermesh degree histogram {0:1}; intra-mesh degree histograms mesh0 {0:1} (topology_mapper_utils.cpp:2452)
+2026-11-01 22:25:22.934 | info     |          Fabric | Physical multi-mesh adjacency: intermesh degree histogram {0:1}; intra-mesh degree histograms mesh0 {0:1} (topology_mapper_utils.cpp:2460)
+2026-11-01 22:25:22.935 | warning  |       Inspector | Failed to start Inspector RPC server: ::socket(addr.generic.sa_family, type, 0): Operation not permitted (data.cpp:76)
+2026-11-01 22:25:22.941 | info     |           Metal | Skipping fabric configure (router sync) for mock/emule devices (fabric_firmware_initializer.cpp:328)
+2026-11-01 22:25:22.943 | info     |           Metal | JIT parallel compile: 3 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_7BYGsL/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:23.536 | info     |           Metal | execute_program_emulated: program 0 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:23.549 | info     |           Metal | JIT parallel compile: 1 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_Xf6wbl/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:24.134 | info     |           Metal | execute_program_emulated: program 2 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:24.137 | info     |           Metal | JIT parallel compile: 1 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_NLqBAn/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:24.720 | info     |           Metal | execute_program_emulated: program 4 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:24.724 | info     |           Metal | JIT parallel compile: 1 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_5vVREZ/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:25.309 | info     |           Metal | execute_program_emulated: program 6 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:25.313 | info     |           Metal | JIT parallel compile: 1 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_KnR26e/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:25.896 | info     |           Metal | execute_program_emulated: program 8 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:25.901 | info     |           Metal | JIT parallel compile: 1 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_KzioHD/wrapper.cpp:26:
+In file included from /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/compute/eltwise_copy.cpp:7:
+/tmp/fingolfin-tt-emule/include/jit_hw/api/compute/common.h:53:9: warning: 'ALWI' macro redefined [-Wmacro-redefined]
+   53 | #define ALWI FORCE_INLINE
+      |         ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:77:9: note: previous definition is here
+   77 | #define ALWI inline __attribute__((always_inline))
+      |         ^
+1 warning generated.
+2026-11-01 22:25:26.488 | info     |           Metal | execute_program_emulated: program 10 resolved (1 logical cores) (emulated_program_runner.cpp:3323)
+2026-11-01 22:25:26.493 | info     |           Metal | Skipping fabric teardown for mock/emule devices (fabric_firmware_initializer.cpp:343)
+[       OK ] MeshDeviceFixture.TensixTestSingleCoreMultiTileBankedDramReaderDataCopyDramWriter (3561 ms)
+[----------] 1 test from MeshDeviceFixture (3561 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3561 ms total)
+[  PASSED  ] 1 test.
+2026-11-01 22:25:26.495 | info     |          Device | Closing user mode device drivers (tt_cluster.cpp:513)
+2026-11-01 22:25:26.495 | info     |             UMD | Closing devices in cluster (cluster.cpp:1105)
+2026-11-01 22:25:26.495 | info     |             UMD | Closing devices in cluster completed. (cluster.cpp:1114)
+2026-11-01 22:25:26.495 | info     |             UMD | Cluster destructor started. (cluster.cpp:808)
+2026-11-01 22:25:26.495 | info     |             UMD | Cluster destructor completed. (cluster.cpp:811)

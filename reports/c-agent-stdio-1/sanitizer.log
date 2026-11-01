@@ -1,0 +1,35 @@
+Start testing: Nov 01 20:53 CST
+----------------------------------------------------------
+17/23 Testing: session
+17/23 Test: session
+Command: "/tmp/fg-c-vm-asan-1/session_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"session" start time: Nov 01 20:53 CST
+Output:
+----------------------------------------------------------
+session: load/unload, generation, replay, capacity, pins, ownership and close passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"session" end time: Nov 01 20:53 CST
+"session" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/23 Testing: agent_stdio
+18/23 Test: agent_stdio
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../agent/tests/stdio.py" "/tmp/fg-c-vm-asan-1/fg-agent" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"agent_stdio" start time: Nov 01 20:53 CST
+Output:
+----------------------------------------------------------
+agent stdio: framing, strict envelopes, load/unload, replay, stale generations, close and EOF passed
+<end of output>
+Test time =   0.25 sec
+----------------------------------------------------------
+Test Passed.
+"agent_stdio" end time: Nov 01 20:53 CST
+"agent_stdio" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:53 CST

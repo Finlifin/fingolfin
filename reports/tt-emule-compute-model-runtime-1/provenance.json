@@ -1,0 +1,13 @@
+{
+  "emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "sha256": {
+    "integration/tt-emule/compute-model-runtime/runtime.c": "64e887c2fd5ee8c3bbe95da1c1a98b404e64ec89c884a063dd096d0a4dc5f446",
+    "integration/tt-emule/compute-model-runtime/build.py": "425e38c8c00317eb5c4cd44abe06d802eedb47c4840df90029a5bd955e0cab17",
+    "integration/tt-emule/compute-model-runtime/run.py": "7b2ce29dd60d9e46bcb330b5941ec1884a21b7ff2da3aa119ac6d812f28e1527",
+    "integration/tt-emule/compute-model-runtime/check-boundary.py": "61803d18e51e861f8dfb93afeb80635bf38c44373e8eca0d8f42cefe1d32b3fc",
+    "integration/tt-emule/compute-model-runtime/README.md": "33ffa0f042e77d0f1e63c9540d5a336a4a8e26f2bde388025899cdaf4eb18685",
+    "integration/tt-emule/observability/prepare.py": "a9c73d7cd5638910f7fcebe4727ed8e5b0a6bc2e13df54633ee999927e7f7c68",
+    "integration/tt-emule/observability/tilize-count.patch": "2e4e72351c1dbeed12f982b4e76e6b7a7533a9665b8d1b2a8279a9ee6f189ec5"
+  }
+}

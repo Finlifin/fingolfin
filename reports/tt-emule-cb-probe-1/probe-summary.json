@@ -1,0 +1,62 @@
+[
+  {
+    "case": "exact",
+    "mode": "on",
+    "seen": 1,
+    "frames": 1,
+    "vm": 1,
+    "errors": 0,
+    "push_pages": 2,
+    "pop_pages": 0
+  },
+  {
+    "case": "exact",
+    "mode": "off",
+    "seen": 1,
+    "frames": 0,
+    "vm": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0
+  },
+  {
+    "case": "exact",
+    "mode": "miss",
+    "seen": 1,
+    "frames": 0,
+    "vm": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0
+  },
+  {
+    "case": "wrap",
+    "mode": "on",
+    "seen": 5,
+    "frames": 5,
+    "vm": 5,
+    "errors": 0,
+    "push_pages": 4,
+    "pop_pages": 2
+  },
+  {
+    "case": "wrap",
+    "mode": "off",
+    "seen": 5,
+    "frames": 0,
+    "vm": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0
+  },
+  {
+    "case": "wrap",
+    "mode": "miss",
+    "seen": 5,
+    "frames": 0,
+    "vm": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0
+  }
+]

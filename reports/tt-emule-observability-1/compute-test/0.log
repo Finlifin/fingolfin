@@ -1,0 +1,134 @@
+Running main() from gmock_main.cc
+Note: Google Test filter = MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MeshDeviceFixture
+[ RUN      ] MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute
+2026-11-01 21:17:30.471 | info     |           Metal | Disabling multi-erisc mode with simulator/emule target device (rtoptions.cpp:363)
+2026-11-01 21:17:30.471 | info     |          Device | Opening user mode device driver (tt_cluster.cpp:228)
+2026-11-01 21:17:30.471 | warning  |          Device | Using emulated device mode with memory-backed I/O (tt_cluster.cpp:254)
+2026-11-01 21:17:30.471 | info     |             UMD | Cluster constructor started. (cluster.cpp:378)
+2026-11-01 21:17:30.472 | info     |             UMD | Cluster constructor completed. (cluster.cpp:574)
+2026-11-01 21:17:30.472 | info     |             UMD | Starting devices in cluster (cluster.cpp:1092)
+2026-11-01 21:17:30.472 | info     |             UMD | Starting devices in cluster completed. (cluster.cpp:1100)
+2026-11-01 21:17:30.472 | info     |     Distributed | Using auto discovery to generate mesh graph. (metal_env.cpp:423)
+2026-11-01 21:17:30.472 | info     |     Distributed | Constructing control plane using auto-discovery (no mesh graph descriptor). (metal_env.cpp:485)
+2026-11-01 21:17:30.473 | info     |          Fabric | Logical multi-mesh adjacency: intermesh degree histogram {0:1}; intra-mesh degree histograms mesh0 {0:1} (topology_mapper_utils.cpp:2452)
+2026-11-01 21:17:30.473 | info     |          Fabric | Physical multi-mesh adjacency: intermesh degree histogram {0:1}; intra-mesh degree histograms mesh0 {0:1} (topology_mapper_utils.cpp:2460)
+2026-11-01 21:17:30.474 | warning  |       Inspector | Failed to start Inspector RPC server: ::socket(addr.generic.sa_family, type, 0): Operation not permitted (data.cpp:76)
+2026-11-01 21:17:30.480 | info     |           Metal | Skipping fabric configure (router sync) for mock/emule devices (fabric_firmware_initializer.cpp:328)
+2026-11-01 21:17:30.480 | info     |           Metal | JIT parallel compile: 2 unique kernels to compile (emulated_program_runner.cpp:1806)
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:68:9: error: call to 'cb_reserve_back' is ambiguous
+   68 |         cb_reserve_back(CB_ID, CB_STEP_SIZE);
+      |         ^~~~~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:155:13: note: candidate function
+  155 | inline void cb_reserve_back(
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:290:13: note: candidate function
+  290 | inline void cb_reserve_back(
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:70:9: error: call to 'cb_push_back' is ambiguous
+   70 |         cb_push_back(CB_ID, CB_STEP_SIZE);
+      |         ^~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:186:13: note: candidate function
+  186 | inline void cb_push_back(uint32_t cb_id, uint32_t n) {
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:296:13: note: candidate function
+  296 | inline void cb_push_back(uint32_t cb_id, int32_t n)    {
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:87:5: error: call to 'cb_reserve_back' is ambiguous
+   87 |     cb_reserve_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:155:13: note: candidate function
+  155 | inline void cb_reserve_back(
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:290:13: note: candidate function
+  290 | inline void cb_reserve_back(
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:89:5: error: call to 'cb_push_back' is ambiguous
+   89 |     cb_push_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:186:13: note: candidate function
+  186 | inline void cb_push_back(uint32_t cb_id, uint32_t n) {
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:296:13: note: candidate function
+  296 | inline void cb_push_back(uint32_t cb_id, int32_t n)    {
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:92:5: error: call to 'cb_reserve_back' is ambiguous
+   92 |     cb_reserve_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:155:13: note: candidate function
+  155 | inline void cb_reserve_back(
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:290:13: note: candidate function
+  290 | inline void cb_reserve_back(
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:94:5: error: call to 'cb_push_back' is ambiguous
+   94 |     cb_push_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:186:13: note: candidate function
+  186 | inline void cb_push_back(uint32_t cb_id, uint32_t n) {
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:296:13: note: candidate function
+  296 | inline void cb_push_back(uint32_t cb_id, int32_t n)    {
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:107:5: error: call to 'cb_reserve_back' is ambiguous
+  107 |     cb_reserve_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:155:13: note: candidate function
+  155 | inline void cb_reserve_back(
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:290:13: note: candidate function
+  290 | inline void cb_reserve_back(
+      |             ^
+In file included from /tmp/tt_emule_jit_0A25wk/wrapper.cpp:21:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_writer.cpp:110:5: error: call to 'cb_push_back' is ambiguous
+  110 |     cb_push_back(CB_ID, CB_STEP_SIZE);
+      |     ^~~~~~~~~~~~
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:186:13: note: candidate function
+  186 | inline void cb_push_back(uint32_t cb_id, uint32_t n) {
+      |             ^
+/tmp/fingolfin-tt-emule/include/jit_hw/api/cb_api.h:296:13: note: candidate function
+  296 | inline void cb_push_back(uint32_t cb_id, int32_t n)    {
+      |             ^
+In file included from /tmp/tt_emule_jit_c3zxA5/wrapper.cpp:26:
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_reader.cpp:72:5: error: use of undeclared identifier 'riscv_wait'
+   72 |     riscv_wait(NUM_WAIT_CYCLES);
+      |     ^~~~~~~~~~
+8 errors generated.
+In file included from /tmp/tt_emule_jit_c3zxA5/wrapper.cpp:25:
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:196:19: error: static assertion failed due to requirement 'sizeof(unsigned int *) <= sizeof(unsigned int)'
+  196 |     static_assert(sizeof(T) <= sizeof(uint32_t));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_reader.cpp:45:23: note: in instantiation of function template specialization 'get_arg_val<unsigned int *>' requested here
+   45 |     auto result_ptr = get_arg_val<DataT*>(0);
+      |                       ^
+/tmp/fingolfin-tt-emule/include/jit_hw/jit_kernel_stubs.hpp:196:29: note: expression evaluates to '8 <= 4'
+  196 |     static_assert(sizeof(T) <= sizeof(uint32_t));
+      |                   ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+2 errors generated.
+unknown file: Failure
+C++ exception with description "jit_compile_kernel: compiler failed (exit 256) for kernel: /tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/test_kernels/misc/circular_buffer/cb_wrapping_test_blocking_reader.cpp" thrown in the test body.
+2026-11-01 21:17:30.934 | info     |           Metal | Skipping fabric teardown for mock/emule devices (fabric_firmware_initializer.cpp:343)
+[  FAILED  ] MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute (462 ms)
+[----------] 1 test from MeshDeviceFixture (462 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (463 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute
+
+ 1 FAILED TEST
+2026-11-01 21:17:30.935 | info     |          Device | Closing user mode device drivers (tt_cluster.cpp:513)
+2026-11-01 21:17:30.935 | info     |             UMD | Closing devices in cluster (cluster.cpp:1105)
+2026-11-01 21:17:30.935 | info     |             UMD | Closing devices in cluster completed. (cluster.cpp:1114)
+2026-11-01 21:17:30.935 | info     |             UMD | Cluster destructor started. (cluster.cpp:808)
+2026-11-01 21:17:30.935 | info     |             UMD | Cluster destructor completed. (cluster.cpp:811)

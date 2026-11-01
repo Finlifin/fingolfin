@@ -1,0 +1,12 @@
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fingolfin-ubpf-build
+[1/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_instruction_valid.c.o
+[2/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit.c.o
+[3/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_support.c.o
+[4/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_arm64.c.o
+[5/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_x86_64.c.o
+[6/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_safe.c.o
+[7/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_loader.c.o
+[8/9] Building C object vm/CMakeFiles/ubpf.dir/ubpf_vm.c.o
+[9/9] Linking C static library lib/libubpf.a

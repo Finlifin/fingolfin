@@ -1,0 +1,13 @@
+{
+  "sha256": {
+    "integration/tt-emule/dynamic-model-runtime/adapter.h": "76851f2cde478ef1fb42995a61b5c639515ce178e753264ceb00202754011d75",
+    "integration/tt-emule/dynamic-model-runtime/build.py": "4ecd45e1aadd24ab49643da416bae8593a294eb6c421da46714589bec664ab5f",
+    "integration/tt-emule/dynamic-model-runtime/runtime.c": "dda7f4685df467a6cee86f5548ae99f89a452c2594b6e6137a373054ee600d3c",
+    "integration/tt-emule/dynamic-model-runtime/run.py": "fa3aae6a52f43b72861e80d019c0e544ad4694b7e394b3828cc08e06123e9356",
+    "integration/tt-emule/dynamic-model-runtime/README.md": "5857fef96ba1a6b179f5b0939d8d29bd8a9ea43d7e1db0d5c4862bf3d16659b0",
+    "integration/tt-emule/dynamic-model-runtime/check-recovery.py": "d5915484692ec08756c5fc8a43b8466b648a03aef381c5c4536935a0899d03dd",
+    "integration/tt-emule/dynamic-model-runtime/report.py": "2806d40fdc67125b210076527cb16daf600d3f581d96143c50d08f67c733a3f5",
+    "integration/tt-emule/lifecycle/exception_scenario.cpp": "43f8c0fbb62585ecb71fcaf87fc6a45e1bdaa2f7151b4c5906c83a87326c6bf2",
+    "integration/tt-emule/lifecycle/exception-scenario.patch": "73b164901ec68aa6fed9028fa6f989b132bd4b7409fcdde356976452e450bef4"
+  }
+}

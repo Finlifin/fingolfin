@@ -1,0 +1,89 @@
+--- a/tt_metal/impl/emulation/emulated_program_runner.cpp
++++ b/tt_metal/impl/emulation/emulated_program_runner.cpp
+@@ -1598,6 +1598,13 @@
+                     key += ":" + k + "=" + v;
+                 }
+                 key += metal2_key_suffix;
++                // Probe ABI/content changes must not reuse an older kernel DSO.
++                std::ifstream fg_probe(std::string(TT_EMULE_JIT_INCLUDE_DIR) + "/fg_trace.h");
++                if (!fg_probe) throw std::runtime_error("Fingolfin probe header unavailable for JIT cache identity");
++                std::ostringstream fg_probe_text;
++                fg_probe_text << fg_probe.rdbuf();
++                if (fg_probe.bad()) throw std::runtime_error("Fingolfin probe header read failed");
++                key += ":fg_probe2:" + std::to_string(fnv1a_hash(fg_probe_text.str()));
+                 // Per-kernel include roots (Kernel::process_include_paths) change
+                 // which headers resolve, and therefore the compiled artifact, so
+                 // fold them into the key. Without this, two kernels that share
+@@ -3000,6 +3007,7 @@
+ // execute_program_emulated REGISTERS its fibers (spawn, no run); run_mesh_dispatch then drives ONE
+ // run_until_idle so all chips' fibers run concurrently. See tt-emule docs/fiber-engine.md.
+ static bool g_emule_mesh_defer = false;
++static std::vector<uint64_t> g_fg_mesh_devices;
+ static std::vector<std::vector<std::vector<std::unique_ptr<tt_emule::EmuleDFBInterface[]>>>>
+     g_mesh_dfb_keep;
+ // [MESH] ASAN snapshot keepalive. In defer mode the deferred fibers read the per-launch
+@@ -3024,6 +3032,22 @@
+ static std::unordered_map<ProgramId, ResolvedProgram> g_resolved_programs;
+ static std::deque<ProgramId> g_resolved_lru;
+ static constexpr size_t kMaxResolvedPrograms = 256;
++
++extern "C" uint64_t fg_tt_launch_begin(uint64_t device) __attribute__((weak));
++extern "C" void fg_tt_launch_end(uint64_t token) __attribute__((weak));
++extern "C" uint64_t fg_tt_launch_begin_many(const uint64_t*, size_t) __attribute__((weak));
++struct FgLaunchScope {
++    uint64_t token = 0;
++    explicit FgLaunchScope(uint64_t device, bool enabled = true) {
++        if (enabled && fg_tt_launch_begin && fg_tt_launch_end) token = fg_tt_launch_begin(device);
++    }
++    explicit FgLaunchScope(const std::vector<uint64_t>& devices) {
++        if (fg_tt_launch_begin_many && fg_tt_launch_end) token = fg_tt_launch_begin_many(devices.data(), devices.size());
++        else if (devices.size() == 1 && fg_tt_launch_begin && fg_tt_launch_end) token = fg_tt_launch_begin(devices.front());
++    }
++    ~FgLaunchScope() { if (token) fg_tt_launch_end(token); }
++    FgLaunchScope(const FgLaunchScope&) = delete;
++};
+ 
+ static void launch_cores(
+     std::vector<CoreSetup>& core_setups,
+@@ -3230,6 +3254,7 @@
+         return;
+     }
+ 
++    FgLaunchScope fg_launch_scope(device_id);
+     // Run all registered fibers to completion; rethrows the first kernel exception,
+     // throws on a quiescent deadlock, aborts with a dump on livelock/hang.
+     sched.run_until_idle();
+@@ -3367,6 +3392,8 @@
+     dispatch_to_device(device, program, resolved, defer);
+ 
+     if (defer) {
++        if (std::find(g_fg_mesh_devices.begin(), g_fg_mesh_devices.end(), device_id) == g_fg_mesh_devices.end())
++            g_fg_mesh_devices.push_back(device_id);
+         log_debug(tt::LogMetal, "execute_program_emulated: device {} registered (deferred mesh run)", device_id);
+         return;
+     }
+@@ -3378,6 +3405,7 @@
+ // into defer mode; run_mesh_dispatch drives the single concurrent run + frees kept state.
+ // ---------------------------------------------------------------------------
+ void begin_mesh_dispatch() {
++    g_fg_mesh_devices.clear();
+     g_emule_mesh_defer = true;
+     g_mesh_dfb_keep.clear();
+     g_mesh_oob_keep.clear();
+@@ -3391,6 +3419,7 @@
+     struct Cleanup {
+         ~Cleanup() {
+             g_emule_mesh_defer = false;
++            g_fg_mesh_devices.clear();
+             g_mesh_dfb_keep.clear();
+             g_mesh_oob_keep.clear();
+         }
+@@ -3398,6 +3427,8 @@
+     // All devices' fibers were registered (spawned) during the per-device register phase;
+     // run them concurrently on the worker pool in one pass. Each fiber's ctx carries its
+     // device's core_map/bridge_dram, so cross-chip NOC resolution stays correct.
++    // v2 observers resolve each event using the device stored in its fiber context.
++    FgLaunchScope fg_launch_scope(g_fg_mesh_devices);
+     tt::tt_metal::emule_fiber::FiberScheduler::instance().run_until_idle();
+ }
+ 

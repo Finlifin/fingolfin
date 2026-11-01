@@ -1,0 +1,7 @@
+{
+  "runtime/include/fingolfin/objects.h": "57aed5078db7dd2fd72e9d9d3e4e3f19f7b2f6fec669b8c678069a17d8ecb064",
+  "runtime/src/objects.c": "814973368225fcccb1e1a3ee7bf303cb2deaca764b60e61019d2ed5983592038",
+  "runtime/tests/objects.c": "9993178cb18307237030e9f9e50a6c89099584516d6c626a7a5a9b0d4d46ecad",
+  "runtime/CMakeLists.txt": "aa1952c12859590fc3857100a77692d1b25fb8e77492b03fa763ca570b883880",
+  "docs/runtime-objects.md": "85532a263314d8944a591f2f146beddd808b50be621de2572489fd0e3614486a"
+}

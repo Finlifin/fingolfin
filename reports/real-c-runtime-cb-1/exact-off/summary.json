@@ -1,0 +1,18 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "results": [
+    {
+      "filter": "MeshDeviceFixture.CB_Reservation_ExactCapacity_NoViolation",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.CB_Reservation_ExactCapacity_NoViolation",
+        "--gtest_output=xml:/home/fin/apps/fingolfin/reports/real-c-runtime-cb-1/exact-off/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 0.564462056998309,
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

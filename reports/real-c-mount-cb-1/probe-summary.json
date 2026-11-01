@@ -1,0 +1,152 @@
+[
+  {
+    "case": "exact",
+    "mode": "on",
+    "seen": 1,
+    "frames": 1,
+    "dispatches": 1,
+    "errors": 0,
+    "push_pages": 2,
+    "pop_pages": 0,
+    "records": 1,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "exact",
+    "mode": "off",
+    "seen": 1,
+    "frames": 0,
+    "dispatches": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0,
+    "records": 0,
+    "route_generations": [
+      2,
+      2
+    ]
+  },
+  {
+    "case": "exact",
+    "mode": "miss",
+    "seen": 1,
+    "frames": 0,
+    "dispatches": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0,
+    "records": 0,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "exact",
+    "mode": "dual",
+    "seen": 1,
+    "frames": 1,
+    "dispatches": 2,
+    "errors": 0,
+    "push_pages": 4,
+    "pop_pages": 0,
+    "records": 2,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "exact",
+    "mode": "toggle",
+    "seen": 1,
+    "frames": 1,
+    "dispatches": 1,
+    "errors": 0,
+    "push_pages": 2,
+    "pop_pages": 0,
+    "records": 1,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "wrap",
+    "mode": "on",
+    "seen": 5,
+    "frames": 5,
+    "dispatches": 5,
+    "errors": 0,
+    "push_pages": 4,
+    "pop_pages": 2,
+    "records": 5,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "wrap",
+    "mode": "off",
+    "seen": 5,
+    "frames": 0,
+    "dispatches": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0,
+    "records": 0,
+    "route_generations": [
+      2,
+      2
+    ]
+  },
+  {
+    "case": "wrap",
+    "mode": "miss",
+    "seen": 5,
+    "frames": 0,
+    "dispatches": 0,
+    "errors": 0,
+    "push_pages": 0,
+    "pop_pages": 0,
+    "records": 0,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "wrap",
+    "mode": "dual",
+    "seen": 5,
+    "frames": 5,
+    "dispatches": 10,
+    "errors": 0,
+    "push_pages": 8,
+    "pop_pages": 4,
+    "records": 10,
+    "route_generations": [
+      1,
+      1
+    ]
+  },
+  {
+    "case": "wrap",
+    "mode": "toggle",
+    "seen": 5,
+    "frames": 3,
+    "dispatches": 3,
+    "errors": 0,
+    "push_pages": 3,
+    "pop_pages": 1,
+    "records": 3,
+    "route_generations": [
+      3,
+      3
+    ]
+  }
+]

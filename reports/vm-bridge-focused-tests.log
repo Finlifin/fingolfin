@@ -1,0 +1,11 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests/vm.rs (target/debug/build/fingolfin/555d3bdd7157b545/out/vm-555d3bdd7157b545)
+
+running 3 tests
+test histogram_overflow_preserves_prior_map_update ... ok
+Error: Instruction limit exceeded.
+test actual_rust_host_map_histogram_partial_failure ... ok
+test actual_rust_host_counter_output_errors_and_reuse ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

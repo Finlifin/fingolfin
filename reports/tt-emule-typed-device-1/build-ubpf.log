@@ -1,0 +1,11 @@
+["cmake", "--build", "/tmp/fg-typed-device-1/ubpf-build", "-j", "2"]
+[ 11%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_arm64.c.o
+[ 22%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_instruction_valid.c.o
+[ 33%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit.c.o
+[ 44%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_support.c.o
+[ 55%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_jit_x86_64.c.o
+[ 66%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_safe.c.o
+[ 77%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_loader.c.o
+[ 88%] Building C object vm/CMakeFiles/ubpf.dir/ubpf_vm.c.o
+[100%] Linking C static library ../lib/libubpf.a
+[100%] Built target ubpf

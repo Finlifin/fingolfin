@@ -1,0 +1,8 @@
+/target/
+/build/
+/.venv/
+__pycache__/
+*.py[cod]
+/reports/**/jit-cache/
+/reports/**/*-jit/
+/reports/**/jit/

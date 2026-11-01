@@ -1,0 +1,4 @@
+["cmake", "--build", "/tmp/fingolfin-emule-build", "--target", "unit_tests_api", "-j", "2"]
+[0/2] Re-checking globbed directories...
+[1/2] Generating RPC stub for /tmp/fingolfin-tt-metal/tt_metal/impl/debug/inspector/rpc.capnp
+Cannot generate stub file for Inspector. If you need python autocomplete/static analysis, install with: pip install pycapnp

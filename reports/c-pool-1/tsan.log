@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:02 CST
+----------------------------------------------------------
+6/7 Testing: pool
+6/7 Test: pool
+Command: "/tmp/fg-pool-tsan/pool_test" "/tmp/fg-c-vm-fixtures-3/record.o"
+Directory: /tmp/fg-pool-tsan
+"pool" start time: Nov 01 20:02 CST
+Output:
+----------------------------------------------------------
+C VM pool: lifecycle, exhaustion, token ownership and 40000 concurrent executions passed
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"pool" end time: Nov 01 20:02 CST
+"pool" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:02 CST

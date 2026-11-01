@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/check-recovery.py", "--artifacts", "/tmp/fg-typed-device-1/dynamic", "--runtime-build", "/tmp/fg-typed-device-1/runtime-build", "--ubpf-build", "/tmp/fg-typed-device-1/ubpf-build", "--output", "/tmp/fg-typed-device-1/results/recovery"]
+/tmp/fg-typed-device-1/results/recovery/summary.json

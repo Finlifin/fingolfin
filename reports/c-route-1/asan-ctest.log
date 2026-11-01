@@ -1,0 +1,67 @@
+Start testing: Nov 01 19:29 CST
+----------------------------------------------------------
+1/4 Testing: containers
+1/4 Test: containers
+Command: "/tmp/fg-c-vm-asan-1/containers_test"
+Directory: /tmp/fg-c-vm-asan-1
+"containers" start time: Nov 01 19:29 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:29 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: host
+2/4 Test: host
+Command: "/tmp/fg-c-vm-asan-1/host_test"
+Directory: /tmp/fg-c-vm-asan-1
+"host" start time: Nov 01 19:29 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 19:29 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: route
+3/4 Test: route
+Command: "/tmp/fg-c-vm-asan-1/route_test"
+Directory: /tmp/fg-c-vm-asan-1
+"route" start time: Nov 01 19:29 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 19:29 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: vm
+4/4 Test: vm
+Command: "/tmp/fg-c-vm-asan-1/vm_test" "/tmp/fg-c-vm-fixtures-1/record.o" "/tmp/fg-c-vm-fixtures-1/aggregate.o"
+Directory: /tmp/fg-c-vm-asan-1
+"vm" start time: Nov 01 19:29 CST
+Output:
+----------------------------------------------------------
+PASS: generated ELF -> C VM -> C Host; isolation, allowlist, frame/capacity/overflow/budget, partial success
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"vm" end time: Nov 01 19:29 CST
+"vm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:29 CST

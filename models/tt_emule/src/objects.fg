@@ -1,0 +1,6 @@
+pub object tt_emule { id: u64 }
+pub object tt_emule.device { id: u64 }
+pub object tt_emule.device.core { x: u32, y: u32 }
+pub object tt_emule.device.core.cb { id: u32 }
+pub object tt_emule.device.core.noc { id: u32 }
+pub object tt_emule.device.core.compute { id: u32 }

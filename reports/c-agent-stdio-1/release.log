@@ -1,0 +1,1 @@
+agent stdio: framing, strict envelopes, load/unload, replay, stale generations, close and EOF passed

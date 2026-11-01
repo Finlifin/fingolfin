@@ -1,0 +1,32 @@
+["cmake", "--build", "/tmp/fg-repro-verify-2/runtime-build", "-j", "2"]
+[  3%] Building C object CMakeFiles/fingolfin.dir/src/util.c.o
+[  7%] Building C object CMakeFiles/fingolfin.dir/src/objects.c.o
+[ 11%] Building C object CMakeFiles/fingolfin.dir/src/containers.c.o
+[ 14%] Building C object CMakeFiles/fingolfin.dir/src/state.c.o
+[ 18%] Building C object CMakeFiles/fingolfin.dir/src/host.c.o
+[ 22%] Building C object CMakeFiles/fingolfin.dir/src/route.c.o
+[ 25%] Building C object CMakeFiles/fingolfin.dir/src/bytes.c.o
+[ 29%] Building C object CMakeFiles/fingolfin.dir/src/elf.c.o
+[ 33%] Building C object CMakeFiles/fingolfin.dir/src/schema.c.o
+[ 37%] Building C object CMakeFiles/fingolfin.dir/src/gate.c.o
+[ 40%] Building C object CMakeFiles/fingolfin.dir/src/facts.c.o
+[ 44%] Building C object CMakeFiles/fingolfin.dir/src/vm.c.o
+[ 48%] Building C object CMakeFiles/fingolfin.dir/src/pool.c.o
+[ 51%] Building C object CMakeFiles/fingolfin.dir/src/hash.c.o
+[ 55%] Building C object CMakeFiles/fingolfin.dir/src/package.c.o
+[ 59%] Building C object CMakeFiles/fingolfin.dir/src/program.c.o
+[ 62%] Building C object CMakeFiles/fingolfin.dir/src/attachment.c.o
+[ 66%] Building C object CMakeFiles/fingolfin.dir/src/binding.c.o
+[ 70%] Linking C static library libfingolfin.a
+[ 70%] Built target fingolfin
+[ 74%] Building C object CMakeFiles/fgctl.dir/home/fin/apps/fingolfin/cli/fgctl.c.o
+[ 77%] Building C object CMakeFiles/fingolfin_agent.dir/home/fin/apps/fingolfin/agent/src/session.c.o
+[ 81%] Building C object CMakeFiles/fgctl.dir/home/fin/apps/fingolfin/cli/session.c.o
+[ 85%] Building C object CMakeFiles/fingolfin_agent.dir/home/fin/apps/fingolfin/agent/src/mount.c.o
+[ 88%] Linking C static library libfingolfin_agent.a
+[ 88%] Built target fingolfin_agent
+[ 92%] Building C object CMakeFiles/fg-agent.dir/home/fin/apps/fingolfin/agent/src/main.c.o
+[ 96%] Linking C executable fgctl
+[ 96%] Built target fgctl
+[100%] Linking C executable fg-agent
+[100%] Built target fg-agent

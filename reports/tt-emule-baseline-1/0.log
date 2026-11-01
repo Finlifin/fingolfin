@@ -1,0 +1,21 @@
+Running main() from gmock_main.cc
+Note: Google Test filter = HostBufferTest.*
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from HostBufferTest
+[ RUN      ] HostBufferTest.Empty
+[       OK ] HostBufferTest.Empty (0 ms)
+[ RUN      ] HostBufferTest.BasicOwned
+[       OK ] HostBufferTest.BasicOwned (0 ms)
+[ RUN      ] HostBufferTest.BasicBorrowed
+[       OK ] HostBufferTest.BasicBorrowed (0 ms)
+[ RUN      ] HostBufferTest.IncorrectCast
+2026-11-01 17:48:08.222 | critical |          Always | TT_FATAL: Requested type T does not match the underlying buffer type. (assert.hpp:104)
+[       OK ] HostBufferTest.IncorrectCast (0 ms)
+[ RUN      ] HostBufferTest.ShallowCopy
+[       OK ] HostBufferTest.ShallowCopy (0 ms)
+[----------] 5 tests from HostBufferTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.

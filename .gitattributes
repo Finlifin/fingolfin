@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Preserve exact evidence bytes and upstream patch contexts.
+reports/** -text
+*.patch -text

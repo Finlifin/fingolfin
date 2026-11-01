@@ -1,0 +1,86 @@
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+COMMENT = _{ "--" ~ (!"\n" ~ ANY)* }
+keyword = { ("fn" | "on" | "where" | "use" | "pub" | "struct" | "enum" | "hook" | "object" | "property" | "let" | "var" | "return" | "if" | "else" | "true" | "false" | "as" | "or" | "not") ~ !ident_continue }
+ident_continue = _{ ASCII_ALPHANUMERIC | "_" }
+ident = @{ !keyword ~ (ASCII_ALPHA | "_") ~ ident_continue* }
+path = { ident ~ ("." ~ ident)* }
+visibility = @{ "pub" ~ !ident_continue }
+file = { SOI ~ item* ~ EOI }
+item = _{ import | function | struct_decl | enum_decl | hook_decl | object_decl }
+import = { visibility? ~ kw_use ~ path ~ ("." ~ "{" ~ ident ~ ("," ~ ident)* ~ ","? ~ "}")? ~ ";" }
+function = { visibility? ~ kw_fn ~ ident ~ on_clause? ~ "(" ~ parameters? ~ ")" ~ return_type? ~ where_clause? ~ block }
+on_clause = { kw_on ~ path }
+parameters = { parameter ~ ("," ~ parameter)* ~ ","? }
+parameter = { ident ~ ":" ~ ty }
+return_type = { "->" ~ ty }
+ty = { pointer_type | array_type | path }
+pointer_type = { "*" ~ ty }
+array_type = { "[" ~ ty ~ ";" ~ integer ~ "]" }
+struct_decl = { visibility? ~ kw_struct ~ ident ~ "{" ~ fields? ~ "}" }
+fields = { field ~ ("," ~ field)* ~ ","? }
+field = { ident ~ ":" ~ ty }
+enum_decl = { visibility? ~ kw_enum ~ ident ~ ":" ~ ty ~ "{" ~ variants ~ "}" }
+variants = { variant ~ ("," ~ variant)* ~ ","? }
+variant = { ident ~ "=" ~ integer }
+hook_decl = { visibility? ~ kw_hook ~ path ~ "(" ~ parameters? ~ ")" ~ ";" }
+object_decl = { visibility? ~ kw_object ~ path ~ "{" ~ fields? ~ "}" }
+where_clause = { kw_where ~ pattern }
+pattern = { pattern_atom ~ (or_op ~ pattern_atom)* }
+or_op = @{ "or" ~ !ident_continue }
+pattern_atom = { not_pattern | object_pattern | "(" ~ pattern ~ ")" }
+not_pattern = { kw_not ~ pattern_atom }
+object_pattern = { path ~ ":" ~ pattern_fields }
+pattern_fields = { "{" ~ (pattern_field ~ ("," ~ pattern_field)* ~ ","?)? ~ "}" }
+pattern_field = { ident ~ ":" ~ matcher }
+matcher = { (pattern_fields | range | scalar | wildcard) ~ binding? }
+binding = { kw_as ~ ident }
+wildcard = @{ "_" ~ !ident_continue }
+range = { integer ~ range_op ~ integer }
+range_op = { "..=" | ".." }
+scalar = { integer | boolean | string | variant_ref }
+integer = @{ "-"? ~ ("0x" ~ ASCII_HEX_DIGIT+ | ASCII_DIGIT+) ~ !ident_continue }
+boolean = @{ ("true" | "false") ~ !ident_continue }
+string = @{ "\"" ~ ("\\" ~ ("\"" | "\\" | "n" | "r" | "t") | !("\"" | "\\") ~ ANY)* ~ "\"" }
+variant_ref = { "." ~ ident }
+block = { "{" ~ statement* ~ "}" }
+statement = _{ variable_decl | return_stmt | if_stmt | assignment | expr_stmt }
+variable_decl = { mutability ~ ident ~ (":" ~ ty)? ~ "=" ~ expression ~ ";" }
+mutability = @{ ("let" | "var") ~ !ident_continue }
+return_stmt = { kw_return ~ expression? ~ ";" }
+if_stmt = { kw_if ~ expression ~ block ~ (kw_else ~ (if_stmt | block))? }
+assignment = { path ~ "=" ~ expression ~ ";" }
+expr_stmt = { expression ~ ";" }
+expression = { prefix* ~ primary ~ (binary ~ prefix* ~ primary)* }
+prefix = _{ negate | logical_not }
+negate = @{ "-" ~ !ASCII_DIGIT }
+logical_not = { "!" }
+primary = _{ call | scalar | path | "(" ~ expression ~ ")" }
+call = { path ~ "(" ~ arguments? ~ ")" }
+arguments = { expression ~ ("," ~ expression)* ~ ","? }
+binary = _{ logical_or | logical_and | equal | not_equal | less_equal | greater_equal | less | greater | add | subtract | multiply | divide | modulo }
+logical_or = { "||" }
+logical_and = { "&&" }
+equal = { "==" }
+not_equal = { "!=" }
+less_equal = { "<=" }
+greater_equal = { ">=" }
+less = { "<" }
+greater = { ">" }
+add = { "+" }
+subtract = { "-" }
+multiply = { "*" }
+divide = { "/" }
+modulo = { "%" }
+kw_fn = @{ "fn" ~ !ident_continue }
+kw_on = @{ "on" ~ !ident_continue }
+kw_where = @{ "where" ~ !ident_continue }
+kw_use = @{ "use" ~ !ident_continue }
+kw_struct = @{ "struct" ~ !ident_continue }
+kw_enum = @{ "enum" ~ !ident_continue }
+kw_hook = @{ "hook" ~ !ident_continue }
+kw_object = @{ "object" ~ !ident_continue }
+kw_return = @{ "return" ~ !ident_continue }
+kw_if = @{ "if" ~ !ident_continue }
+kw_else = @{ "else" ~ !ident_continue }
+kw_as = @{ "as" ~ !ident_continue }
+kw_not = @{ "not" ~ !ident_continue }

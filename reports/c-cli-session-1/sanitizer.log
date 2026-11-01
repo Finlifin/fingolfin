@@ -1,0 +1,52 @@
+Start testing: Nov 01 20:59 CST
+----------------------------------------------------------
+15/24 Testing: cli_inspect
+15/24 Test: cli_inspect
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../cli/test_inspect.py" "/tmp/fg-c-vm-asan-1/fgctl" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"cli_inspect" start time: Nov 01 20:59 CST
+Output:
+----------------------------------------------------------
+C fgctl: metadata, source pins, malformed packages, usage and I/O errors passed
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"cli_inspect" end time: Nov 01 20:59 CST
+"cli_inspect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/24 Testing: agent_stdio
+18/24 Test: agent_stdio
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../agent/tests/stdio.py" "/tmp/fg-c-vm-asan-1/fg-agent" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"agent_stdio" start time: Nov 01 20:59 CST
+Output:
+----------------------------------------------------------
+agent stdio: framing, strict envelopes, load/unload, replay, stale generations, close and EOF passed
+agent program.list: empty, live metadata, sorted IDs after reuse, replay and closed session passed
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"agent_stdio" end time: Nov 01 20:59 CST
+"agent_stdio" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/24 Testing: cli_session
+19/24 Test: cli_session
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../cli/test_session.py" "/tmp/fg-c-vm-asan-1/fgctl" "/tmp/fg-c-vm-asan-1/fg-agent" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"cli_session" start time: Nov 01 20:59 CST
+Output:
+----------------------------------------------------------
+C CLI session: live command sequence, paths, local/remote errors, bad responses and child failures passed
+<end of output>
+Test time =   0.28 sec
+----------------------------------------------------------
+Test Passed.
+"cli_session" end time: Nov 01 20:59 CST
+"cli_session" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:59 CST

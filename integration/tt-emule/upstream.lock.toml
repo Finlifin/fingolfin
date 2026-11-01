@@ -1,0 +1,23 @@
+# Source revisions verified against the checked-out tt-emule tree.
+# A source pin is not evidence of a successful simulator build.
+[tt_emule]
+repository = "https://github.com/tenstorrent/tt-emule.git"
+revision = "07f1bd8301544403c8bc1faa4038f6cbf69909f1"
+
+[tt_metal]
+repository = "https://github.com/tenstorrent/tt-metal.git"
+revision = "d48d09dee19de51f694a52fdf75d569950d38ceb"
+
+[umd]
+revision = "4ed96fb3cc16526400b8baaa70744bc3319ec194"
+
+[tracy]
+revision = "117100515bb21d9a6b3a8f0eee50ecd91f961408"
+
+[sfpi]
+version = "7.67.0"
+archive = "https://github.com/tenstorrent/sfpi/releases/download/7.67.0/sfpi_7.67.0_x86_64_debian.txz"
+sha256 = "e10185760ec9c75a5d248e8a08b992fd67d6b7d1d57e2ccef80de5cb5c17d47a"
+
+[elfio]
+revision = "8ae6cec5d60495822ecd57d736f66149da9b1830"

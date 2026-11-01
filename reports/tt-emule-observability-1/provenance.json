@@ -1,0 +1,15 @@
+{
+  "tt_emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "files": {
+    "integration/tt-emule/observability/prepare.py": "c769b734060fdc8e99afe4867e882615630775c17ca379c34b097b10431f1d74",
+    "integration/tt-emule/observability/trace.c": "1f397e0d6173c39077b80586087f8c789bbb19032bcc9597facbebe1f8cadb8b",
+    "integration/tt-emule/observability/run.py": "f80d68430e098f9c4790c61aabf74d939728ac30807554aaf2599d9a7352e4aa",
+    "integration/tt-emule/observability/report.py": "d880678c8dddc475f2291d201d4826db39e494ebbec5f9cc319ffc2cf6135bfd",
+    "models/tt_emule/src/lib.fg": "e25daa430c176a4617d21a130e9cd2716a62e5cf6c2f215c19d90af2df7aa6c3",
+    "models/tt_emule/src/types.fg": "37e3b590728be4b6b01e609f0dba2ce83967a29e9b1c636f7a06b5002b844983",
+    "models/tt_emule/src/objects.fg": "eb5fe946a663eaaa1c20ec95c7b3f9b7536136f13d283fba6ef49120d90b3646",
+    "models/tt_emule/src/hooks/cb.fg": "6625c3217b1e8aa51801dea85c0df818b8ab275cd56d4751b0a24c4c3d32c8d4",
+    "models/tt_emule/src/hooks/noc.fg": "bf030d96758cc245071e70daeed5aaf1f73904bc7e12f3cbdd33c1e89bc9dced",
+    "models/tt_emule/src/hooks/compute.fg": "dae5221d1e20854d45e759fcd85494effcfa01215ac6b14687efd66b9316b0ca"
+  }
+}

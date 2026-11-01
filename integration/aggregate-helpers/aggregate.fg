@@ -1,0 +1,4 @@
+fn aggregate(key:u64,sample:i64,weight:u64) {
+    builtin.map_add(0,key,weight);
+    builtin.histogram_add(0,sample,weight);
+}

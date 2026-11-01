@@ -1,0 +1,515 @@
+diff --git a/tests/tt_metal/tt_metal/api/emule/test_write_beyond_res_pages.cpp b/tests/tt_metal/tt_metal/api/emule/test_write_beyond_res_pages.cpp
+index 7d002845a50..0d380d62d6f 100644
+--- a/tests/tt_metal/tt_metal/api/emule/test_write_beyond_res_pages.cpp
++++ b/tests/tt_metal/tt_metal/api/emule/test_write_beyond_res_pages.cpp
+@@ -14,6 +14,7 @@
+ #include <tt-metalium/tt_metal.hpp>
+ #include <tt-metalium/core_coord.hpp>
+ #include "device_fixture.hpp"
++#include "impl/emulation/emulated_program_runner.hpp"
+ 
+ using namespace tt;
+ using namespace tt::tt_metal;
+@@ -379,4 +380,394 @@ TEST_F(MeshDeviceFixture, CB_Boundary_GloballyAllocated_Exempt_NoViolation) {
+     ::unsetenv("TT_METAL_EMULE_ASAN");
+ }
+ 
++// Appended inside namespace tt::tt_metal in the pinned emule API test source.
++TEST_F(MeshDeviceFixture, Fingolfin_NocTransferAndSemaphore_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreCoord core = {0, 0};
++    Program program = CreateProgram();
++    CircularBufferConfig config = CircularBufferConfig(3072, {{0, tt::DataFormat::Float16_b}}).set_page_size(0, 1024);
++    CreateCircularBuffer(program, core, config);
++    uint32_t semaphore = CreateSemaphore(program, core, 0);
++    std::string source = R"(
++        #include "api/dataflow/dataflow_api.h"
++        void kernel_main() {
++            cb_reserve_back(0, uint32_t(3));
++            uint32_t base = get_write_ptr(0);
++            auto* first = reinterpret_cast<volatile uint32_t*>(base);
++            for (uint32_t i = 0; i < 4; i++) first[i] = 42 + i;
++            noc_async_read(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_async_writes_flushed();
++            auto* last = reinterpret_cast<volatile uint32_t*>(base + 2048);
++            for (uint32_t i = 0; i < 4; i++) if (last[i] != 42 + i) __builtin_trap();
++            noc_async_read_one_packet(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write_one_packet(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_inline_dw_write(get_noc_addr(base + 2048), 7);
++            noc_async_write_barrier();
++            if (last[0] != 7) __builtin_trap();
++            uint32_t sem_address = get_semaphore(get_compile_time_arg_val(0));
++            auto* sem = reinterpret_cast<volatile tt_l1_ptr uint32_t*>(sem_address);
++            noc_semaphore_set(sem, 0);
++            noc_semaphore_inc(get_noc_addr(sem_address), 1);
++            noc_async_atomic_barrier();
++            noc_semaphore_wait(sem, 1);
++            noc_semaphore_wait_min(sem, 1);
++            if (*sem != 1) __builtin_trap();
++            cb_push_back(0, uint32_t(3));
++            cb_wait_front(0, uint32_t(3));
++            auto* queued = reinterpret_cast<volatile uint32_t*>(get_read_ptr(0));
++            if (queued[0] != 42) __builtin_trap();
++            cb_pop_front(0, uint32_t(3));
++        }
++    )";
++    CreateKernelFromString(program, source, core,
++        DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
++                           .noc = NOC::RISCV_0_default, .compile_args = {semaphore}});
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Kernel checks copied words, inline write and semaphore value.
++}
++
++TEST_F(MeshDeviceFixture, Fingolfin_ArithmeticAndActivation_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreCoord core = {0, 0};
++    Program program = CreateProgram();
++    for (uint32_t cb : {0u, 1u, 16u}) {
++        CreateCircularBuffer(program, core,
++            CircularBufferConfig(2048, {{cb, tt::DataFormat::Float16_b}}).set_page_size(cb, 2048));
++    }
++    std::string producer = R"(
++        #include "api/dataflow/dataflow_api.h"
++        void kernel_main() {
++            for (uint32_t cb = 0; cb < 2; cb++) {
++                cb_reserve_back(cb, uint32_t(1));
++                auto* p = reinterpret_cast<volatile uint16_t*>(get_write_ptr(cb));
++                for (uint32_t i = 0; i < 1024; i++) p[i] = 0x3f80; // bfloat16 1.0
++                cb_push_back(cb, uint32_t(1));
++            }
++            const uint16_t expected[10] = {0x4000, 0, 0x3f80, 0x402e, 0x3f80,
++                                           0x3f80, 0x3f80, 0x3f00, 0x3f80, 0x3f80};
++            for (uint32_t op = 0; op < 10; op++) {
++                cb_wait_front(16, uint32_t(1));
++                auto* p = reinterpret_cast<volatile uint16_t*>(get_read_ptr(16));
++                for (uint32_t i = 0; i < 1024; i++) {
++                    uint16_t value = p[i];
++                    if (op == 3) { if (value < 0x402d || value > 0x402f) __builtin_trap(); }
++                    else if (value != expected[op]) __builtin_trap();
++                }
++                cb_pop_front(16, uint32_t(1));
++            }
++        }
++    )";
++    std::string compute = R"(
++        #include "api/compute/eltwise_binary.h"
++        #include "api/compute/tile_move_copy.h"
++        #include "api/compute/eltwise_unary/exp.h"
++        #include "api/compute/eltwise_unary/recip.h"
++        #include "api/compute/eltwise_unary/sqrt.h"
++        #include "api/compute/eltwise_unary/relu.h"
++        void kernel_main() {
++            binary_op_init_common(0, 1, 16);
++            cb_wait_front(0, uint32_t(1)); cb_wait_front(1, uint32_t(1));
++            for (uint32_t op = 0; op < 10; op++) {
++                cb_reserve_back(16, uint32_t(1));
++                tile_regs_acquire();
++                if (op == 0) add_tiles(0, 1, 0, 0, 0);
++                else if (op == 1) sub_tiles(0, 1, 0, 0, 0);
++                else if (op == 2) mul_tiles(0, 1, 0, 0, 0);
++                else {
++                    copy_tile(0, 0, 0);
++                    if (op == 3) { exp_tile_init(); exp_tile(0); }
++                    if (op == 4) { recip_tile_init(); recip_tile(0); }
++                    if (op == 5) { sqrt_tile_init(); sqrt_tile(0); }
++                    if (op == 6) relu_tile(0);
++                    if (op == 7) relu_max_tile(0, 0x3f000000);
++                    if (op == 8) relu_min_tile(0, 0x3f000000);
++                    if (op == 9) leaky_relu_tile(0, 0x3e000000);
++                }
++                tile_regs_commit(); tile_regs_wait();
++                if (op == 0) pack_tile_block(0, 16, 1);
++                else pack_tile(0, 16);
++                tile_regs_release(); cb_push_back(16, uint32_t(1));
++            }
++            cb_pop_front(0, uint32_t(1)); cb_pop_front(1, uint32_t(1));
++        }
++    )";
++    CreateKernelFromString(program, producer, core,
++        DataMovementConfig{.processor = DataMovementProcessor::RISCV_0, .noc = NOC::RISCV_0_default});
++    CreateKernelFromString(program, compute, core, ComputeConfig{});
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Ten output tiles checked elementwise by the consumer kernel.
++}
++
++TEST_F(MeshDeviceFixture, Fingolfin_LayoutRoundTrip_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreCoord core = {0, 0};
++    Program program = CreateProgram();
++    for (uint32_t cb : {0u, 2u, 3u, 16u}) {
++        CreateCircularBuffer(program, core,
++            CircularBufferConfig(4096, {{cb, tt::DataFormat::Float16_b}}).set_page_size(cb, 2048));
++    }
++    std::string producer = R"(
++        #include "api/dataflow/dataflow_api.h"
++        // Distinct finite BF16 bit patterns make row, face and tile swaps visible.
++        uint16_t expected(uint32_t row, uint32_t col) {
++            return uint16_t(0x3800 + row * 64 + col);
++        }
++        void kernel_main() {
++            cb_reserve_back(0, uint32_t(2));
++            auto* input = reinterpret_cast<volatile uint16_t*>(get_write_ptr(0));
++            for (uint32_t r = 0; r < 32; r++)
++                for (uint32_t c = 0; c < 64; c++) input[r*64+c] = expected(r,c);
++            cb_push_back(0, uint32_t(2));
++            cb_wait_front(2, uint32_t(2));
++            auto* tiled = reinterpret_cast<volatile uint16_t*>(get_read_ptr(2));
++            for (uint32_t t = 0; t < 2; t++)
++                for (uint32_t r = 0; r < 32; r++)
++                    for (uint32_t c = 0; c < 32; c++) {
++                        uint32_t face = (r/16)*2+c/16;
++                        uint32_t index = t*1024+face*256+(r%16)*16+c%16;
++                        if (tiled[index] != expected(r,t*32+c)) __builtin_trap();
++                    }
++            // A token releases compute only after the intermediate layout is checked.
++            cb_reserve_back(3, uint32_t(1)); cb_push_back(3, uint32_t(1));
++            cb_wait_front(16, uint32_t(2));
++            auto* output = reinterpret_cast<volatile uint16_t*>(get_read_ptr(16));
++            for (uint32_t r = 0; r < 32; r++)
++                for (uint32_t c = 0; c < 64; c++)
++                    if (output[r*64+c] != expected(r,c)) __builtin_trap();
++            cb_pop_front(16, uint32_t(2));
++        }
++    )";
++    std::string compute = R"(
++        #include "api/compute/tile_move_copy.h"
++        #include "api/compute/tilize.h"
++        #include "api/compute/untilize.h"
++        void kernel_main() {
++            cb_wait_front(0, uint32_t(2)); cb_reserve_back(2, uint32_t(2));
++            tilize_init(0, 2, 2); tilize_block(0, 2, 2); tilize_uninit();
++            cb_push_back(2, uint32_t(2)); cb_pop_front(0, uint32_t(2));
++            cb_wait_front(3, uint32_t(1)); cb_pop_front(3, uint32_t(1));
++            cb_wait_front(2, uint32_t(2)); cb_reserve_back(16, uint32_t(2));
++            untilize_init(2, 16);
++            tile_regs_acquire(); untilize_block(2, 2, 16);
++            tile_regs_commit(); tile_regs_wait(); tile_regs_release();
++            untilize_uninit();
++            cb_push_back(16, uint32_t(2)); cb_pop_front(2, uint32_t(2));
++        }
++    )";
++    CreateKernelFromString(program, producer, core,
++        DataMovementConfig{.processor = DataMovementProcessor::RISCV_0, .noc = NOC::RISCV_0_default});
++    CreateKernelFromString(program, compute, core, ComputeConfig{});
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Independently checks both intermediate face layout and round trip.
++}
++
++TEST_F(MeshDeviceFixture, Fingolfin_MulticastTwoReceivers_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreRange cores({0, 0}, {2, 0});
++    Program program = CreateProgram();
++    CreateCircularBuffer(program, cores,
++        CircularBufferConfig(2048, {{0, tt::DataFormat::Float16_b}}).set_page_size(0, 2048));
++    uint32_t ready = CreateSemaphore(program, cores, 0);
++    uint32_t done = CreateSemaphore(program, cores, 0);
++    auto sender = device->worker_core_from_logical_core({0, 0});
++    auto first = device->worker_core_from_logical_core({1, 0});
++    auto last = device->worker_core_from_logical_core({2, 0});
++    std::string kernel = R"(
++        #include "api/dataflow/dataflow_api.h"
++        void kernel_main() {
++            const uint32_t role = get_compile_time_arg_val(0);
++            uint32_t ready_addr = get_semaphore(get_compile_time_arg_val(1));
++            uint32_t done_addr = get_semaphore(get_compile_time_arg_val(2));
++            auto* ready = reinterpret_cast<volatile tt_l1_ptr uint32_t*>(ready_addr);
++            auto* done = reinterpret_cast<volatile tt_l1_ptr uint32_t*>(done_addr);
++            const uint32_t sx=get_compile_time_arg_val(3), sy=get_compile_time_arg_val(4);
++            const uint32_t x1=get_compile_time_arg_val(5), y1=get_compile_time_arg_val(6);
++            const uint32_t x2=get_compile_time_arg_val(7), y2=get_compile_time_arg_val(8);
++            cb_reserve_back(0, uint32_t(1));
++            uint32_t base = get_write_ptr(0);
++            auto* words = reinterpret_cast<volatile uint32_t*>(base);
++            for (uint32_t i=0; i<512; i++) words[i] = role==0 ? 0x12340000+i : 0;
++            if (role==0) {
++                noc_semaphore_wait(ready, 2);
++                noc_async_write_multicast(base, get_noc_multicast_addr(x1,y1,x2,y2,base), 2048, 2);
++                noc_async_write_barrier();
++                noc_semaphore_inc(get_noc_addr(x1,y1,done_addr), 1);
++                noc_semaphore_inc(get_noc_addr(x2,y2,done_addr), 1);
++                noc_async_atomic_barrier();
++                // Wait for both consumers to verify their own L1, not just send completion.
++                noc_semaphore_wait(ready, 4);
++            } else {
++                noc_semaphore_inc(get_noc_addr(sx,sy,ready_addr), 1);
++                noc_async_atomic_barrier();
++                noc_semaphore_wait(done, 1);
++                for (uint32_t i=0; i<512; i++)
++                    if (words[i] != 0x12340000+i) __builtin_trap();
++                noc_semaphore_inc(get_noc_addr(sx,sy,ready_addr), 1);
++                noc_async_atomic_barrier();
++            }
++            cb_push_back(0, uint32_t(1)); cb_wait_front(0, uint32_t(1)); cb_pop_front(0, uint32_t(1));
++        }
++    )";
++    for (uint32_t role=0; role<3; role++) {
++        CreateKernelFromString(program, kernel, CoreCoord{role, 0},
++            DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
++                .noc = NOC::RISCV_0_default,
++                .compile_args = {role, ready, done, sender.x, sender.y, first.x, first.y, last.x, last.y}});
++    }
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Both receiving cores checked every word before acknowledging.
++}
++
++// Appended inside namespace tt::tt_metal in the pinned emule API test source.
++TEST_F(MeshDeviceFixture, Fingolfin_RepeatedLaunchIdentity_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreCoord core = {0, 0};
++    Program program = CreateProgram();
++    CircularBufferConfig config = CircularBufferConfig(3072, {{0, tt::DataFormat::Float16_b}}).set_page_size(0, 1024);
++    CreateCircularBuffer(program, core, config);
++    uint32_t semaphore = CreateSemaphore(program, core, 0);
++    std::string source = R"(
++        #include "api/dataflow/dataflow_api.h"
++        void kernel_main() {
++            cb_reserve_back(0, uint32_t(3));
++            uint32_t base = get_write_ptr(0);
++            auto* first = reinterpret_cast<volatile uint32_t*>(base);
++            for (uint32_t i = 0; i < 4; i++) first[i] = 42 + i;
++            noc_async_read(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_async_writes_flushed();
++            auto* last = reinterpret_cast<volatile uint32_t*>(base + 2048);
++            for (uint32_t i = 0; i < 4; i++) if (last[i] != 42 + i) __builtin_trap();
++            noc_async_read_one_packet(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write_one_packet(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_inline_dw_write(get_noc_addr(base + 2048), 7);
++            noc_async_write_barrier();
++            if (last[0] != 7) __builtin_trap();
++            uint32_t sem_address = get_semaphore(get_compile_time_arg_val(0));
++            auto* sem = reinterpret_cast<volatile tt_l1_ptr uint32_t*>(sem_address);
++            noc_semaphore_set(sem, 0);
++            noc_semaphore_inc(get_noc_addr(sem_address), 1);
++            noc_async_atomic_barrier();
++            noc_semaphore_wait(sem, 1);
++            noc_semaphore_wait_min(sem, 1);
++            if (*sem != 1) __builtin_trap();
++            cb_push_back(0, uint32_t(3));
++            cb_wait_front(0, uint32_t(3));
++            auto* queued = reinterpret_cast<volatile uint32_t*>(get_read_ptr(0));
++            if (queued[0] != 42) __builtin_trap();
++            cb_pop_front(0, uint32_t(3));
++        }
++    )";
++    CreateKernelFromString(program, source, core,
++        DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
++                           .noc = NOC::RISCV_0_default, .compile_args = {semaphore}});
++    detail::LaunchProgram(device, program);
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Kernel checks copied words, inline write and semaphore value.
++}
++
++// Appended inside namespace tt::tt_metal in the pinned emule API test source.
++TEST_F(MeshDeviceFixture, Fingolfin_LaunchExceptionRecovery_Observed) {
++    auto* device = this->devices_.at(0)->get_devices()[0];
++    CoreCoord core = {0, 0};
++    Program program = CreateProgram();
++    CircularBufferConfig config = CircularBufferConfig(3072, {{0, tt::DataFormat::Float16_b}}).set_page_size(0, 1024);
++    CreateCircularBuffer(program, core, config);
++    uint32_t semaphore = CreateSemaphore(program, core, 0);
++    std::string source = R"(
++        #include "api/dataflow/dataflow_api.h"
++        #include <stdexcept>
++        void kernel_main() {
++            cb_reserve_back(0, uint32_t(3));
++            uint32_t base = get_write_ptr(0);
++            auto* first = reinterpret_cast<volatile uint32_t*>(base);
++            for (uint32_t i = 0; i < 4; i++) first[i] = 42 + i;
++            noc_async_read(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_async_writes_flushed();
++            auto* last = reinterpret_cast<volatile uint32_t*>(base + 2048);
++            for (uint32_t i = 0; i < 4; i++) if (last[i] != 42 + i) __builtin_trap();
++            noc_async_read_one_packet(get_noc_addr(base), base + 1024, 16);
++            noc_async_read_barrier();
++            noc_async_write_one_packet(base + 1024, get_noc_addr(base + 2048), 16);
++            noc_async_write_barrier();
++            noc_inline_dw_write(get_noc_addr(base + 2048), 7);
++            noc_async_write_barrier();
++            if (last[0] != 7) __builtin_trap();
++            uint32_t sem_address = get_semaphore(get_compile_time_arg_val(0));
++            auto* sem = reinterpret_cast<volatile tt_l1_ptr uint32_t*>(sem_address);
++            noc_semaphore_set(sem, 0);
++            noc_semaphore_inc(get_noc_addr(sem_address), 1);
++            noc_async_atomic_barrier();
++            noc_semaphore_wait(sem, 1);
++            noc_semaphore_wait_min(sem, 1);
++            if (*sem != 1) __builtin_trap();
++            cb_push_back(0, uint32_t(3));
++            cb_wait_front(0, uint32_t(3));
++            auto* queued = reinterpret_cast<volatile uint32_t*>(get_read_ptr(0));
++            if (queued[0] != 42) __builtin_trap();
++            cb_pop_front(0, uint32_t(3));
++            if (get_arg_val<uint32_t>(0)) throw std::runtime_error("Fingolfin expected launch failure");
++        }
++    )";
++    auto kernel = CreateKernelFromString(program, source, core,
++        DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
++                           .noc = NOC::RISCV_0_default, .compile_args = {semaphore}});
++    SetRuntimeArgs(program, kernel, core, {1});
++    EXPECT_THROW(detail::LaunchProgram(device, program), std::exception);
++    SetRuntimeArgs(program, kernel, core, {0});
++    detail::LaunchProgram(device, program);
++    SUCCEED(); // Kernel checks copied words, inline write and semaphore value.
++}
++
++TEST_F(MeshDeviceFixture, Fingolfin_TwoDeviceIdentity_Observed) {
++    ASSERT_GE(this->devices_.size(), 2u);
++    CoreCoord core={0,0};
++    Program first=CreateProgram(), second=CreateProgram();
++    std::string kernel=R"(
++        #include "api/dataflow/dataflow_api.h"
++        void kernel_main() {
++            cb_reserve_back(0,uint32_t(1));
++            auto* words=reinterpret_cast<volatile uint32_t*>(get_write_ptr(0));
++            uint32_t value=get_compile_time_arg_val(0);
++            for(uint32_t i=0;i<512;i++) words[i]=value+i;
++            cb_push_back(0,uint32_t(1));
++            cb_wait_front(0,uint32_t(1));
++            auto* queued=reinterpret_cast<volatile uint32_t*>(get_read_ptr(0));
++            for(uint32_t i=0;i<512;i++) if(queued[i]!=value+i) __builtin_trap();
++            cb_pop_front(0,uint32_t(1));
++        }
++    )";
++    auto* d0=this->devices_.at(0)->get_devices()[0];
++    auto* d1=this->devices_.at(1)->get_devices()[0];
++    ASSERT_NE(d0->id(),d1->id());
++    Program* programs[2]={&first,&second};
++    for(uint32_t i=0;i<2;i++) {
++        CreateCircularBuffer(*programs[i],core,
++            CircularBufferConfig(2048,{{0,tt::DataFormat::Float16_b}}).set_page_size(0,2048));
++        CreateKernelFromString(*programs[i],kernel,core,
++            DataMovementConfig{.processor=DataMovementProcessor::RISCV_0,.noc=NOC::RISCV_0_default,
++                               .compile_args={100u+i*1000u}});
++    }
++    // Register both devices before driving their fibers in one scheduler run.
++    // Repeating also exercises per-device state retirement and slot reuse.
++    for(uint32_t i=0;i<2;i++) {
++        emule::begin_mesh_dispatch();
++        detail::LaunchProgram(d0,first);
++        detail::LaunchProgram(d1,second);
++        emule::run_mesh_dispatch();
++    }
++}
++
+ }  // namespace tt::tt_metal
+diff --git a/tt_metal/hw/CMakeLists.txt b/tt_metal/hw/CMakeLists.txt
+index 09d8a1ef518..e84c1a46eed 100644
+--- a/tt_metal/hw/CMakeLists.txt
++++ b/tt_metal/hw/CMakeLists.txt
+@@ -60,7 +60,11 @@ set_property(
+ # this script sets a bunch of variables of the form SFPI_snake_case_name
+ include(${SFPI_BASE}/sfpi-version.cmake)
+ 
+-if(TT_USE_SYSTEM_SFPI)
++if(FINGOLFIN_SFPI_ROOT)
++    # Explicit, hash-verified portable toolchain. Keep downstream version and
++    # dynamic-library checks enabled; do not fake the host distribution.
++    set(SFPI_BASE "${FINGOLFIN_SFPI_ROOT}")
++elseif(TT_USE_SYSTEM_SFPI)
+     # we'll use the system's version
+     set(SFPI_BASE "/opt/tenstorrent")
+ elseif(NOT "${SFPI_hash}" STREQUAL "")
+diff --git a/tt_metal/impl/emulation/emulated_program_runner.cpp b/tt_metal/impl/emulation/emulated_program_runner.cpp
+index 66394e3c7c9..0617ce4c1a2 100644
+--- a/tt_metal/impl/emulation/emulated_program_runner.cpp
++++ b/tt_metal/impl/emulation/emulated_program_runner.cpp
+@@ -1598,6 +1598,13 @@ static void collect_kernels(
+                     key += ":" + k + "=" + v;
+                 }
+                 key += metal2_key_suffix;
++                // Probe ABI/content changes must not reuse an older kernel DSO.
++                std::ifstream fg_probe(std::string(TT_EMULE_JIT_INCLUDE_DIR) + "/fg_trace.h");
++                if (!fg_probe) throw std::runtime_error("Fingolfin probe header unavailable for JIT cache identity");
++                std::ostringstream fg_probe_text;
++                fg_probe_text << fg_probe.rdbuf();
++                if (fg_probe.bad()) throw std::runtime_error("Fingolfin probe header read failed");
++                key += ":fg_probe2:" + std::to_string(fnv1a_hash(fg_probe_text.str()));
+                 // Per-kernel include roots (Kernel::process_include_paths) change
+                 // which headers resolve, and therefore the compiled artifact, so
+                 // fold them into the key. Without this, two kernels that share
+@@ -3000,6 +3007,7 @@ struct EmuleSigfpeGuard {
+ // execute_program_emulated REGISTERS its fibers (spawn, no run); run_mesh_dispatch then drives ONE
+ // run_until_idle so all chips' fibers run concurrently. See tt-emule docs/fiber-engine.md.
+ static bool g_emule_mesh_defer = false;
++static std::vector<uint64_t> g_fg_mesh_devices;
+ static std::vector<std::vector<std::vector<std::unique_ptr<tt_emule::EmuleDFBInterface[]>>>>
+     g_mesh_dfb_keep;
+ // [MESH] ASAN snapshot keepalive. In defer mode the deferred fibers read the per-launch
+@@ -3025,6 +3033,22 @@ static std::unordered_map<ProgramId, ResolvedProgram> g_resolved_programs;
+ static std::deque<ProgramId> g_resolved_lru;
+ static constexpr size_t kMaxResolvedPrograms = 256;
+ 
++extern "C" uint64_t fg_tt_launch_begin(uint64_t device) __attribute__((weak));
++extern "C" void fg_tt_launch_end(uint64_t token) __attribute__((weak));
++extern "C" uint64_t fg_tt_launch_begin_many(const uint64_t*, size_t) __attribute__((weak));
++struct FgLaunchScope {
++    uint64_t token = 0;
++    explicit FgLaunchScope(uint64_t device, bool enabled = true) {
++        if (enabled && fg_tt_launch_begin && fg_tt_launch_end) token = fg_tt_launch_begin(device);
++    }
++    explicit FgLaunchScope(const std::vector<uint64_t>& devices) {
++        if (fg_tt_launch_begin_many && fg_tt_launch_end) token = fg_tt_launch_begin_many(devices.data(), devices.size());
++        else if (devices.size() == 1 && fg_tt_launch_begin && fg_tt_launch_end) token = fg_tt_launch_begin(devices.front());
++    }
++    ~FgLaunchScope() { if (token) fg_tt_launch_end(token); }
++    FgLaunchScope(const FgLaunchScope&) = delete;
++};
++
+ static void launch_cores(
+     std::vector<CoreSetup>& core_setups,
+     uint8_t* dram_data,
+@@ -3230,6 +3254,7 @@ static void launch_cores(
+         return;
+     }
+ 
++    FgLaunchScope fg_launch_scope(device_id);
+     // Run all registered fibers to completion; rethrows the first kernel exception,
+     // throws on a quiescent deadlock, aborts with a dump on livelock/hang.
+     sched.run_until_idle();
+@@ -3367,6 +3392,8 @@ void execute_program_emulated(IDevice* device, Program& program) {
+     dispatch_to_device(device, program, resolved, defer);
+ 
+     if (defer) {
++        if (std::find(g_fg_mesh_devices.begin(), g_fg_mesh_devices.end(), device_id) == g_fg_mesh_devices.end())
++            g_fg_mesh_devices.push_back(device_id);
+         log_debug(tt::LogMetal, "execute_program_emulated: device {} registered (deferred mesh run)", device_id);
+         return;
+     }
+@@ -3378,6 +3405,7 @@ void execute_program_emulated(IDevice* device, Program& program) {
+ // into defer mode; run_mesh_dispatch drives the single concurrent run + frees kept state.
+ // ---------------------------------------------------------------------------
+ void begin_mesh_dispatch() {
++    g_fg_mesh_devices.clear();
+     g_emule_mesh_defer = true;
+     g_mesh_dfb_keep.clear();
+     g_mesh_oob_keep.clear();
+@@ -3391,6 +3419,7 @@ void run_mesh_dispatch() {
+     struct Cleanup {
+         ~Cleanup() {
+             g_emule_mesh_defer = false;
++            g_fg_mesh_devices.clear();
+             g_mesh_dfb_keep.clear();
+             g_mesh_oob_keep.clear();
+         }
+@@ -3398,6 +3427,8 @@ void run_mesh_dispatch() {
+     // All devices' fibers were registered (spawned) during the per-device register phase;
+     // run them concurrently on the worker pool in one pass. Each fiber's ctx carries its
+     // device's core_map/bridge_dram, so cross-chip NOC resolution stays correct.
++    // v2 observers resolve each event using the device stored in its fiber context.
++    FgLaunchScope fg_launch_scope(g_fg_mesh_devices);
+     tt::tt_metal::emule_fiber::FiberScheduler::instance().run_until_idle();
+ }
+ 

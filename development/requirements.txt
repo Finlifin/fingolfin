@@ -1,0 +1,2 @@
+black==26.10.1
+cmakelang==0.6.13

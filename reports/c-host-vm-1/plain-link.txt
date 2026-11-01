@@ -1,0 +1,1 @@
+/usr/bin/clang -Xlinker --dependency-file=CMakeFiles/vm_test.dir/link.d CMakeFiles/vm_test.dir/tests/vm.c.o -o vm_test  libfingolfin.a /tmp/fingolfin-ubpf-build/lib/libubpf.a -lm

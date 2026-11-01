@@ -1,0 +1,407 @@
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/7/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/7/push.fgo"]
+{
+  "bytes": 25093,
+  "output": "/tmp/fg-noc-model-1/7/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "5dd20a93cd5f8bf8c95f993e683879526616b24783a57bf2adc67a82e79d67ad"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/7/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/7/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/7/push.adapter.h",
+  "program_source_hash": "84b87f738f4800a59a26fdbdf1f8c9f1c2931bb699babc115e459e8d9ebf2f80"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/7", "-DFG_MODEL_HOOK=7", "-DFG_MODEL_CALLBACK=fg_noc_model_7", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_7\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_7\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/7/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/8/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/8/push.fgo"]
+{
+  "bytes": 25096,
+  "output": "/tmp/fg-noc-model-1/8/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "e77ba7c324346261b6ec344bb7e1f54111042d5763c300632b72cfe195c60740"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/8/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/8/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/8/push.adapter.h",
+  "program_source_hash": "f340f5d19560b6e4bebd1c300de7dac84952a498e3582f6707232c617036ee50"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/8", "-DFG_MODEL_HOOK=8", "-DFG_MODEL_CALLBACK=fg_noc_model_8", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_8\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_8\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/8/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/9/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/9/push.fgo"]
+{
+  "bytes": 40358,
+  "output": "/tmp/fg-noc-model-1/9/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "28ed5914e4452e7c72eb9554f43e242947a07d3c883f289c8f93e9d6401da74b"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/9/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/9/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/9/push.adapter.h",
+  "program_source_hash": "87e8189d5520b8fbba4ac704f7e0aa635cae95733d24e740f38d80ce2ba3c245"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/9", "-DFG_MODEL_HOOK=9", "-DFG_MODEL_CALLBACK=fg_noc_model_9", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_9\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_9\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/9/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/10/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/10/push.fgo"]
+{
+  "bytes": 40362,
+  "output": "/tmp/fg-noc-model-1/10/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "cdb0df61356f6b9a35911c3bbc4fb26d23449d9806ad131f61180e2a9d819b5b"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/10/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/10/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/10/push.adapter.h",
+  "program_source_hash": "160668fe4c46cbe17bb0c2543889ff66fe2a84f0c60ed150de8d241f22861871"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/10", "-DFG_MODEL_HOOK=10", "-DFG_MODEL_CALLBACK=fg_noc_model_10", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_10\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_10\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/10/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/11/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/11/push.fgo"]
+{
+  "bytes": 40365,
+  "output": "/tmp/fg-noc-model-1/11/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "d72aa14b4f3765eda9aaba33d742ff0cf1ca5a2029aeed0ef69850b9f1ee5f94"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/11/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/11/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/11/push.adapter.h",
+  "program_source_hash": "8ab837c4f8f1144880437143564abad5d0b2190d176609f382c2085e14d4e981"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/11", "-DFG_MODEL_HOOK=11", "-DFG_MODEL_CALLBACK=fg_noc_model_11", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_11\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_11\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/11/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/12/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/12/push.fgo"]
+{
+  "bytes": 40365,
+  "output": "/tmp/fg-noc-model-1/12/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "b50c50b28faa423eb9b95c8c107d0be4784fe69485118d5f27670224c29b7217"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/12/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/12/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/12/push.adapter.h",
+  "program_source_hash": "87193f5ec141a8dfe539aa5a49615888bd02ac73c457de6b68482ee768ff9f6c"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/12", "-DFG_MODEL_HOOK=12", "-DFG_MODEL_CALLBACK=fg_noc_model_12", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_12\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_12\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/12/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/13/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/13/push.fgo"]
+{
+  "bytes": 42292,
+  "output": "/tmp/fg-noc-model-1/13/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "5dd3d8515a544289c4a39fb614d07d224c0b1479531c872c460a43910c073517"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/13/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/13/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/13/push.adapter.h",
+  "program_source_hash": "62a2b97c2c9fde07ae4b9435a741587b644b23c4757a083fda86643d28b00c34"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/13", "-DFG_MODEL_HOOK=13", "-DFG_MODEL_CALLBACK=fg_noc_model_13", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_13\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_13\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/13/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/14/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/14/push.fgo"]
+{
+  "bytes": 22748,
+  "output": "/tmp/fg-noc-model-1/14/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "889305647a16830ae8d86cda77f70c6a54b22fcb26f9bd409ded5e06d060fecf"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/14/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/14/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/14/push.adapter.h",
+  "program_source_hash": "373d0a4e8c46409ef18cdb6e9a19479ff1444fc7f8ad1704e2937a2879c89663"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/14", "-DFG_MODEL_HOOK=14", "-DFG_MODEL_CALLBACK=fg_noc_model_14", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_14\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_14\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/14/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/15/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/15/push.fgo"]
+{
+  "bytes": 22751,
+  "output": "/tmp/fg-noc-model-1/15/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "277aa3dd70dcca56b1846d2db0f2b1f6bc0977a4630b4b4bcb012a7f06b0f1f7"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/15/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/15/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/15/push.adapter.h",
+  "program_source_hash": "39e30b35a2a0f95f4eba38010fe17244a5491ffe710479c4e9ffb16b982cba34"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/15", "-DFG_MODEL_HOOK=15", "-DFG_MODEL_CALLBACK=fg_noc_model_15", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_15\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_15\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/15/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/16/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/16/push.fgo"]
+{
+  "bytes": 22767,
+  "output": "/tmp/fg-noc-model-1/16/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "560f1273ebe608689e1d2886bd9dbe23f2e31e3d2da7d5221fc9d16170035ffd"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/16/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/16/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/16/push.adapter.h",
+  "program_source_hash": "4f0618c096f0973edd3d802f821ddb6e095a402960a8df2543577932c589683a"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/16", "-DFG_MODEL_HOOK=16", "-DFG_MODEL_CALLBACK=fg_noc_model_16", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_16\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_16\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/16/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/17/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/17/push.fgo"]
+{
+  "bytes": 25133,
+  "output": "/tmp/fg-noc-model-1/17/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "874b0e1ca26322ef941237b6a9218e4d2a854b7fe7ac3a8f52c07b9f8d13f772"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/17/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/17/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/17/push.adapter.h",
+  "program_source_hash": "4642351a8ad39ced95b0b8dd07275f958a28b78abdc6ba5d0d33ea18226f749e"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/17", "-DFG_MODEL_HOOK=17", "-DFG_MODEL_CALLBACK=fg_noc_model_17", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_17\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_17\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/17/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/18/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/18/push.fgo"]
+{
+  "bytes": 25127,
+  "output": "/tmp/fg-noc-model-1/18/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "da1ac44606607f13bb109558f220dd40db8922dddb6277a8dff3db4838f63bac"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/18/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/18/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/18/push.adapter.h",
+  "program_source_hash": "a6564b89798877d0fac639d13fbf061bb05b2a46d1d65cb206f8d575d0fb568f"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/18", "-DFG_MODEL_HOOK=18", "-DFG_MODEL_CALLBACK=fg_noc_model_18", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_18\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_18\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/18/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/19/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/19/push.fgo"]
+{
+  "bytes": 25130,
+  "output": "/tmp/fg-noc-model-1/19/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "5a8ef6bc8329f30f7f757ae97be687c167e2d9b0fe9ec5a184ddbdfa50020194"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/19/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/19/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/19/push.adapter.h",
+  "program_source_hash": "d30d4f254dd0b6afaaf81a290661ce58767159062f5ab4d1922ea678dd95dee2"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/19", "-DFG_MODEL_HOOK=19", "-DFG_MODEL_CALLBACK=fg_noc_model_19", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_19\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_19\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/19/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-noc-model-1/20/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/20/push.fgo"]
+{
+  "bytes": 42288,
+  "output": "/tmp/fg-noc-model-1/20/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "3d22ffb27a675eeeac5c288856eba91f16a5df9d5abf4d174bfbd8930be211c4"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-noc-model-1/20/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-noc-model-1/20/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-noc-model-1/20/push.adapter.h",
+  "program_source_hash": "d5a7041252780e7e4983fe4bc18656a9478607bfd4488cf04d1ed0d81e11d665"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-noc-model-1/20", "-DFG_MODEL_HOOK=20", "-DFG_MODEL_CALLBACK=fg_noc_model_20", "-DFG_MODEL_PACKAGE_ENV=\"FG_NOC_PACKAGE_20\"", "-DFG_MODEL_REPORT_ENV=\"FG_NOC_REPORT_20\"", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/runtime.c", "-o", "/tmp/fg-noc-model-1/20/adapter.o"]
+["cc", "-shared", "-fPIC", "/tmp/fg-noc-model-1/driver.c", "/tmp/fg-noc-model-1/7/adapter.o", "/tmp/fg-noc-model-1/8/adapter.o", "/tmp/fg-noc-model-1/9/adapter.o", "/tmp/fg-noc-model-1/10/adapter.o", "/tmp/fg-noc-model-1/11/adapter.o", "/tmp/fg-noc-model-1/12/adapter.o", "/tmp/fg-noc-model-1/13/adapter.o", "/tmp/fg-noc-model-1/14/adapter.o", "/tmp/fg-noc-model-1/15/adapter.o", "/tmp/fg-noc-model-1/16/adapter.o", "/tmp/fg-noc-model-1/17/adapter.o", "/tmp/fg-noc-model-1/18/adapter.o", "/tmp/fg-noc-model-1/19/adapter.o", "/tmp/fg-noc-model-1/20/adapter.o", "/tmp/fg-runtime-pic/libfingolfin_agent.a", "/tmp/fg-runtime-pic/libfingolfin.a", "/tmp/fg-ubpf-scratch-pic/lib/libubpf.a", "-ljson-c", "-lcrypto", "-pthread", "-lm", "-o", "/tmp/fg-noc-model-1/runtime.so"]

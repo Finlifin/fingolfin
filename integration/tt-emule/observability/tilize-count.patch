@@ -1,0 +1,10 @@
+--- a/include/jit_hw/api/compute/tilize.h
++++ b/include/jit_hw/api/compute/tilize.h
+@@ -213,6 +213,6 @@
+ // Block variant with explicit tile-index args (some op code uses 5-arg form).
+ inline void tilize_block(uint32_t icb, uint32_t num_tiles, uint32_t ocb,
+                          uint32_t /*itile_start*/, uint32_t /*otile_start*/) {
+-    FG_TRACE_SCOPE(31, icb, 0, ocb);
++    FG_TRACE_SCOPE(31, icb, num_tiles, ocb);
+     tilize_block(icb, num_tiles, ocb);
+ }

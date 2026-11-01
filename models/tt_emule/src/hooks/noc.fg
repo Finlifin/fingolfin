@@ -1,0 +1,29 @@
+use tt_emule.types.{Observation, Core};
+-- include/jit_hw/api/dataflow/dataflow_api.h:317
+pub hook tt_emule.device.core.noc.noc_async_read(call: Observation, core: Core, src_noc_addr: u64, dst_local_l1_addr: u32, size: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:345
+pub hook tt_emule.device.core.noc.noc_async_write(call: Observation, core: Core, src_local_l1_addr: u32, dst_noc_addr: u64, size: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:535
+pub hook tt_emule.device.core.noc.noc_async_read_barrier(call: Observation, core: Core, noc: u8);
+-- include/jit_hw/api/dataflow/dataflow_api.h:538
+pub hook tt_emule.device.core.noc.noc_async_write_barrier(call: Observation, core: Core, noc: u8);
+-- include/jit_hw/api/dataflow/dataflow_api.h:539
+pub hook tt_emule.device.core.noc.noc_async_writes_flushed(call: Observation, core: Core, noc: u8);
+-- include/jit_hw/api/dataflow/dataflow_api.h:561
+pub hook tt_emule.device.core.noc.noc_async_atomic_barrier(call: Observation, core: Core, noc: u8);
+-- include/jit_hw/api/dataflow/dataflow_api.h:776
+pub hook tt_emule.device.core.noc.noc_semaphore_inc(call: Observation, core: Core, noc_addr: u64, incr: u32, noc: u8);
+-- include/jit_hw/api/dataflow/dataflow_api.h:725
+pub hook tt_emule.device.core.noc.noc_semaphore_set(call: Observation, core: Core, val: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:732
+pub hook tt_emule.device.core.noc.noc_semaphore_wait(call: Observation, core: Core, val: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:754
+pub hook tt_emule.device.core.noc.noc_semaphore_wait_min(call: Observation, core: Core, min_val: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:479
+pub hook tt_emule.device.core.noc.noc_async_write_multicast(call: Observation, core: Core, src_local_l1_addr: u32, dst_mcast_noc_addr: u64, size: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:378
+pub hook tt_emule.device.core.noc.noc_async_read_one_packet(call: Observation, core: Core, src_noc_addr: u64, dst_local_l1_addr: u32, size: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:382
+pub hook tt_emule.device.core.noc.noc_async_write_one_packet(call: Observation, core: Core, src_local_l1_addr: u32, dst_noc_addr: u64, size: u32);
+-- include/jit_hw/api/dataflow/dataflow_api.h:988
+pub hook tt_emule.device.core.noc.noc_inline_dw_write(call: Observation, core: Core, addr: u64, val: u32, be: u8);

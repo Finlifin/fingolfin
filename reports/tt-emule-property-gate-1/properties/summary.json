@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "commands": [
+    [
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "emit-adapter",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/property-probe.fg",
+      "--model",
+      "/home/fin/apps/fingolfin/models/tt_emule",
+      "--function",
+      "program::observe",
+      "--output",
+      "/tmp/fg-property-gate-full-2/results/properties/probe.adapter.h"
+    ],
+    [
+      "cc",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-I/tmp/fg-property-gate-full-2/results/properties",
+      "-I/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime",
+      "-I/home/fin/apps/fingolfin/runtime/include",
+      "-I/home/fin/apps/fingolfin/sdk/include",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/properties-test.c",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/properties.c",
+      "/home/fin/apps/fingolfin/runtime/src/objects.c",
+      "/tmp/fg-property-gate-full-2/runtime-build/libfingolfin.a",
+      "-pthread",
+      "-o",
+      "/tmp/fg-property-gate-full-2/results/properties/properties-test"
+    ],
+    [
+      "/tmp/fg-property-gate-full-2/results/properties/properties-test"
+    ]
+  ]
+}

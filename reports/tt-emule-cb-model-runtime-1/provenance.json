@@ -1,0 +1,11 @@
+{
+  "sha256": {
+    "integration/tt-emule/cb-model-runtime/build.py": "528f59b4a174cbf2d85649e1ee507d1585de0c78cd4ebd9c804b9916ec7dc8a8",
+    "integration/tt-emule/cb-model-runtime/run.py": "482705564bf3cf5b722b0ce6b803d04c679326ebbd58c92283f42bce37b4806b",
+    "integration/tt-emule/cb-model-runtime/check-boundary.py": "b989520f0dabcb19bf152e73f9121d4f02ec4c4e8ca4c462f3e6dbbe211462cb",
+    "integration/tt-emule/cb-model-runtime/README.md": "fa5296fae7b784849576cc7f5e732eaa33480f0b39944a670c9240b627e72a0c",
+    "integration/tt-emule/model-runtime/runtime.c": "f758c79f60e35e40e52dc2067791365e640ea873a5493d0c42fd7eac43ff51cc",
+    "integration/tt-emule/observability/noc_scenario.cpp": "2df0ab4dcc0752ffd0172e7b64018c265dc02316c2a855ab5d930e1fa04e74db",
+    "integration/tt-emule/observability/noc-scenario.patch": "f3a2a85c9c14a66d4d9f46496715de1d9f4eb44c4f1653f8678ed7c5083fe04a"
+  }
+}

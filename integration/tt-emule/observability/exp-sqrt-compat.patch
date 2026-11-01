@@ -1,0 +1,10 @@
+--- a/include/jit_hw/api/compute/eltwise_unary/exp.h
++++ b/include/jit_hw/api/compute/eltwise_unary/exp.h
+@@ -70,6 +70,7 @@
+     HI16_ONLY     = 15,
+ };
+ struct p_setrwc {
++    static constexpr uint32_t SET_ABD_F = 0xf; // match cmath_common.h for combined exp/sqrt kernels
+     constexpr static std::uint32_t CLR_NONE = 0x0;
+     constexpr static std::uint32_t CR_D     = 0x4;
+     constexpr static std::uint32_t SET_D    = 0x4;

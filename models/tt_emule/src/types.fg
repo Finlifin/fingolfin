@@ -1,0 +1,4 @@
+-- phase: 0 enters the API scope; 1 leaves it, not a success result.
+pub struct Observation { sequence: u64, thread: u32, phase: u32 }
+-- device is captured from the executing fiber; it is not a host thread ID.
+pub struct Core { device: u64, x: u32, y: u32 }

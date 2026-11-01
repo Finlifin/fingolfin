@@ -1,0 +1,53 @@
+Test project /tmp/fg-final-c-1
+      Start  1: objects
+ 1/24 Test  #1: objects ..........................   Passed    0.00 sec
+      Start  2: facts
+ 2/24 Test  #2: facts ............................   Passed    0.00 sec
+      Start  3: gate
+ 3/24 Test  #3: gate .............................   Passed    0.00 sec
+      Start  4: containers
+ 4/24 Test  #4: containers .......................   Passed    0.00 sec
+      Start  5: host
+ 5/24 Test  #5: host .............................   Passed    0.00 sec
+      Start  6: quiescence
+ 6/24 Test  #6: quiescence .......................   Passed    0.00 sec
+      Start  7: route
+ 7/24 Test  #7: route ............................   Passed    0.01 sec
+      Start  8: elf
+ 8/24 Test  #8: elf ..............................   Passed    0.00 sec
+      Start  9: schema
+ 9/24 Test  #9: schema ...........................   Passed    0.00 sec
+      Start 10: scratch
+10/24 Test #10: scratch ..........................   Passed    0.00 sec
+      Start 11: vm_alloc
+11/24 Test #11: vm_alloc .........................   Passed    0.00 sec
+      Start 12: pool
+12/24 Test #12: pool .............................   Passed    0.02 sec
+      Start 13: vm
+13/24 Test #13: vm ...............................   Passed    0.00 sec
+      Start 14: package
+14/24 Test #14: package ..........................   Passed    0.00 sec
+      Start 15: cli_inspect
+15/24 Test #15: cli_inspect ......................   Passed    0.04 sec
+      Start 16: session
+16/24 Test #16: session ..........................   Passed    0.00 sec
+      Start 17: agent_stdio
+17/24 Test #17: agent_stdio ......................   Passed    0.14 sec
+      Start 18: cli_session
+18/24 Test #18: cli_session ......................   Passed    0.25 sec
+      Start 19: mount
+19/24 Test #19: mount ............................   Passed    0.01 sec
+      Start 20: gated_binding
+20/24 Test #20: gated_binding ....................   Passed    0.00 sec
+      Start 21: generated_adapter
+21/24 Test #21: generated_adapter ................   Passed    0.00 sec
+      Start 22: binding
+22/24 Test #22: binding ..........................   Passed    0.00 sec
+      Start 23: attachment
+23/24 Test #23: attachment .......................   Passed    0.00 sec
+      Start 24: program
+24/24 Test #24: program ..........................   Passed    0.01 sec
+
+100% tests passed out of 24
+
+Total Test time (real) =   0.51 sec

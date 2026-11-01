@@ -1,0 +1,252 @@
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/property-probe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-property-gate-full-2/results/properties/probe.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 0
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 1
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 2
+      },
+      {
+        "left": 1,
+        "op": 2,
+        "right": 2,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 3
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 4
+      },
+      {
+        "left": 4,
+        "op": 2,
+        "right": 5,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 5
+      },
+      {
+        "left": 6,
+        "op": 2,
+        "right": 7,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 6
+      },
+      {
+        "left": 0,
+        "op": 1,
+        "right": 0,
+        "stage": 1,
+        "test": 7
+      },
+      {
+        "left": 9,
+        "op": 2,
+        "right": 10,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 8,
+        "op": 2,
+        "right": 11,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 3,
+        "op": 2,
+        "right": 12,
+        "stage": 0,
+        "test": 0
+      },
+      {
+        "left": 0,
+        "op": 2,
+        "right": 13,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [
+      {
+        "read": {
+          "property": {
+            "fields": [],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 0,
+        "test": "Record"
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 1,
+        "test": "Record"
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "id"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 2,
+        "test": {
+          "Literal": {
+            "Integer": 0
+          }
+        }
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "core"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 3,
+        "test": "Record"
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "core",
+              "x"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 4,
+        "test": {
+          "Literal": {
+            "Integer": 0
+          }
+        }
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "core",
+              "y"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 5,
+        "test": {
+          "Literal": {
+            "Integer": 0
+          }
+        }
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "core",
+              "cb"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 6,
+        "test": "Record"
+      },
+      {
+        "read": {
+          "property": {
+            "fields": [
+              "device",
+              "core",
+              "cb",
+              "id"
+            ],
+            "object": "tt_emule"
+          },
+          "stage": "Object"
+        },
+        "read_index": 7,
+        "test": {
+          "Literal": {
+            "Integer": 0
+          }
+        }
+      }
+    ],
+    "version": 1
+  },
+  "model_source_hash": "e0ac50ba242cb1dd18a3d85e12fa735baed02577218ced867ed68bcd22a92fd9",
+  "output": "/tmp/fg-property-gate-full-2/results/properties/probe.adapter.h",
+  "program_source_hash": "c1d17688e7c705960810903c613a64cd22ebc142046ea43d5e79eb0eb4c75315"
+}
+["cc", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I/tmp/fg-property-gate-full-2/results/properties", "-I/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime", "-I/home/fin/apps/fingolfin/runtime/include", "-I/home/fin/apps/fingolfin/sdk/include", "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/properties-test.c", "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/properties.c", "/home/fin/apps/fingolfin/runtime/src/objects.c", "/tmp/fg-property-gate-full-2/runtime-build/libfingolfin.a", "-pthread", "-o", "/tmp/fg-property-gate-full-2/results/properties/properties-test"]
+["/tmp/fg-property-gate-full-2/results/properties/properties-test"]
+generated .fg predicate: true/false/unknown; 64-bit devices; stale/ABA; budget; malformed paths/tree passed

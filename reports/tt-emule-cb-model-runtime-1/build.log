@@ -1,0 +1,175 @@
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/1/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/1/push.fgo"]
+{
+  "bytes": 23473,
+  "output": "/tmp/fg-cb-model-six-1/1/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "4e90b595a2c9ef3d8b4b62d7554c7e0dbd528e1762fe3eac3cfa7552520cb1d0"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/1/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/1/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/1/push.adapter.h",
+  "program_source_hash": "7f8d99439e4b22f6e9ea516a04cdbf6b612449754d1ef64f44227a19c28c5f89"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/1", "-DFG_MODEL_HOOK=1", "-DFG_MODEL_HAS_COUNT=1", "-DFG_MODEL_CALLBACK=fg_cb_model_1", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_1\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_1\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/1/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/2/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/2/push.fgo"]
+{
+  "bytes": 23464,
+  "output": "/tmp/fg-cb-model-six-1/2/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "0af6712f2d3b2304267b3c0d97414ee638f556013b4ea353591bbd603b1b0d5e"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/2/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/2/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/2/push.adapter.h",
+  "program_source_hash": "edb10d1e930f3c47d2ab5d55fc96ecbb11154fffe00766602e858167bf284570"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/2", "-DFG_MODEL_HOOK=2", "-DFG_MODEL_HAS_COUNT=1", "-DFG_MODEL_CALLBACK=fg_cb_model_2", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_2\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_2\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/2/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/3/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/3/push.fgo"]
+{
+  "bytes": 23467,
+  "output": "/tmp/fg-cb-model-six-1/3/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "f3b90b1b7f511ce1f780058808d69f6549b717fc8d7de031739b0aea098d939e"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/3/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/3/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/3/push.adapter.h",
+  "program_source_hash": "3450d7d0f75c69527148805b712eb135f1828c59e83ffb46adb75655ac705885"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/3", "-DFG_MODEL_HOOK=3", "-DFG_MODEL_HAS_COUNT=1", "-DFG_MODEL_CALLBACK=fg_cb_model_3", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_3\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_3\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/3/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/4/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/4/push.fgo"]
+{
+  "bytes": 23464,
+  "output": "/tmp/fg-cb-model-six-1/4/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "bb7408904762f3c12ecad72702f92e742e42b4a98a93f6761da000552a300ec9"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/4/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/4/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/4/push.adapter.h",
+  "program_source_hash": "62524b65097d1a3b57c966902db21d2627adcaf21b1f047744360d68d518dc11"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/4", "-DFG_MODEL_HOOK=4", "-DFG_MODEL_HAS_COUNT=1", "-DFG_MODEL_CALLBACK=fg_cb_model_4", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_4\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_4\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/4/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/5/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/5/push.fgo"]
+{
+  "bytes": 22826,
+  "output": "/tmp/fg-cb-model-six-1/5/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "4d25c77f72e142f5732be5d0300026ba422377089f1b3d1c4a661de41431262b"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/5/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/5/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/5/push.adapter.h",
+  "program_source_hash": "62326e55654064a31e4c4003f1614ae5f960688ba24875d12d8c22c50844e720"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/5", "-DFG_MODEL_HOOK=5", "-DFG_MODEL_HAS_COUNT=0", "-DFG_MODEL_CALLBACK=fg_cb_model_5", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_5\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_5\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/5/adapter.o"]
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/tmp/fg-cb-model-six-1/6/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/6/push.fgo"]
+{
+  "bytes": 22823,
+  "output": "/tmp/fg-cb-model-six-1/6/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "263c81762ed1d45263bedda9eaa13337ad9e9e89a3705961edd812df479df104"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/tmp/fg-cb-model-six-1/6/observe.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-cb-model-six-1/6/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-cb-model-six-1/6/push.adapter.h",
+  "program_source_hash": "042ea147bd926d468c8aeea748e89dc52a9b7b2f63ed8824c84139dcd90f0959"
+}
+["cc", "-c", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-cb-model-six-1/6", "-DFG_MODEL_HOOK=6", "-DFG_MODEL_HAS_COUNT=0", "-DFG_MODEL_CALLBACK=fg_cb_model_6", "-DFG_MODEL_PACKAGE_ENV=\"FG_CB_MODEL_PACKAGE_6\"", "-DFG_MODEL_REPORT_ENV=\"FG_CB_MODEL_REPORT_6\"", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "-o", "/tmp/fg-cb-model-six-1/6/adapter.o"]
+["cc", "-shared", "-fPIC", "/tmp/fg-cb-model-six-1/driver.c", "/tmp/fg-cb-model-six-1/1/adapter.o", "/tmp/fg-cb-model-six-1/2/adapter.o", "/tmp/fg-cb-model-six-1/3/adapter.o", "/tmp/fg-cb-model-six-1/4/adapter.o", "/tmp/fg-cb-model-six-1/5/adapter.o", "/tmp/fg-cb-model-six-1/6/adapter.o", "/tmp/fg-runtime-pic/libfingolfin_agent.a", "/tmp/fg-runtime-pic/libfingolfin.a", "/tmp/fg-ubpf-scratch-pic/lib/libubpf.a", "-ljson-c", "-lcrypto", "-pthread", "-lm", "-o", "/tmp/fg-cb-model-six-1/runtime.so"]

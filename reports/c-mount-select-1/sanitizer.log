@@ -1,0 +1,70 @@
+Start testing: Nov 01 21:10 CST
+----------------------------------------------------------
+6/25 Testing: route
+6/25 Test: route
+Command: "/tmp/fg-c-vm-asan-1/route_test"
+Directory: /tmp/fg-c-vm-asan-1
+"route" start time: Nov 01 21:10 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 21:10 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/25 Testing: mount
+20/25 Test: mount
+Command: "/tmp/fg-c-vm-asan-1/mount_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"mount" start time: Nov 01 21:10 CST
+Output:
+----------------------------------------------------------
+batch mount: 64 subscribers, atomic preparation, isolation, independent gates and partial errors passed
+mount selection: generations, old leases, disable/resume state and bounded retirement passed
+mount concurrent selection: 500 publications / 4000 observations, counters and output agree
+mount: generated adapter, registry independence, detach with live lease, output drain and cleanup passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"mount" end time: Nov 01 21:10 CST
+"mount" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/25 Testing: gated_binding
+21/25 Test: gated_binding
+Command: "/tmp/fg-c-vm-asan-1/gated_binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"gated_binding" start time: Nov 01 21:10 CST
+Output:
+----------------------------------------------------------
+gated binding: false skips factory/VM; unknown/stale/budget/invalid allow; copied facts and old leases passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"gated_binding" end time: Nov 01 21:10 CST
+"gated_binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/25 Testing: binding
+23/25 Test: binding
+Command: "/tmp/fg-c-vm-asan-1/binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"binding" start time: Nov 01 21:10 CST
+Output:
+----------------------------------------------------------
+SDK route -> binding -> Attachment -> C VM: old generations, failed publication, frame validation and lifetime pins passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"binding" end time: Nov 01 21:10 CST
+"binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 21:10 CST

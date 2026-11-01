@@ -1,0 +1,17 @@
+["cmake", "-S", "/home/fin/apps/fingolfin/runtime", "-B", "/tmp/fg-typed-device-1/runtime-build", "-DCMAKE_POSITION_INDEPENDENT_CODE=ON", "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_TESTING=OFF", "-DFG_WITH_PACKAGE=ON", "-DFG_WITH_UBPF=ON", "-DFG_UBPF_SCRATCH=ON", "-DFG_UBPF_ROOT=/tmp/fg-ubpf-scratch-1", "-DFG_UBPF_BUILD=/tmp/fg-typed-device-1/ubpf-build"]
+-- The C compiler identification is GNU 16.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found PkgConfig: /usr/bin/pkg-config (found version "3.0.10")
+-- Checking for module 'json-c>=0.15'
+--   Found json-c, version 0.19
+-- Found OpenSSL: /usr/lib/libcrypto.so (found version "3.6.5") found components: Crypto
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fg-typed-device-1/runtime-build

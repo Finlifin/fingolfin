@@ -1,0 +1,35 @@
+Start testing: Nov 01 20:15 CST
+----------------------------------------------------------
+11/13 Testing: binding
+11/13 Test: binding
+Command: "/tmp/fg-pool-tsan/binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"binding" start time: Nov 01 20:15 CST
+Output:
+----------------------------------------------------------
+SDK route -> binding -> Attachment -> C VM: old generations, failed publication, frame validation and lifetime pins passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"binding" end time: Nov 01 20:15 CST
+"binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/13 Testing: attachment
+12/13 Test: attachment
+Command: "/tmp/fg-pool-tsan/attachment_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"attachment" start time: Nov 01 20:15 CST
+Output:
+----------------------------------------------------------
+Attachment: 40000 concurrent attempts, 917 successes; identity, budget, isolation and close/drain passed
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"attachment" end time: Nov 01 20:15 CST
+"attachment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:15 CST

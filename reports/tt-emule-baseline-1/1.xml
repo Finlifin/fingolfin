@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" disabled="0" errors="0" time="0.498" timestamp="2026-11-01T17:48:08.259" name="AllTests">
+  <testsuite name="MeshDeviceFixture" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0.497" timestamp="2026-11-01T17:48:08.259">
+    <testcase name="CB_Reservation_ExactCapacity_NoViolation" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/emule/test_cb_pages.cpp" line="98" status="run" result="completed" time="0.497" timestamp="2026-11-01T17:48:08.259" classname="MeshDeviceFixture" />
+  </testsuite>
+</testsuites>

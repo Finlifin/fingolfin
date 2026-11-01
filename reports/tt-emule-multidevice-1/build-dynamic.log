@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/build.py", "--cb", "/tmp/fg-multidevice-full-1/cb", "--compute", "/tmp/fg-multidevice-full-1/compute", "--noc", "/tmp/fg-multidevice-full-1/noc", "--runtime-build", "/tmp/fg-multidevice-full-1/runtime-build", "--ubpf-build", "/tmp/fg-multidevice-full-1/ubpf-build", "--output", "/tmp/fg-multidevice-full-1/dynamic"]
+/tmp/fg-multidevice-full-1/dynamic

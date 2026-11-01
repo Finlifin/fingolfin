@@ -1,0 +1,15 @@
+{
+  "sha256": {
+    "models/tt_emule/src/types.fg": "98c9a2503a2ca1934e2b7dbefc6452bdccd2231d75a2a57d49084385c2480eb3",
+    "examples/tt_emule/device_watch.fg": "fbf40e8bea21789b425f76daa42c3ed6372a75120b56c86c27fe29b7cf79b18e",
+    "integration/tt-emule/dynamic-model-runtime/runtime.c": "e6c137305449783ab7ef30bdc22d6932cfc355f6643a2a921dd6ef4edeb85829",
+    "integration/tt-emule/dynamic-model-runtime/build.py": "5d0d15a12ceb98eb9144c6528381f3ceea2dd7021c70de88c52a83a62b44fe0a",
+    "integration/tt-emule/dynamic-model-runtime/adapter.h": "02769cb59a78776468805a072e99fbdf86f196be72da2b815c699b4bc0cdb0c4",
+    "integration/tt-emule/multidevice/run.py": "b46427f629ec1329420a6c28e926bd469a19b1960ef8bcb515300fd9947caa62",
+    "integration/tt-emule/multidevice/check-boundary.py": "f1cb8133a084f8511e2f335ff15ce21637ab2f1a77a030c12c7ed2fdf284c7bd",
+    "integration/tt-emule/cb-model-runtime/build.py": "a5fdf70969866906f70db49c53a933cf91ca524ec7fab1765f4a40afadad7786",
+    "integration/tt-emule/compute-model-runtime/build.py": "2b9d68c07fac65b080fdbc19f7715e52d3093320f35283968072345bc8bd26da",
+    "integration/tt-emule/noc-model-runtime/build.py": "ce02e52431c1e73ede3a8016e7871404088fe8788e7df37d437024d9f3bc586a"
+  },
+  "extra_check": "multidevice/check-boundary.py --artifacts /tmp/fg-typed-device-1/dynamic --output /tmp/fg-typed-device-boundaries-1"
+}

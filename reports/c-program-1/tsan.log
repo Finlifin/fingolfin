@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:08 CST
+----------------------------------------------------------
+11/11 Testing: program
+11/11 Test: program
+Command: "/tmp/fg-pool-tsan/program_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"program" start time: Nov 01 20:08 CST
+Output:
+----------------------------------------------------------
+C Program: ownership, helper policy, error recovery, 10000 calls and executor isolation passed
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"program" end time: Nov 01 20:08 CST
+"program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:08 CST

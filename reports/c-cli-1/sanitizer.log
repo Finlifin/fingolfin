@@ -1,0 +1,35 @@
+Start testing: Nov 01 20:48 CST
+----------------------------------------------------------
+14/21 Testing: package
+14/21 Test: package
+Command: "/tmp/fg-c-vm-asan-1/package_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"package" start time: Nov 01 20:48 CST
+Output:
+----------------------------------------------------------
+C package/hash checks passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"package" end time: Nov 01 20:48 CST
+"package" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/21 Testing: cli_inspect
+15/21 Test: cli_inspect
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../cli/test_inspect.py" "/tmp/fg-c-vm-asan-1/fgctl" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"cli_inspect" start time: Nov 01 20:48 CST
+Output:
+----------------------------------------------------------
+C fgctl: metadata, source pins, malformed packages, usage and I/O errors passed
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"cli_inspect" end time: Nov 01 20:48 CST
+"cli_inspect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:48 CST

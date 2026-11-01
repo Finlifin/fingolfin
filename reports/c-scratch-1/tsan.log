@@ -1,0 +1,52 @@
+Start testing: Nov 01 20:06 CST
+----------------------------------------------------------
+6/9 Testing: scratch
+6/9 Test: scratch
+Command: "/tmp/fg-pool-tsan/scratch_test"
+Directory: /tmp/fg-pool-tsan
+"scratch" start time: Nov 01 20:06 CST
+Output:
+----------------------------------------------------------
+2000 legacy/scratch comparisons; stale stack initialization rejected
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"scratch" end time: Nov 01 20:06 CST
+"scratch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: vm_alloc
+7/9 Test: vm_alloc
+Command: "/tmp/fg-pool-tsan/vm_alloc_test" "/tmp/fg-c-vm-fixtures-3/record.o"
+Directory: /tmp/fg-pool-tsan
+"vm_alloc" start time: Nov 01 20:06 CST
+Output:
+----------------------------------------------------------
+allocation attempts: 0; frees: 0
+20000 VM runs: success/helper failure/frame budget/size/instruction failure
+<end of output>
+Test time =   0.21 sec
+----------------------------------------------------------
+Test Passed.
+"vm_alloc" end time: Nov 01 20:06 CST
+"vm_alloc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: pool
+8/9 Test: pool
+Command: "/tmp/fg-pool-tsan/pool_test" "/tmp/fg-c-vm-fixtures-3/record.o"
+Directory: /tmp/fg-pool-tsan
+"pool" start time: Nov 01 20:06 CST
+Output:
+----------------------------------------------------------
+C VM pool: lifecycle, exhaustion, token ownership and 40000 concurrent executions passed
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"pool" end time: Nov 01 20:06 CST
+"pool" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:06 CST

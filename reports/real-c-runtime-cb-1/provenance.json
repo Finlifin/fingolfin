@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "/tmp/fg-real-cb-1/record.fgo": "a827804eee977072413495b8dced691461ebe1a03c5315723221e9b5441ab7eb",
+    "/tmp/fg-real-cb-1/record.adapter.h": "8e3c7a8a957f0e2eed23793769cf74a87528a21a37491c83519fb479ae4ce47a",
+    "/tmp/fg-real-cb-1/runtime.so": "af8102bfe314bbe566a459480cb7931837439941c9db6074ad30b01cb7c091f0"
+  },
+  "revisions": {
+    "tt-emule": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+    "tt-metal": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+    "ubpf": "8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521"
+  },
+  "ubpf_patch_sha256": "7e1690f1689f0135cd1d4aa944bde9be4cf3b9e77f823eeb96a02d3da7c8fc85"
+}

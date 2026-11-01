@@ -1,0 +1,3072 @@
+["git", "-C", "/tmp/fingolfin-ubpf", "rev-parse", "HEAD"]
+8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521
+["cargo", "build", "--offline"]
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::add", "--output", "/tmp/fg-generated-bpf-run-5/add/program.c", "--header", "/tmp/fg-generated-bpf-run-5/add/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::add",
+  "header": "/tmp/fg-generated-bpf-run-5/add/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/add/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/add/program.c", "-o", "/tmp/fg-generated-bpf-run-5/add/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/add", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/add/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1111
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1392
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 155
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1102
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 577
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 639
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1578
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1079
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 943
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 829
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 600
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1272
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 305
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1156
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 694
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 664
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1432
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 740
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1750
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1456
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 929
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1416
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1704
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 779
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 834
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1322
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1053
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 772
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1784
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1158
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 874
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1609
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: false, bits: 64 }")
+reference execution: InvalidValue("expected Integer { signed: false, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 9223372036854775810
+  },
+  "steps": 11
+}
+["/tmp/fg-generated-bpf-run-5/add/runner", "/tmp/fg-generated-bpf-run-5/add/program.o"]
+0 0 457
+0 0 570
+0 0 9b
+0 0 44e
+0 0 241
+0 0 27f
+0 0 62a
+0 0 437
+0 0 3af
+0 0 33d
+0 0 258
+0 0 4f8
+0 0 131
+0 0 484
+0 0 2b6
+0 0 298
+0 0 598
+0 0 2e4
+0 0 6d6
+0 0 5b0
+0 0 3a1
+0 0 588
+0 0 6a8
+0 0 30b
+0 0 342
+0 0 52a
+0 0 41d
+0 0 304
+0 0 6f8
+0 0 486
+0 0 36a
+0 0 649
+0 0 0
+2 2 0
+2 2 0
+0 0 8000000000000002
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::mul", "--output", "/tmp/fg-generated-bpf-run-5/mul/program.c", "--header", "/tmp/fg-generated-bpf-run-5/mul/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::mul",
+  "header": "/tmp/fg-generated-bpf-run-5/mul/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/mul/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/mul/program.c", "-o", "/tmp/fg-generated-bpf-run-5/mul/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/mul", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/mul/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 378159
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 463420
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 21000
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 3965
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 609702
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 556808
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 499508
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 227104
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1000
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 66450
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 105315
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 636788
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 68760
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 4824
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 112404
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 33433
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 10431
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 44298
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 409248
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 170772
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 458890
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 45792
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 406119
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 15216
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 264138
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 197491
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 28060
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 107042
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 21084
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 81216
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 14964
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 64532
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 18446744073709551615
+  },
+  "steps": 11
+}
+reference execution: Arithmetic
+reference execution: InvalidValue("expected Integer { signed: false, bits: 64 }")
+["/tmp/fg-generated-bpf-run-5/mul/runner", "/tmp/fg-generated-bpf-run-5/mul/program.o"]
+0 0 5c52f
+0 0 7123c
+0 0 5208
+0 0 f7d
+0 0 94da6
+0 0 87f08
+0 0 79f34
+0 0 37720
+0 0 3e8
+0 0 10392
+0 0 19b63
+0 0 9b774
+0 0 10c98
+0 0 12d8
+0 0 1b714
+0 0 8299
+0 0 28bf
+0 0 ad0a
+0 0 63ea0
+0 0 29b14
+0 0 7008a
+0 0 b2e0
+0 0 63267
+0 0 3b70
+0 0 407ca
+0 0 30373
+0 0 6d9c
+0 0 1a222
+0 0 525c
+0 0 13d40
+0 0 3a74
+0 0 fc14
+0 0 0
+0 0 ffffffffffffffff
+2 2 0
+2 2 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::div", "--output", "/tmp/fg-generated-bpf-run-5/div/program.c", "--header", "/tmp/fg-generated-bpf-run-5/div/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::div",
+  "header": "/tmp/fg-generated-bpf-run-5/div/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/div/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/div/program.c", "-o", "/tmp/fg-generated-bpf-run-5/div/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/div", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/div/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 2
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -5
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -6
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 5
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -2
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 4
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -86
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 3
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 2
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -9223372036854775808
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 9223372036854775807
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -2
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -2
+  },
+  "steps": 11
+}
+reference execution: Arithmetic
+["/tmp/fg-generated-bpf-run-5/div/runner", "/tmp/fg-generated-bpf-run-5/div/program.o"]
+0 0 ffffffffffffffff
+0 0 2
+0 0 fffffffffffffffb
+0 0 0
+0 0 0
+0 0 fffffffffffffffa
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 5
+0 0 0
+0 0 fffffffffffffffe
+0 0 0
+0 0 1
+0 0 0
+0 0 4
+0 0 ffffffffffffffaa
+0 0 1
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 0
+0 0 3
+0 0 0
+0 0 0
+0 0 2
+2 2 0
+0 0 8000000000000000
+0 0 7fffffffffffffff
+0 0 fffffffffffffffe
+0 0 fffffffffffffffe
+2 2 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::rem", "--output", "/tmp/fg-generated-bpf-run-5/rem/program.c", "--header", "/tmp/fg-generated-bpf-run-5/rem/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::rem",
+  "header": "/tmp/fg-generated-bpf-run-5/rem/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/rem/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/rem/program.c", "-o", "/tmp/fg-generated-bpf-run-5/rem/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/rem", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/rem/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -194
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 453
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -593
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -11
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -193
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 56
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -29
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -227
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 207
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 113
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 112
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 92
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 303
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 208
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -28
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -2
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 642
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -592
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 380
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -188
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 480
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 43
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 37
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 142
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -161
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 903
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -38
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -86
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -72
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 684
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 643
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 46
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1
+  },
+  "steps": 11
+}
+reference execution: Arithmetic
+["/tmp/fg-generated-bpf-run-5/rem/runner", "/tmp/fg-generated-bpf-run-5/rem/program.o"]
+0 0 ffffffffffffff3e
+0 0 1c5
+0 0 fffffffffffffdaf
+0 0 fffffffffffffff5
+0 0 ffffffffffffff3f
+0 0 38
+0 0 ffffffffffffffe3
+0 0 ffffffffffffff1d
+0 0 cf
+0 0 71
+0 0 70
+0 0 5c
+0 0 12f
+0 0 d0
+0 0 ffffffffffffffe4
+0 0 fffffffffffffffe
+0 0 282
+0 0 fffffffffffffdb0
+0 0 17c
+0 0 ffffffffffffff44
+0 0 1e0
+0 0 2b
+0 0 25
+0 0 8e
+0 0 ffffffffffffff5f
+0 0 387
+0 0 ffffffffffffffda
+0 0 ffffffffffffffaa
+0 0 ffffffffffffffb8
+0 0 2ac
+0 0 283
+0 0 2e
+0 0 0
+0 0 0
+0 0 0
+0 0 ffffffffffffffff
+0 0 1
+2 2 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::branch", "--output", "/tmp/fg-generated-bpf-run-5/branch/program.c", "--header", "/tmp/fg-generated-bpf-run-5/branch/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::branch",
+  "header": "/tmp/fg-generated-bpf-run-5/branch/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/branch/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/branch/program.c", "-o", "/tmp/fg-generated-bpf-run-5/branch/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/branch", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/branch/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 865
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 46
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1925
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 440
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 319
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 38
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 25
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 539
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 611
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1729
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 248
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 156
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 380
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 605
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 529
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 297
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 430
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 360
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 99
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 51
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 472
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 906
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1063
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 999
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1266
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 261
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 422
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 647
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 715
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 720
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 430
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 249
+  },
+  "steps": 31
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 24
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 18446744073709551614
+  },
+  "steps": 31
+}
+reference execution: InvalidValue("expected Integer { signed: false, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 9223372036854775806
+  },
+  "steps": 31
+}
+["/tmp/fg-generated-bpf-run-5/branch/runner", "/tmp/fg-generated-bpf-run-5/branch/program.o"]
+0 0 361
+0 0 2e
+0 0 785
+0 0 1b8
+0 0 13f
+0 0 26
+0 0 19
+0 0 21b
+0 0 263
+0 0 6c1
+0 0 f8
+0 0 9c
+0 0 17c
+0 0 25d
+0 0 211
+0 0 129
+0 0 1ae
+0 0 168
+0 0 63
+0 0 33
+0 0 1d8
+0 0 38a
+0 0 427
+0 0 3e7
+0 0 4f2
+0 0 105
+0 0 1a6
+0 0 287
+0 0 2cb
+0 0 2d0
+0 0 1ae
+0 0 f9
+0 0 0
+0 0 fffffffffffffffe
+2 2 0
+0 0 7ffffffffffffffe
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::smul", "--output", "/tmp/fg-generated-bpf-run-5/smul/program.c", "--header", "/tmp/fg-generated-bpf-run-5/smul/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::smul",
+  "header": "/tmp/fg-generated-bpf-run-5/smul/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/smul/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/smul/program.c", "-o", "/tmp/fg-generated-bpf-run-5/smul/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/smul", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/smul/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -60900
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 851829
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 186245
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -319697
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -286443
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 280140
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -234981
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -214858
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -746130
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 363612
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -69390
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 20284
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -512160
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -231297
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -32754
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 372842
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 114912
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 592288
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -38036
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -399424
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -358752
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 413888
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -294944
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -40755
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -230762
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -348390
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 527583
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 112761
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -76472
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -253145
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -150880
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -104280
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -9223372036854775808
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 9223372036854775807
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -21
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -21
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+["/tmp/fg-generated-bpf-run-5/smul/runner", "/tmp/fg-generated-bpf-run-5/smul/program.o"]
+0 0 ffffffffffff121c
+0 0 cff75
+0 0 2d785
+0 0 fffffffffffb1f2f
+0 0 fffffffffffba115
+0 0 4464c
+0 0 fffffffffffc6a1b
+0 0 fffffffffffcb8b6
+0 0 fffffffffff49d6e
+0 0 58c5c
+0 0 fffffffffffef0f2
+0 0 4f3c
+0 0 fffffffffff82f60
+0 0 fffffffffffc787f
+0 0 ffffffffffff800e
+0 0 5b06a
+0 0 1c0e0
+0 0 909a0
+0 0 ffffffffffff6b6c
+0 0 fffffffffff9e7c0
+0 0 fffffffffffa86a0
+0 0 650c0
+0 0 fffffffffffb7fe0
+0 0 ffffffffffff60cd
+0 0 fffffffffffc7a96
+0 0 fffffffffffaaf1a
+0 0 80cdf
+0 0 1b879
+0 0 fffffffffffed548
+0 0 fffffffffffc2327
+0 0 fffffffffffdb2a0
+0 0 fffffffffffe68a8
+2 2 0
+0 0 8000000000000000
+0 0 7fffffffffffffff
+0 0 ffffffffffffffeb
+0 0 ffffffffffffffeb
+0 0 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::sadd", "--output", "/tmp/fg-generated-bpf-run-5/sadd/program.c", "--header", "/tmp/fg-generated-bpf-run-5/sadd/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::sadd",
+  "header": "/tmp/fg-generated-bpf-run-5/sadd/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/sadd/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/sadd/program.c", "-o", "/tmp/fg-generated-bpf-run-5/sadd/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/sadd", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/sadd/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -956
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 646
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 11
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -265
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 143
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -711
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -855
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -328
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1389
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 892
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -72
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 114
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1012
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -688
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -133
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 593
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -542
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1136
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 133
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -253
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1541
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -142
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 572
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -462
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 369
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -676
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 352
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 886
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1204
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -76
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1010
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1053
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -9223372036854775807
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -4
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 4
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+["/tmp/fg-generated-bpf-run-5/sadd/runner", "/tmp/fg-generated-bpf-run-5/sadd/program.o"]
+0 0 fffffffffffffc44
+0 0 286
+0 0 b
+0 0 fffffffffffffef7
+0 0 8f
+0 0 fffffffffffffd39
+0 0 fffffffffffffca9
+0 0 fffffffffffffeb8
+0 0 56d
+0 0 37c
+0 0 ffffffffffffffb8
+0 0 72
+0 0 fffffffffffffc0c
+0 0 fffffffffffffd50
+0 0 ffffffffffffff7b
+0 0 251
+0 0 fffffffffffffde2
+0 0 fffffffffffffb90
+0 0 85
+0 0 ffffffffffffff03
+0 0 fffffffffffff9fb
+0 0 ffffffffffffff72
+0 0 23c
+0 0 fffffffffffffe32
+0 0 171
+0 0 fffffffffffffd5c
+0 0 160
+0 0 376
+0 0 fffffffffffffb4c
+0 0 ffffffffffffffb4
+0 0 fffffffffffffc0e
+0 0 fffffffffffffbe3
+2 2 0
+0 0 8000000000000001
+2 2 0
+0 0 fffffffffffffffc
+0 0 4
+0 0 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::sub", "--output", "/tmp/fg-generated-bpf-run-5/sub/program.c", "--header", "/tmp/fg-generated-bpf-run-5/sub/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::sub",
+  "header": "/tmp/fg-generated-bpf-run-5/sub/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/sub/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/sub/program.c", "-o", "/tmp/fg-generated-bpf-run-5/sub/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/sub", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/sub/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 597
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1078
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1482
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1386
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 604
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1157
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -345
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1143
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1011
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 706
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -237
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 431
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1172
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1749
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -641
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 199
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1583
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1248
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1179
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -843
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 63
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -647
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -841
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1240
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -503
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 285
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -885
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1379
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 1273
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 830
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -250
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -1481
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -9223372036854775807
+  },
+  "steps": 11
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 9223372036854775806
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": -10
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 10
+  },
+  "steps": 11
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Integer": 0
+  },
+  "steps": 11
+}
+["/tmp/fg-generated-bpf-run-5/sub/runner", "/tmp/fg-generated-bpf-run-5/sub/program.o"]
+0 0 255
+0 0 436
+0 0 fffffffffffffa36
+0 0 56a
+0 0 25c
+0 0 fffffffffffffb7b
+0 0 fffffffffffffea7
+0 0 fffffffffffffb89
+0 0 3f3
+0 0 2c2
+0 0 ffffffffffffff13
+0 0 1af
+0 0 fffffffffffffb6c
+0 0 fffffffffffff92b
+0 0 fffffffffffffd7f
+0 0 c7
+0 0 62f
+0 0 fffffffffffffb20
+0 0 fffffffffffffb65
+0 0 fffffffffffffcb5
+0 0 3f
+0 0 fffffffffffffd79
+0 0 fffffffffffffcb7
+0 0 fffffffffffffb28
+0 0 fffffffffffffe09
+0 0 11d
+0 0 fffffffffffffc8b
+0 0 fffffffffffffa9d
+0 0 4f9
+0 0 33e
+0 0 ffffffffffffff06
+0 0 fffffffffffffa37
+0 0 8000000000000001
+2 2 0
+0 0 7ffffffffffffffe
+0 0 fffffffffffffff6
+0 0 a
+0 0 0
+1 1 0
+4 4 0
+5 0 0
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-bpf", "/home/fin/apps/fingolfin/integration/generated-bpf/arithmetic.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::short", "--output", "/tmp/fg-generated-bpf-run-5/short/program.c", "--header", "/tmp/fg-generated-bpf-run-5/short/frame.h"]
+{
+  "backend": "bpf-c",
+  "function": "program::short",
+  "header": "/tmp/fg-generated-bpf-run-5/short/frame.h",
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "output": "/tmp/fg-generated-bpf-run-5/short/program.c",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905"
+}
+["clang", "-target", "bpfel", "-mcpu=v3", "-ffreestanding", "-O2", "-g", "-c", "/tmp/fg-generated-bpf-run-5/short/program.c", "-o", "/tmp/fg-generated-bpf-run-5/short/program.o"]
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-generated-bpf-run-5/short", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/generated-bpf/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-generated-bpf-run-5/short/runner"]
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+reference execution: InvalidValue("expected Integer { signed: true, bits: 64 }")
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": false
+  },
+  "steps": 33
+}
+{
+  "engine": "reference",
+  "program_source_hash": "f2212fcba7a910eced4df22bd495bf42e9c32dcc28780aaff5c6feb464755905",
+  "result": {
+    "Bool": true
+  },
+  "steps": 13
+}
+["/tmp/fg-generated-bpf-run-5/short/runner", "/tmp/fg-generated-bpf-run-5/short/program.o"]
+0 0 0
+0 0 1
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 0
+0 0 0
+0 0 1
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 1
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 0
+0 0 1
+0 0 0
+0 0 1
+0 0 1
+0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 1
+2 2 0
+0 0 0
+0 0 1
+0 0 0
+0 0 0
+0 0 1
+1 1 0
+4 4 0
+5 0 0

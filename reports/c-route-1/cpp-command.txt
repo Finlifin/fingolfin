@@ -1,0 +1,3 @@
+clang++ -std=c++17 -Wall -Wextra -Wpedantic -Werror -I sdk/include -I runtime/include runtime/tests/sdk_v2.cpp /tmp/fg-c-vm-build-1/libfingolfin.a -pthread -o /tmp/fg-sdk-v2-test
+/tmp/fg-sdk-v2-test
+Exit status: 0

@@ -1,0 +1,10 @@
+fn add(a:u64,b:u64)->u64 {return a+b;}
+fn mul(a:u64,b:u64)->u64 {return a*b;}
+fn div(a:i64,b:i64)->i64 {return a/b;}
+fn rem(a:i64,b:i64)->i64 {return a%b;}
+fn branch(a:u64,b:u64)->u64 {var result=a; if a>b {let result=a-b; if result>10 {return result;}} else {result=result+b;} return result;}
+fn smul(a:i64,b:i64)->i64 {return a*b;}
+fn sadd(a:i64,b:i64)->i64 {return a+b;}
+fn sub(a:i64,b:i64)->i64 {return a-b;}
+fn positive(a:i64,b:i64)->bool {return a/b>0;}
+fn short(a:i64,b:i64)->bool {return b==0 || positive(a,b);}

@@ -1,0 +1,646 @@
+[
+  {
+    "hook": 1,
+    "name": "cb_reserve_back",
+    "has_count": true,
+    "group": "cb"
+  },
+  {
+    "hook": 2,
+    "name": "cb_push_back",
+    "has_count": true,
+    "group": "cb"
+  },
+  {
+    "hook": 3,
+    "name": "cb_wait_front",
+    "has_count": true,
+    "group": "cb"
+  },
+  {
+    "hook": 4,
+    "name": "cb_pop_front",
+    "has_count": true,
+    "group": "cb"
+  },
+  {
+    "hook": 5,
+    "name": "get_write_ptr",
+    "has_count": false,
+    "group": "cb"
+  },
+  {
+    "hook": 6,
+    "name": "get_read_ptr",
+    "has_count": false,
+    "group": "cb"
+  },
+  {
+    "hook": 21,
+    "name": "tile_regs_acquire",
+    "params": [],
+    "slots": [],
+    "group": "compute"
+  },
+  {
+    "hook": 22,
+    "name": "tile_regs_commit",
+    "params": [],
+    "slots": [],
+    "group": "compute"
+  },
+  {
+    "hook": 23,
+    "name": "tile_regs_wait",
+    "params": [],
+    "slots": [],
+    "group": "compute"
+  },
+  {
+    "hook": 24,
+    "name": "tile_regs_release",
+    "params": [],
+    "slots": [],
+    "group": "compute"
+  },
+  {
+    "hook": 25,
+    "name": "add_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 26,
+    "name": "sub_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 27,
+    "name": "mul_tiles",
+    "params": [
+      [
+        "icb0",
+        "u32"
+      ],
+      [
+        "icb1",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 28,
+    "name": "pack_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 29,
+    "name": "pack_tile_block",
+    "params": [
+      [
+        "ifrom_dst",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 30,
+    "name": "copy_tile",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "itile",
+        "u32"
+      ],
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 31,
+    "name": "tilize_block",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 32,
+    "name": "untilize_block",
+    "params": [
+      [
+        "icb",
+        "u32"
+      ],
+      [
+        "ntiles",
+        "u32"
+      ],
+      [
+        "ocb",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 33,
+    "name": "exp_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 34,
+    "name": "recip_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 35,
+    "name": "sqrt_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 36,
+    "name": "relu_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 37,
+    "name": "relu_max_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "param0",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 38,
+    "name": "relu_min_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "param0",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 39,
+    "name": "leaky_relu_tile",
+    "params": [
+      [
+        "idst",
+        "u32"
+      ],
+      [
+        "slope",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      2
+    ],
+    "group": "compute"
+  },
+  {
+    "hook": 7,
+    "name": "noc_async_read",
+    "params": [
+      [
+        "src_noc_addr",
+        "u64"
+      ],
+      [
+        "dst_local_l1_addr",
+        "u32"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4,
+    "group": "noc"
+  },
+  {
+    "hook": 8,
+    "name": "noc_async_write",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4,
+    "group": "noc"
+  },
+  {
+    "hook": 9,
+    "name": "noc_async_read_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9,
+    "group": "noc"
+  },
+  {
+    "hook": 10,
+    "name": "noc_async_write_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9,
+    "group": "noc"
+  },
+  {
+    "hook": 11,
+    "name": "noc_async_writes_flushed",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9,
+    "group": "noc"
+  },
+  {
+    "hook": 12,
+    "name": "noc_async_atomic_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9,
+    "group": "noc"
+  },
+  {
+    "hook": 13,
+    "name": "noc_semaphore_inc",
+    "params": [
+      [
+        "noc_addr",
+        "u64"
+      ],
+      [
+        "incr",
+        "u32"
+      ],
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 11,
+    "group": "noc"
+  },
+  {
+    "hook": 14,
+    "name": "noc_semaphore_set",
+    "params": [
+      [
+        "val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 2,
+    "group": "noc"
+  },
+  {
+    "hook": 15,
+    "name": "noc_semaphore_wait",
+    "params": [
+      [
+        "val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 2,
+    "group": "noc"
+  },
+  {
+    "hook": 16,
+    "name": "noc_semaphore_wait_min",
+    "params": [
+      [
+        "min_val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      1
+    ],
+    "records_per_event": 2,
+    "group": "noc"
+  },
+  {
+    "hook": 17,
+    "name": "noc_async_write_multicast",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_mcast_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4,
+    "group": "noc"
+  },
+  {
+    "hook": 18,
+    "name": "noc_async_read_one_packet",
+    "params": [
+      [
+        "src_noc_addr",
+        "u64"
+      ],
+      [
+        "dst_local_l1_addr",
+        "u32"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4,
+    "group": "noc"
+  },
+  {
+    "hook": 19,
+    "name": "noc_async_write_one_packet",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4,
+    "group": "noc"
+  },
+  {
+    "hook": 20,
+    "name": "noc_inline_dw_write",
+    "params": [
+      [
+        "addr",
+        "u64"
+      ],
+      [
+        "val",
+        "u32"
+      ],
+      [
+        "be",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 11,
+    "group": "noc"
+  }
+]

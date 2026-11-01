@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:11 CST
+----------------------------------------------------------
+11/12 Testing: attachment
+11/12 Test: attachment
+Command: "/tmp/fg-pool-tsan/attachment_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"attachment" start time: Nov 01 20:11 CST
+Output:
+----------------------------------------------------------
+Attachment: 40000 concurrent attempts, 1710 successes; identity, budget, isolation and close/drain passed
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"attachment" end time: Nov 01 20:11 CST
+"attachment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:11 CST

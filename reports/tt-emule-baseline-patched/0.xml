@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="5" failures="0" disabled="0" errors="0" time="0" timestamp="2026-11-01T17:50:52.125" name="AllTests">
+  <testsuite name="HostBufferTest" tests="5" failures="0" disabled="0" skipped="0" errors="0" time="0" timestamp="2026-11-01T17:50:52.125">
+    <testcase name="Empty" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/test_host_buffer.cpp" line="21" status="run" result="completed" time="0" timestamp="2026-11-01T17:50:52.125" classname="HostBufferTest" />
+    <testcase name="BasicOwned" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/test_host_buffer.cpp" line="26" status="run" result="completed" time="0" timestamp="2026-11-01T17:50:52.125" classname="HostBufferTest" />
+    <testcase name="BasicBorrowed" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/test_host_buffer.cpp" line="37" status="run" result="completed" time="0" timestamp="2026-11-01T17:50:52.125" classname="HostBufferTest" />
+    <testcase name="IncorrectCast" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/test_host_buffer.cpp" line="54" status="run" result="completed" time="0" timestamp="2026-11-01T17:50:52.125" classname="HostBufferTest" />
+    <testcase name="ShallowCopy" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/test_host_buffer.cpp" line="59" status="run" result="completed" time="0" timestamp="2026-11-01T17:50:52.125" classname="HostBufferTest" />
+  </testsuite>
+</testsuites>

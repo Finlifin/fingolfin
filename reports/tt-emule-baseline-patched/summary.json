@@ -1,0 +1,44 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "results": [
+    {
+      "filter": "HostBufferTest.*",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=HostBufferTest.*",
+        "--gtest_output=xml:/home/fin/apps/fingolfin/reports/tt-emule-baseline-patched/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 5,
+      "seconds": 0.031897475999357994,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "filter": "MeshDeviceFixture.CB_Reservation_ExactCapacity_NoViolation",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.CB_Reservation_ExactCapacity_NoViolation",
+        "--gtest_output=xml:/home/fin/apps/fingolfin/reports/tt-emule-baseline-patched/1.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 0.564369990999694,
+      "passed": true,
+      "reason": ""
+    },
+    {
+      "filter": "MeshDeviceFixture.CB_Boundary_Wraparound_NoViolation",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.CB_Boundary_Wraparound_NoViolation",
+        "--gtest_output=xml:/home/fin/apps/fingolfin/reports/tt-emule-baseline-patched/2.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 0.5643198369998572,
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

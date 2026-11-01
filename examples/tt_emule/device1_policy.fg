@@ -1,0 +1,6 @@
+use tt_emule.types.{Observation, Core};
+-- Predicate-only policy input to dynamic-model-runtime/build.py --property-policy.
+-- The policy body is empty; mounted observation bodies come from their packages.
+fn observe on tt_emule.device.core.cb.cb_push_back(call: Observation, core: Core, cb_id: u32, n: u32)
+where tt_emule: { device: { id: 1 } }
+{}

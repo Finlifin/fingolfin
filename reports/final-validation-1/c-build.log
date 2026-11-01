@@ -1,0 +1,94 @@
+[  1%] Building C object CMakeFiles/fingolfin.dir/src/util.c.o
+[  2%] Building C object CMakeFiles/fingolfin.dir/src/objects.c.o
+[  4%] Building C object CMakeFiles/fingolfin.dir/src/containers.c.o
+[  5%] Building C object CMakeFiles/fingolfin.dir/src/state.c.o
+[  7%] Building C object CMakeFiles/fingolfin.dir/src/host.c.o
+[  8%] Building C object CMakeFiles/fingolfin.dir/src/route.c.o
+[ 10%] Building C object CMakeFiles/fingolfin.dir/src/bytes.c.o
+[ 11%] Building C object CMakeFiles/fingolfin.dir/src/elf.c.o
+[ 13%] Building C object CMakeFiles/fingolfin.dir/src/schema.c.o
+[ 14%] Building C object CMakeFiles/fingolfin.dir/src/gate.c.o
+[ 15%] Building C object CMakeFiles/fingolfin.dir/src/facts.c.o
+[ 17%] Building C object CMakeFiles/fingolfin.dir/src/vm.c.o
+[ 18%] Building C object CMakeFiles/fingolfin.dir/src/pool.c.o
+[ 20%] Building C object CMakeFiles/fingolfin.dir/src/hash.c.o
+[ 21%] Building C object CMakeFiles/fingolfin.dir/src/package.c.o
+[ 23%] Building C object CMakeFiles/fingolfin.dir/src/program.c.o
+[ 24%] Building C object CMakeFiles/fingolfin.dir/src/attachment.c.o
+[ 26%] Building C object CMakeFiles/fingolfin.dir/src/binding.c.o
+[ 27%] Linking C static library libfingolfin.a
+[ 27%] Built target fingolfin
+[ 28%] Building C object CMakeFiles/objects_test.dir/tests/objects.c.o
+[ 30%] Building C object CMakeFiles/facts_test.dir/tests/facts.c.o
+[ 31%] Linking C executable facts_test
+[ 33%] Linking C executable objects_test
+[ 33%] Built target facts_test
+[ 34%] Building C object CMakeFiles/gate_test.dir/tests/gate.c.o
+[ 34%] Built target objects_test
+[ 36%] Building C object CMakeFiles/containers_test.dir/tests/containers.c.o
+[ 37%] Linking C executable gate_test
+[ 37%] Built target gate_test
+[ 39%] Building C object CMakeFiles/host_test.dir/tests/host.c.o
+[ 40%] Linking C executable host_test
+[ 42%] Linking C executable containers_test
+[ 42%] Built target host_test
+[ 43%] Building C object CMakeFiles/quiescence_test.dir/tests/quiescence.c.o
+[ 43%] Built target containers_test
+[ 44%] Building C object CMakeFiles/route_test.dir/tests/route.c.o
+[ 46%] Linking C executable quiescence_test
+[ 46%] Built target quiescence_test
+[ 47%] Building C object CMakeFiles/elf_test.dir/tests/elf.c.o
+[ 49%] Linking C executable route_test
+[ 50%] Linking C executable elf_test
+[ 50%] Built target route_test
+[ 50%] Built target elf_test
+[ 52%] Building C object CMakeFiles/schema_test.dir/tests/schema.c.o
+[ 53%] Building C object CMakeFiles/scratch_test.dir/tests/scratch.c.o
+[ 55%] Linking C executable scratch_test
+[ 56%] Linking C executable schema_test
+[ 56%] Built target scratch_test
+[ 57%] Building C object CMakeFiles/vm_alloc_test.dir/tests/vm_alloc.c.o
+[ 57%] Built target schema_test
+[ 59%] Building C object CMakeFiles/pool_test.dir/tests/pool.c.o
+[ 60%] Linking C executable vm_alloc_test
+[ 60%] Built target vm_alloc_test
+[ 62%] Building C object CMakeFiles/vm_test.dir/tests/vm.c.o
+[ 63%] Linking C executable pool_test
+[ 63%] Built target pool_test
+[ 65%] Building C object CMakeFiles/fgctl.dir/home/fin/apps/fingolfin/cli/fgctl.c.o
+[ 66%] Building C object CMakeFiles/fgctl.dir/home/fin/apps/fingolfin/cli/session.c.o
+[ 68%] Linking C executable vm_test
+[ 68%] Built target vm_test
+[ 69%] Building C object CMakeFiles/package_test.dir/tests/package.c.o
+[ 71%] Linking C executable package_test
+[ 71%] Built target package_test
+[ 72%] Building C object CMakeFiles/fingolfin_agent.dir/home/fin/apps/fingolfin/agent/src/session.c.o
+[ 73%] Linking C executable fgctl
+[ 73%] Built target fgctl
+[ 75%] Building C object CMakeFiles/gated_binding_test.dir/tests/gated_binding.c.o
+[ 76%] Building C object CMakeFiles/fingolfin_agent.dir/home/fin/apps/fingolfin/agent/src/mount.c.o
+[ 78%] Linking C executable gated_binding_test
+[ 79%] Linking C static library libfingolfin_agent.a
+[ 79%] Built target gated_binding_test
+[ 81%] Building C object CMakeFiles/generated_adapter_test.dir/tests/generated_adapter.c.o
+[ 81%] Built target fingolfin_agent
+[ 82%] Building C object CMakeFiles/binding_test.dir/tests/binding.c.o
+[ 84%] Linking C executable generated_adapter_test
+[ 84%] Built target generated_adapter_test
+[ 85%] Building C object CMakeFiles/attachment_test.dir/tests/attachment.c.o
+[ 86%] Linking C executable binding_test
+[ 86%] Built target binding_test
+[ 88%] Building C object CMakeFiles/program_test.dir/tests/program.c.o
+[ 89%] Linking C executable attachment_test
+[ 89%] Built target attachment_test
+[ 91%] Linking C executable program_test
+[ 92%] Building C object CMakeFiles/fg-agent.dir/home/fin/apps/fingolfin/agent/src/main.c.o
+[ 92%] Built target program_test
+[ 94%] Building C object CMakeFiles/session_test.dir/home/fin/apps/fingolfin/agent/tests/session.c.o
+[ 95%] Linking C executable session_test
+[ 97%] Linking C executable fg-agent
+[ 97%] Built target session_test
+[ 97%] Built target fg-agent
+[ 98%] Building C object CMakeFiles/mount_test.dir/home/fin/apps/fingolfin/agent/tests/mount.c.o
+[100%] Linking C executable mount_test
+[100%] Built target mount_test

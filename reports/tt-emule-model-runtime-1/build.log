@@ -1,0 +1,29 @@
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/push.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-model-runtime-2/push.fgo"]
+{
+  "bytes": 23780,
+  "output": "/tmp/fg-model-runtime-2/push.fgo",
+  "profile": "development-function-frames",
+  "sha256": "db36b376d8067bec481d461c8cceb3b107b8e80114f2bcc651a4d7a233916e1d"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "emit-adapter", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/push.fg", "--model", "/home/fin/apps/fingolfin/models/tt_emule", "--function", "program::observe", "--output", "/tmp/fg-model-runtime-2/push.adapter.h"]
+{
+  "backend": "c-binding-adapter",
+  "function": "program::observe",
+  "gate": {
+    "nodes": [
+      {
+        "left": 0,
+        "op": 0,
+        "right": 0,
+        "stage": 0,
+        "test": 0
+      }
+    ],
+    "tests": [],
+    "version": 1
+  },
+  "model_source_hash": "f3ed7af6e892d88f0493e63e29565575a9240fba3cc84115176a639608ed9e4a",
+  "output": "/tmp/fg-model-runtime-2/push.adapter.h",
+  "program_source_hash": "c7e6fb2b303b7de7a8ce44e9310a52eab9da0a3ef4112903baff28f7fb84ba86"
+}
+["cc", "-shared", "-fPIC", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/home/fin/apps/fingolfin/agent/include", "-I", "/home/fin/apps/fingolfin/runtime/include", "-I", "/home/fin/apps/fingolfin/sdk/include", "-I", "/tmp/fg-model-runtime-2", "/home/fin/apps/fingolfin/integration/tt-emule/model-runtime/runtime.c", "/tmp/fg-runtime-pic/libfingolfin_agent.a", "/tmp/fg-runtime-pic/libfingolfin.a", "/tmp/fg-ubpf-scratch-pic/lib/libubpf.a", "-ljson-c", "-lcrypto", "-pthread", "-lm", "-o", "/tmp/fg-model-runtime-2/runtime.so"]

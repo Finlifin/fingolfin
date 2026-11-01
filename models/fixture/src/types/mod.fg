@@ -1,0 +1,2 @@
+pub struct ObsCall { run: u64, generation: u64 }
+pub struct CbHandle { slot: u64, generation: u64 }

@@ -1,0 +1,51 @@
+Start testing: Nov 01 20:51 CST
+----------------------------------------------------------
+15/22 Testing: cli_inspect
+15/22 Test: cli_inspect
+Command: "/usr/bin/python3.14" "/home/fin/apps/fingolfin/runtime/../cli/test_inspect.py" "/tmp/fg-c-vm-asan-1/fgctl" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"cli_inspect" start time: Nov 01 20:51 CST
+Output:
+----------------------------------------------------------
+C fgctl: metadata, source pins, malformed packages, usage and I/O errors passed
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"cli_inspect" end time: Nov 01 20:51 CST
+"cli_inspect" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/22 Testing: session
+17/22 Test: session
+Command: "/tmp/fg-c-vm-asan-1/session_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"session" start time: Nov 01 20:51 CST
+Output:
+----------------------------------------------------------
+session: load/unload, generation, replay, capacity, pins, ownership and close passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"session" end time: Nov 01 20:51 CST
+"session" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/22 Testing: program
+22/22 Test: program
+Command: "/tmp/fg-c-vm-asan-1/program_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"program" start time: Nov 01 20:51 CST
+Output:
+----------------------------------------------------------
+C Program: ownership, helper policy, error recovery, 10000 calls and executor isolation passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"program" end time: Nov 01 20:51 CST
+"program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:51 CST

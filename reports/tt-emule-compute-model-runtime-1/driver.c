@@ -1,0 +1,41 @@
+#include <stdint.h>
+void fg_compute_model_21(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_22(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_23(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_24(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_25(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_26(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_27(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_28(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_29(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_30(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_31(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_32(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_33(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_34(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_35(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_36(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_37(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_38(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_compute_model_39(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c);
+void fg_tt_scope_event(uint32_t hook,uint32_t phase,uint32_t x,uint32_t y,uint64_t a,uint64_t b,uint64_t c) {
+fg_compute_model_21(hook,phase,x,y,a,b,c);
+fg_compute_model_22(hook,phase,x,y,a,b,c);
+fg_compute_model_23(hook,phase,x,y,a,b,c);
+fg_compute_model_24(hook,phase,x,y,a,b,c);
+fg_compute_model_25(hook,phase,x,y,a,b,c);
+fg_compute_model_26(hook,phase,x,y,a,b,c);
+fg_compute_model_27(hook,phase,x,y,a,b,c);
+fg_compute_model_28(hook,phase,x,y,a,b,c);
+fg_compute_model_29(hook,phase,x,y,a,b,c);
+fg_compute_model_30(hook,phase,x,y,a,b,c);
+fg_compute_model_31(hook,phase,x,y,a,b,c);
+fg_compute_model_32(hook,phase,x,y,a,b,c);
+fg_compute_model_33(hook,phase,x,y,a,b,c);
+fg_compute_model_34(hook,phase,x,y,a,b,c);
+fg_compute_model_35(hook,phase,x,y,a,b,c);
+fg_compute_model_36(hook,phase,x,y,a,b,c);
+fg_compute_model_37(hook,phase,x,y,a,b,c);
+fg_compute_model_38(hook,phase,x,y,a,b,c);
+fg_compute_model_39(hook,phase,x,y,a,b,c);
+}

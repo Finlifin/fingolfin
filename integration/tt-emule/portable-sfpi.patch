@@ -1,0 +1,17 @@
+diff --git a/tt_metal/hw/CMakeLists.txt b/tt_metal/hw/CMakeLists.txt
+index 09d8a1ef518..e84c1a46eed 100644
+--- a/tt_metal/hw/CMakeLists.txt
++++ b/tt_metal/hw/CMakeLists.txt
+@@ -60,7 +60,11 @@ set_property(
+ # this script sets a bunch of variables of the form SFPI_snake_case_name
+ include(${SFPI_BASE}/sfpi-version.cmake)
+ 
+-if(TT_USE_SYSTEM_SFPI)
++if(FINGOLFIN_SFPI_ROOT)
++    # Explicit, hash-verified portable toolchain. Keep downstream version and
++    # dynamic-library checks enabled; do not fake the host distribution.
++    set(SFPI_BASE "${FINGOLFIN_SFPI_ROOT}")
++elseif(TT_USE_SYSTEM_SFPI)
+     # we'll use the system's version
+     set(SFPI_BASE "/opt/tenstorrent")
+ elseif(NOT "${SFPI_hash}" STREQUAL "")

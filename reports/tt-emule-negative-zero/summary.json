@@ -1,0 +1,18 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "results": [
+    {
+      "filter": "FingolfinNonexistentTest.*",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=FingolfinNonexistentTest.*",
+        "--gtest_output=xml:/home/fin/apps/fingolfin/reports/tt-emule-negative-zero/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 0,
+      "seconds": 0.03159691699875111,
+      "passed": false,
+      "reason": "zero test cases"
+    }
+  ]
+}

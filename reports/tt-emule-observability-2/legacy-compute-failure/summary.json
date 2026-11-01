@@ -1,0 +1,18 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "results": [
+    {
+      "filter": "MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.TensixTestCircularBufferWrappingBlockingToCompute",
+        "--gtest_output=xml:/tmp/fg-observability-1/compute-fixed2-test/0.xml"
+      ],
+      "exit_code": -6,
+      "tests": 1,
+      "seconds": 0.7146445129983476,
+      "passed": false,
+      "reason": "exit -6, timeout=False; test failure"
+    }
+  ]
+}

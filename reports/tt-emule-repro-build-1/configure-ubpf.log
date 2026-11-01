@@ -1,0 +1,18 @@
+["cmake", "-S", "/tmp/fg-ubpf-scratch-1", "-B", "/tmp/fg-repro-verify-2/ubpf-build", "-DCMAKE_POSITION_INDEPENDENT_CODE=ON", "-DCMAKE_BUILD_TYPE=Release", "-DUBPF_ENABLE_TESTS=OFF", "-DUBPF_SKIP_EXTERNAL=ON", "-DUBPF_INSTALL_GIT_HOOKS=OFF"]
+-- The C compiler identification is GNU 16.2.1
+-- The CXX compiler identification is GNU 16.2.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for pow in m
+-- Looking for pow in m - found
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fg-repro-verify-2/ubpf-build

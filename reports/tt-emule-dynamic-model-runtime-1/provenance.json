@@ -1,0 +1,16 @@
+{
+  "emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "sha256": {
+    "integration/tt-emule/dynamic-model-runtime/adapter.h": "76851f2cde478ef1fb42995a61b5c639515ce178e753264ceb00202754011d75",
+    "integration/tt-emule/dynamic-model-runtime/build.py": "4ecd45e1aadd24ab49643da416bae8593a294eb6c421da46714589bec664ab5f",
+    "integration/tt-emule/dynamic-model-runtime/runtime.c": "a904f080e661ace0a03bfdfd1404ed950f4daf1880734bfea1ff2f51decc7717",
+    "integration/tt-emule/dynamic-model-runtime/run.py": "64bf963cc149377ba5761ace791b2372a08ff45a52317d3e1951f4f1157c638c",
+    "integration/tt-emule/dynamic-model-runtime/README.md": "51623ccf290e81b5a53ba67bf0b472435a45f66517c0dcc5d509c9a002fc4782",
+    "integration/tt-emule/lifecycle/launch.patch": "78a3c172d500386508194b01052ef78850828f06596a0574c3bd92e53626db7a",
+    "runtime/src/objects.c": "814973368225fcccb1e1a3ee7bf303cb2deaca764b60e61019d2ed5983592038",
+    "/tmp/fg-runtime-pic/libfingolfin.a": "5f002ad6042f155bcbbd3ebc97b1a9c939988b36000120853e41edd189592102",
+    "/tmp/fg-runtime-pic/libfingolfin_agent.a": "4fcbd66360eb1ff2bc0f7ad06907fb622ac1cc107e809535e1d4644962412a96",
+    "/tmp/fg-ubpf-scratch-pic/lib/libubpf.a": "f8f5ea21ae41d025281969cc7fa036316d5b2acf52eb35849355a43a7362e142"
+  }
+}

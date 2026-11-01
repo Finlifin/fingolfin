@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:23 CST
+----------------------------------------------------------
+1/17 Testing: gate
+1/17 Test: gate
+Command: "/tmp/fg-c-vm-asan-1/gate_test"
+Directory: /tmp/fg-c-vm-asan-1
+"gate" start time: Nov 01 20:23 CST
+Output:
+----------------------------------------------------------
+C gate: three-valued truth tables, stages, stale identity, invalid facts/plan and bounded deep topology passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"gate" end time: Nov 01 20:23 CST
+"gate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:23 CST

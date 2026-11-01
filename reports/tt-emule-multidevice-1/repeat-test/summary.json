@@ -1,0 +1,19 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "cluster_descriptor": "/tmp/fingolfin-tt-metal/tt_metal/third_party/umd/tests/cluster_descriptor_examples/wormhole_N150.yaml",
+  "results": [
+    {
+      "filter": "MeshDeviceFixture.Fingolfin_RepeatedLaunchIdentity_Observed",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.Fingolfin_RepeatedLaunchIdentity_Observed",
+        "--gtest_output=xml:/tmp/fg-multidevice-full-1/results/repeat-test/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 0.6646969539979182,
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

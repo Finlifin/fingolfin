@@ -1,0 +1,313 @@
+[
+  {
+    "stage": "catalog",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/observability/catalog.py",
+      "--emule",
+      "/tmp/fingolfin-tt-emule",
+      "--output",
+      "/tmp/fg-final-emule-2/catalog.json"
+    ],
+    "exit_code": 0,
+    "seconds": 0.051532612000301015,
+    "log": "catalog.log"
+  },
+  {
+    "stage": "configure-ubpf",
+    "command": [
+      "cmake",
+      "-S",
+      "/tmp/fg-ubpf-scratch-1",
+      "-B",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUBPF_ENABLE_TESTS=OFF",
+      "-DUBPF_SKIP_EXTERNAL=ON",
+      "-DUBPF_INSTALL_GIT_HOOKS=OFF"
+    ],
+    "exit_code": 0,
+    "seconds": 0.26048763599828817,
+    "log": "configure-ubpf.log"
+  },
+  {
+    "stage": "build-ubpf",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 1.0642788160002965,
+    "log": "build-ubpf.log"
+  },
+  {
+    "stage": "configure-runtime",
+    "command": [
+      "cmake",
+      "-S",
+      "/home/fin/apps/fingolfin/runtime",
+      "-B",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF",
+      "-DFG_WITH_PACKAGE=ON",
+      "-DFG_WITH_UBPF=ON",
+      "-DFG_UBPF_SCRATCH=ON",
+      "-DFG_UBPF_ROOT=/tmp/fg-ubpf-scratch-1",
+      "-DFG_UBPF_BUILD=/tmp/fg-final-emule-2/ubpf-build"
+    ],
+    "exit_code": 0,
+    "seconds": 0.12839728000108153,
+    "log": "configure-runtime.log"
+  },
+  {
+    "stage": "build-runtime",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 0.8463580110001203,
+    "log": "build-runtime.log"
+  },
+  {
+    "stage": "build-cb",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/cb-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "--output",
+      "/tmp/fg-final-emule-2/cb"
+    ],
+    "exit_code": 0,
+    "seconds": 0.4190740400008508,
+    "log": "build-cb.log"
+  },
+  {
+    "stage": "build-compute",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/compute-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "--catalog",
+      "/tmp/fg-final-emule-2/catalog.json",
+      "--output",
+      "/tmp/fg-final-emule-2/compute"
+    ],
+    "exit_code": 0,
+    "seconds": 1.2268797069991706,
+    "log": "build-compute.log"
+  },
+  {
+    "stage": "build-noc",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "--catalog",
+      "/tmp/fg-final-emule-2/catalog.json",
+      "--output",
+      "/tmp/fg-final-emule-2/noc"
+    ],
+    "exit_code": 0,
+    "seconds": 1.0090888340018864,
+    "log": "build-noc.log"
+  },
+  {
+    "stage": "build-dynamic",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/build.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--cb",
+      "/tmp/fg-final-emule-2/cb",
+      "--compute",
+      "/tmp/fg-final-emule-2/compute",
+      "--noc",
+      "/tmp/fg-final-emule-2/noc",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "--output",
+      "/tmp/fg-final-emule-2/dynamic"
+    ],
+    "exit_code": 0,
+    "seconds": 0.5883266220007499,
+    "log": "build-dynamic.log"
+  },
+  {
+    "stage": "build-host-tests",
+    "command": [
+      "cmake",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--target",
+      "unit_tests_api",
+      "-j",
+      "2"
+    ],
+    "exit_code": 0,
+    "seconds": 0.04769789100100752,
+    "log": "build-host-tests.log"
+  },
+  {
+    "stage": "reference",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/observability/run.py",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--catalog",
+      "/tmp/fg-final-emule-2/catalog.json",
+      "--output",
+      "/tmp/fg-final-emule-2/reference"
+    ],
+    "exit_code": 0,
+    "seconds": 6.969616338996275,
+    "log": "reference.log"
+  },
+  {
+    "stage": "dynamic-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/run.py",
+      "--artifacts",
+      "/tmp/fg-final-emule-2/dynamic",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--reference",
+      "/tmp/fg-final-emule-2/reference",
+      "--output",
+      "/tmp/fg-final-emule-2/results"
+    ],
+    "exit_code": 0,
+    "seconds": 8.465204876003554,
+    "log": "dynamic-tests.log"
+  },
+  {
+    "stage": "property-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/check-properties.py",
+      "--compiler",
+      "/home/fin/apps/fingolfin/target/debug/fingolfin",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--output",
+      "/tmp/fg-final-emule-2/results/properties"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0883400359962252,
+    "log": "property-tests.log"
+  },
+  {
+    "stage": "recovery-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/check-recovery.py",
+      "--artifacts",
+      "/tmp/fg-final-emule-2/dynamic",
+      "--runtime-build",
+      "/tmp/fg-final-emule-2/runtime-build",
+      "--ubpf-build",
+      "/tmp/fg-final-emule-2/ubpf-build",
+      "--output",
+      "/tmp/fg-final-emule-2/results/recovery"
+    ],
+    "exit_code": 0,
+    "seconds": 0.16088037799636368,
+    "log": "recovery-tests.log"
+  },
+  {
+    "stage": "multidevice-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/multidevice/run.py",
+      "--artifacts",
+      "/tmp/fg-final-emule-2/dynamic",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--output",
+      "/tmp/fg-final-emule-2/results/multidevice"
+    ],
+    "exit_code": 0,
+    "seconds": 1.2194232110050507,
+    "log": "multidevice-tests.log"
+  },
+  {
+    "stage": "property-gate-tests",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/multidevice/run.py",
+      "--artifacts",
+      "/tmp/fg-final-emule-2/dynamic",
+      "--metal",
+      "/tmp/fingolfin-tt-metal",
+      "--build",
+      "/tmp/fingolfin-emule-build",
+      "--property-gate",
+      "--output",
+      "/tmp/fg-final-emule-2/results/property-gate"
+    ],
+    "exit_code": 0,
+    "seconds": 1.2697503219969803,
+    "log": "property-gate-tests.log"
+  },
+  {
+    "stage": "device-boundaries",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/multidevice/check-boundary.py",
+      "--artifacts",
+      "/tmp/fg-final-emule-2/dynamic",
+      "--output",
+      "/tmp/fg-final-emule-2/results/multidevice/boundary"
+    ],
+    "exit_code": 0,
+    "seconds": 0.06978079900000012,
+    "log": "device-boundaries.log"
+  },
+  {
+    "stage": "report",
+    "command": [
+      "/usr/bin/python3",
+      "/home/fin/apps/fingolfin/integration/tt-emule/dynamic-model-runtime/report.py",
+      "--results",
+      "/tmp/fg-final-emule-2/results"
+    ],
+    "exit_code": 0,
+    "seconds": 0.02969135599414585,
+    "log": "report.log"
+  }
+]

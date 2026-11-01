@@ -1,0 +1,9 @@
+-- Frontend fixture: deliberately no output or runtime claims.
+use fixture.types.{ObsCall, CbHandle};
+fn increment(pages: u32) -> u32 { return pages + 1; }
+fn push on fixture.device.core.cb.post_push(call: *ObsCall, cb: CbHandle, pages: u32)
+where fixture: { device: { id: 0, core: { cb: { id: 16 as cb_id } } } }
+{ let next = increment(pages); let id: u32 = cb_id; }
+fn pop on fixture.device.core.cb.post_pop(call: *ObsCall, cb: CbHandle, pages: u32)
+where fixture: { device: { id: 0, core: { cb: { id: 16 as cb_id } } } }
+{ let previous = pages - 1; let id: u32 = cb_id; }

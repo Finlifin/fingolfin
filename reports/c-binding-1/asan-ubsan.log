@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:15 CST
+----------------------------------------------------------
+13/15 Testing: binding
+13/15 Test: binding
+Command: "/tmp/fg-c-vm-asan-1/binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"binding" start time: Nov 01 20:15 CST
+Output:
+----------------------------------------------------------
+SDK route -> binding -> Attachment -> C VM: old generations, failed publication, frame validation and lifetime pins passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"binding" end time: Nov 01 20:15 CST
+"binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:15 CST

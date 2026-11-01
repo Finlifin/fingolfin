@@ -1,0 +1,80 @@
+[
+  {
+    "scenario": "cb",
+    "passed": true,
+    "seen": 46,
+    "selected": 12,
+    "dispatches": 12,
+    "errors": 0,
+    "enter": 6,
+    "exit": 6,
+    "matched_args": 12,
+    "records": 12,
+    "sequence_sum": 294
+  },
+  {
+    "scenario": "copy",
+    "passed": true,
+    "seen": 8424,
+    "selected": 648,
+    "dispatches": 648,
+    "errors": 0,
+    "enter": 324,
+    "exit": 324,
+    "matched_args": 648,
+    "records": 648,
+    "sequence_sum": 2721277
+  },
+  {
+    "scenario": "noc",
+    "passed": true,
+    "seen": 46,
+    "selected": 2,
+    "dispatches": 2,
+    "errors": 0,
+    "enter": 1,
+    "exit": 1,
+    "matched_args": 2,
+    "records": 2,
+    "sequence_sum": 83
+  },
+  {
+    "scenario": "arithmetic",
+    "passed": true,
+    "seen": 254,
+    "selected": 2,
+    "dispatches": 2,
+    "errors": 0,
+    "enter": 1,
+    "exit": 1,
+    "matched_args": 2,
+    "records": 2,
+    "sequence_sum": 13
+  },
+  {
+    "scenario": "layout",
+    "passed": true,
+    "seen": 56,
+    "selected": 2,
+    "dispatches": 2,
+    "errors": 0,
+    "enter": 1,
+    "exit": 1,
+    "matched_args": 2,
+    "records": 2,
+    "sequence_sum": 13
+  },
+  {
+    "scenario": "multicast",
+    "passed": true,
+    "seen": 64,
+    "selected": 2,
+    "dispatches": 2,
+    "errors": 0,
+    "enter": 1,
+    "exit": 1,
+    "matched_args": 2,
+    "records": 2,
+    "sequence_sum": 103
+  }
+]

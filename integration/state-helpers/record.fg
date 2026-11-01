@@ -1,0 +1,4 @@
+fn record(slot:u32,n:u64) {
+    builtin.counter_add(slot,n);
+    builtin.emit(7,n);
+}

@@ -1,0 +1,220 @@
+[0/2] Re-checking globbed directories...
+[1/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/private/dwarf_info_impl.cpp.o
+[2/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/private/elf_file_impl.cpp.o
+[3/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/elf_file.cpp.o
+[4/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_info.cpp.o
+[5/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_attribute.cpp.o
+[6/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_cu.cpp.o
+[7/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_die.cpp.o
+[8/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_frame.cpp.o
+[9/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/dwarf_location.cpp.o
+[10/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/variable.cpp.o
+[11/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_abbrev.c.o
+[12/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_alloc.c.o
+[13/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_crc.c.o
+[14/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_crc32.c.o
+[15/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_arange.c.o
+[16/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_debug_sup.c.o
+[17/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_debugaddr.c.o
+[18/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_debuglink.c.o
+[19/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_die_deliv.c.o
+[20/219] Building CXX object _deps/ttexalens-build/CMakeFiles/ttexalens_elf.dir/callstack.cpp.o
+[21/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_dsc.c.o
+[22/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_debugnames.c.o
+[23/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_elfread.c.o
+[24/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_elf_rel_detector.c.o
+[25/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_elf_load_headers.c.o
+[26/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_error.c.o
+[27/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_fill_in_attr_form.c.o
+[28/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_find_sigref.c.o
+[29/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_fission_to_cu.c.o
+[30/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_form_class_names.c.o
+[31/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_form.c.o
+[32/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_frame.c.o
+[33/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_frame_iter.c.o
+[34/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_frame2.c.o
+[35/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_gdbindex.c.o
+[36/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_frame_cfa_read.c.o
+[37/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_gnu_index.c.o
+[38/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_global.c.o
+[39/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_groups.c.o
+[40/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_harmless.c.o
+[41/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_generic_init.c.o
+[42/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_leb.c.o
+[43/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_init_finish.c.o
+[44/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_loc.c.o
+[45/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_loclists.c.o
+[46/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_line.c.o
+[47/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_local_malloc.c.o
+[48/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_lname_version.c.o
+[49/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_locationop_read.c.o
+[50/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_lvn_name.c.o
+[51/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_64machoread.c.o
+[52/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_macro.c.o
+[53/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_machoread.c.o
+[54/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_memcpy_swap.c.o
+[55/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_names.c.o
+[56/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_macro5.c.o
+[57/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_object_read_common.c.o
+[58/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_object_detector.c.o
+[59/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_peread.c.o
+[60/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_ranges.c.o
+[61/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_query.c.o
+[62/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_safe_arithmetic.c.o
+[63/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_rnglists.c.o
+[64/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_safe_strcpy.c.o
+[65/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_secname_ck.c.o
+[66/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_seekr.c.o
+[67/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_setup_sections.c.o
+[68/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_stringsection.c.o
+[69/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_tied.c.o
+[70/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_string.c.o
+[71/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_str_offsets.c.o
+[72/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_tsearchhash.c.o
+[73/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_xu_index.c.o
+[74/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_util.c.o
+[75/219] Creating library symlink tt_metal/third_party/umd/lib/libtt-umd.so.0 tt_metal/third_party/umd/lib/libtt-umd.so
+[76/219] Linking CXX shared library lib/libtracy.so.0.13.3
+[77/219] Building C object _deps/libdwarf-build/src/lib/libdwarf/CMakeFiles/dwarf.dir/dwarf_print_lines.c.o
+[78/219] Generating protobuf/factory_system_descriptor.pb.cc, protobuf/factory_system_descriptor.pb.h
+[79/219] Generating protobuf/node_config.pb.cc, protobuf/node_config.pb.h
+[80/219] Generating protobuf/cluster_config.pb.cc, protobuf/cluster_config.pb.h
+[81/219] Generating protobuf/deployment.pb.cc, protobuf/deployment.pb.h
+[82/219] Generating protobuf/ethernet_link_metrics.pb.cc, protobuf/ethernet_link_metrics.pb.h
+[83/219] Building C++ header for api/tt-metalium/serialized_descriptors/mesh_coordinate.fbs
+[84/219] Building CXX object tt_stl/CMakeFiles/tt_stl.dir/tt_stl/llvm/llvm_small_vector.cpp.o
+[85/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/wh_hal.dir/wormhole/wh_hal_tensix.cpp.o
+[86/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/wh_hal.dir/wormhole/wh_hal_active_eth.cpp.o
+[87/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/wh_hal.dir/wormhole/wh_hal.cpp.o
+[88/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/wh_hal.dir/wormhole/wh_hal_idle_eth.cpp.o
+[89/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/bh_hal.dir/blackhole/bh_hal_tensix.cpp.o
+[90/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/bh_hal.dir/blackhole/bh_hal.cpp.o
+[91/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/bh_hal.dir/blackhole/bh_hal_active_eth.cpp.o
+[92/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/bh_hal.dir/blackhole/bh_hal_idle_eth.cpp.o
+[93/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/bh_hal.dir/blackhole/bh_hal_dram.cpp.o
+[94/219] Building CXX object tt_metal/llrt/hal/tt-1xx/CMakeFiles/hal_1xx.dir/hal_1xx_common.cpp.o
+[95/219] Building CXX object tt_metal/llrt/hal/tt-2xx/CMakeFiles/qa_hal.dir/quasar/qa_hal.cpp.o
+[96/219] Building CXX object tt_metal/llrt/hal/tt-2xx/CMakeFiles/qa_hal.dir/quasar/qa_hal_tensix.cpp.o
+[97/219] Building CXX object tt_metal/llrt/hal/tt-2xx/CMakeFiles/qa_hal.dir/quasar/qa_hal_active_eth.cpp.o
+[98/219] Building CXX object tt_metal/llrt/hal/tt-2xx/CMakeFiles/qa_hal.dir/quasar/qa_hal_idle_eth.cpp.o
+[99/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/impl/flatbuffer/light_metal_binary.fbs
+[100/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/impl/flatbuffer/command.fbs
+[101/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/impl/flatbuffer/base_types.fbs
+[102/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/impl/flatbuffer/buffer_types.fbs
+[103/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/impl/flatbuffer/program_types.fbs
+[104/219] Compiling Cap'n Proto schema /tmp/fingolfin-tt-metal/tt_metal/impl/debug/inspector/rpc.capnp
+[105/219] Generating RPC server implementation for /tmp/fingolfin-tt-metal/tt_metal/impl/debug/inspector/rpc.capnp
+[106/219] Compiling Cap'n Proto schema /tmp/fingolfin-tt-metal/tt_metal/impl/jit_server/rpc.capnp
+[107/219] Generating internal/disaggregation/protobuf/kv_chunk_address_table.pb.cc, internal/disaggregation/protobuf/kv_chunk_address_table.pb.h
+[108/219] Generating RPC stub for /tmp/fingolfin-tt-metal/tt_metal/impl/debug/inspector/rpc.capnp
+Cannot generate stub file for Inspector. If you need python autocomplete/static analysis, install with: pip install pycapnp
+[109/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/distributed/flatbuffer/socket_peer_descriptor.fbs
+[110/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/distributed/flatbuffer/hd_socket_descriptor.fbs
+[111/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/distributed/flatbuffer/h2d_stream_service_descriptor.fbs
+[112/219] Building C++ header for /tmp/fingolfin-tt-metal/tt_metal/distributed/flatbuffer/d2h_stream_service_descriptor.fbs
+[113/219] Generating protobuf/mesh_graph_descriptor.pb.cc, protobuf/mesh_graph_descriptor.pb.h
+[114/219] Generating protobuf/physical_system_descriptor.pb.cc, protobuf/physical_system_descriptor.pb.h
+[115/219] Generating protobuf/router_port_directions.pb.cc, protobuf/router_port_directions.pb.h
+[116/219] Generating protobuf/port_descriptor_table.pb.cc, protobuf/port_descriptor_table.pb.h
+[117/219] Generating protobuf/intermesh_connection_table.pb.cc, protobuf/intermesh_connection_table.pb.h
+[118/219] Generating protobuf/physical_grouping_descriptor.pb.cc, protobuf/physical_grouping_descriptor.pb.h
+[119/219] Linking CXX static library libmetal_common_pch.a
+[120/219] Linking CXX static library third_party/libcadical.a
+[121/219] Linking C static library _deps/blake3-build/libblake3.a
+[122/219] Linking CXX static library _deps/boost-build/libs/container/libboost_container.a
+[123/219] Linking CXX static library _deps/boost-build/libs/context/libboost_context.a
+[124/219] Linking CXX static library _deps/boost-build/libs/coroutine/libboost_coroutine.a
+[125/219] Linking CXX static library _deps/boost-build/libs/date_time/libboost_date_time.a
+[126/219] Building CXX object _deps/gtest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+[127/219] Building CXX object _deps/gtest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+[128/219] Building CXX object tt_metal/llrt/hal/tt-2xx/CMakeFiles/hal_2xx.dir/hal_2xx_common.cpp.o
+[129/219] Linking CXX static library _deps/capnproto-build/c++/src/capnp/libcapnp-rpc.a
+[130/219] Linking CXX static library _deps/ttexalens-build/libttexalens_elf.a
+[131/219] Linking C static library _deps/libdwarf-build/src/lib/libdwarf/libdwarf.a
+[132/219] Creating library symlink lib/libtracy.so
+[133/219] Linking CXX shared library tt_stl/libtt_stl.so
+[134/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/node/node.cpp.o
+[135/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/node/node_types.cpp.o
+[136/219] Building CXX object _deps/gtest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[137/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/board/board.cpp.o
+[138/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/cabling_generator/regen_descriptors.cpp.o
+[139/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/connector/connector.cpp.o
+[140/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/cabling_generator/cabling_generator.cpp.o
+[141/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/protobuf/factory_system_descriptor.pb.cc.o
+[142/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/protobuf/node_config.pb.cc.o
+[143/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/factory_system_descriptor/utils.cpp.o
+[144/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/protobuf/deployment.pb.cc.o
+[145/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/protobuf/ethernet_link_metrics.pb.cc.o
+[146/219] Building CXX object tools/scaleout/CMakeFiles/scaleout_tools.dir/protobuf/cluster_config.pb.cc.o
+[147/219] Building CXX object tt_metal/logging/CMakeFiles/metalium-logging.dir/logging.cpp.o
+[148/219] Building CXX object tt_metal/common/CMakeFiles/common.dir/Unity/unity_1_cxx.cxx.o
+[149/219] Building CXX object tt_metal/jit_build/CMakeFiles/jit_build.dir/Unity/unity_1_cxx.cxx.o
+[150/219] Building CXX object tt_metal/common/CMakeFiles/common.dir/Unity/unity_0_cxx.cxx.o
+[151/219] Building CXX object tt_metal/llrt/CMakeFiles/llrt.dir/Unity/unity_1_cxx.cxx.o
+[152/219] Building CXX object tt_metal/jit_build/CMakeFiles/jit_build.dir/Unity/unity_0_cxx.cxx.o
+[153/219] Linking CXX static library tt_metal/llrt/hal/tt-1xx/libhal_1xx.a
+[154/219] Linking CXX static library tt_metal/llrt/hal/tt-2xx/libhal_2xx.a
+[155/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_20_cxx.cxx.o
+[156/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_19_cxx.cxx.o
+[157/219] Building CXX object tt_metal/llrt/CMakeFiles/llrt.dir/Unity/unity_0_cxx.cxx.o
+[158/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_17_cxx.cxx.o
+[159/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_16_cxx.cxx.o
+[160/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_18_cxx.cxx.o
+[161/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_15_cxx.cxx.o
+[162/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_14_cxx.cxx.o
+[163/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_13_cxx.cxx.o
+[164/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_12_cxx.cxx.o
+[165/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_11_cxx.cxx.o
+[166/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_10_cxx.cxx.o
+[167/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_8_cxx.cxx.o
+[168/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_9_cxx.cxx.o
+[169/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_6_cxx.cxx.o
+[170/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_5_cxx.cxx.o
+[171/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_7_cxx.cxx.o
+[172/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_4_cxx.cxx.o
+[173/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_3_cxx.cxx.o
+[174/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_2_cxx.cxx.o
+[175/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_1_cxx.cxx.o
+[176/219] Building CXX object tt_metal/detail/CMakeFiles/detail.dir/reports/memory_reporter.cpp.o
+[177/219] Building CXX object tt_metal/impl/CMakeFiles/impl.dir/Unity/unity_0_cxx.cxx.o
+[178/219] Building CXX object tt_metal/distributed/CMakeFiles/distributed.dir/Unity/unity_4_cxx.cxx.o
+[179/219] Building CXX object tt_metal/distributed/CMakeFiles/distributed.dir/Unity/unity_3_cxx.cxx.o
+[180/219] Building CXX object tt_metal/distributed/CMakeFiles/distributed.dir/Unity/unity_2_cxx.cxx.o
+[181/219] Building CXX object tt_metal/distributed/CMakeFiles/distributed.dir/Unity/unity_1_cxx.cxx.o
+[182/219] Building CXX object tt_metal/distributed/CMakeFiles/distributed.dir/Unity/unity_0_cxx.cxx.o
+[183/219] Building CXX object tt_metal/CMakeFiles/tt_metal.dir/impl/host_api/tt_metal.cpp.o
+[184/219] Building CXX object tt_metal/CMakeFiles/tt_metal.dir/impl/graph/graph_tracking.cpp.o
+[185/219] Building CXX object tt_metal/CMakeFiles/tt_metal.dir/impl/experimental/offline_compile/offline_kernel_compile.cpp.o
+[186/219] Building CXX object tt_metal/CMakeFiles/tt_metal.dir/hal.cpp.o
+[187/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_6_cxx.cxx.o
+[188/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_4_cxx.cxx.o
+[189/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_5_cxx.cxx.o
+[190/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_3_cxx.cxx.o
+[191/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_2_cxx.cxx.o
+[192/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_1_cxx.cxx.o
+[193/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/mesh_graph_descriptor.pb.cc.o
+[194/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/physical_system_descriptor.pb.cc.o
+[195/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/router_port_directions.pb.cc.o
+[196/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/port_descriptor_table.pb.cc.o
+[197/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/intermesh_connection_table.pb.cc.o
+[198/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/protobuf/physical_grouping_descriptor.pb.cc.o
+[199/219] Building CXX object tt_metal/impl/experimental/noc_estimator/CMakeFiles/tt_metal_noc_estimator.dir/noc_estimator.cpp.o
+[200/219] Building CXX object tt_metal/impl/experimental/noc_estimator/CMakeFiles/tt_metal_noc_estimator.dir/interpolation.cpp.o
+[201/219] Building CXX object tt_metal/impl/experimental/noc_estimator/CMakeFiles/tt_metal_noc_estimator.dir/yaml_loader.cpp.o
+[202/219] Linking CXX static library lib/libgmock.a
+[203/219] Linking CXX static library lib/libgmock_main.a
+[204/219] Linking CXX static library lib/libgtest.a
+[205/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_10_cxx.cxx.o
+[206/219] Building CXX object tt_metal/fabric/CMakeFiles/fabric.dir/Unity/unity_0_cxx.cxx.o
+[207/219] Linking CXX shared library tt_metal/libtt_metal.so
+[208/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_9_cxx.cxx.o
+[209/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_8_cxx.cxx.o
+[210/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_7_cxx.cxx.o
+[211/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_6_cxx.cxx.o
+[212/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_5_cxx.cxx.o
+[213/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_4_cxx.cxx.o
+[214/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_2_cxx.cxx.o
+[215/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_1_cxx.cxx.o
+[216/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_0_cxx.cxx.o
+[217/219] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_3_cxx.cxx.o
+[218/219] Linking CXX executable test/tt_metal/unit_tests_api

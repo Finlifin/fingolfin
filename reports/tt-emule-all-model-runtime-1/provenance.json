@@ -1,0 +1,15 @@
+{
+  "emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "sha256": {
+    "integration/tt-emule/all-model-runtime/build.py": "72a6eb254f84821cdf37d7b36630cd791687a55c11781d0a45297ac24fb0e29a",
+    "integration/tt-emule/all-model-runtime/run.py": "d15d6791de4e4781cec6c205714a5796bc2e0971f6db83e15fbc11d46c3cfd79",
+    "integration/tt-emule/all-model-runtime/README.md": "9407621c53ce305fc88b4a9edd4b346453862f4126b89f940ac7b8968091b711",
+    "integration/tt-emule/all-model-runtime/report.py": "2735e112a5889e58c244434f2d1d117f7798e31436fa79a28a52baa333b9c877",
+    "integration/tt-emule/noc-model-runtime/runtime.c": "94baccae38e541ebf8ea3315bb54725a38ce22174d957e9960a1c5203c9562b2",
+    "integration/tt-emule/noc-model-runtime/build.py": "4a2239d34d25a24fcb3c8afdac5b8f4bde72e1e4458aaa789215fdab1fb46e3c",
+    "integration/tt-emule/noc-model-runtime/run.py": "45a23923ff7ec08095f39308b80a296170a1ea6629fdaa446bd811d0317d015d",
+    "integration/tt-emule/noc-model-runtime/check-boundary.py": "c0ab838bd9d52d33654d6503a84842127b1f0a47ae79fa145c56183b98044b4f",
+    "integration/tt-emule/noc-model-runtime/README.md": "23884268b9de1549a514e973aeb50780d03d853d4b36b7cf0ac91442dbfeac91"
+  }
+}

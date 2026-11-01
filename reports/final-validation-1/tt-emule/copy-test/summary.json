@@ -1,0 +1,19 @@
+{
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "cluster_descriptor": "/tmp/fingolfin-tt-metal/tt_metal/third_party/umd/tests/cluster_descriptor_examples/wormhole_N150.yaml",
+  "results": [
+    {
+      "filter": "MeshDeviceFixture.TensixTestSingleCoreMultiTileBankedDramReaderDataCopyDramWriter",
+      "command": [
+        "/tmp/fingolfin-emule-build/test/tt_metal/unit_tests_api",
+        "--gtest_filter=MeshDeviceFixture.TensixTestSingleCoreMultiTileBankedDramReaderDataCopyDramWriter",
+        "--gtest_output=xml:/tmp/fg-final-emule-2/results/copy-test/0.xml"
+      ],
+      "exit_code": 0,
+      "tests": 1,
+      "seconds": 3.567823485995177,
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

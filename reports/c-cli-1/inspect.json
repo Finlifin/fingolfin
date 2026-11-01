@@ -1,0 +1,18 @@
+{
+  "format_version":1,
+  "program_source_hash":"6ac4b2e22fbd26aa449fa71c9f274a2288c5b9e6b476454173d77e79e64ccb2c",
+  "model_source_hash":"402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "entries":[
+    {
+      "function":"program::record",
+      "hook":"",
+      "frame_bytes":32,
+      "alignment":8,
+      "parameters":2,
+      "bindings":0,
+      "has_result":false,
+      "helper_mask":6,
+      "elf_bytes":904
+    }
+  ]
+}

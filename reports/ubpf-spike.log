@@ -1,0 +1,17 @@
+Command: ['cmake', '-S', '/tmp/fingolfin-ubpf', '-B', '/tmp/fingolfin-ubpf-build', '-G', 'Ninja', '-DUBPF_ENABLE_TESTS=OFF', '-DUBPF_SKIP_EXTERNAL=ON', '-DUBPF_ENABLE_INSTALL=OFF', '-DUBPF_INSTALL_GIT_HOOKS=OFF', '-DCMAKE_BUILD_TYPE=Release']
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/fingolfin-ubpf-build
+Command: ['cmake', '--build', '/tmp/fingolfin-ubpf-build', '-j', '2']
+ninja: no work to do.
+Command: ['clang', '-target', 'bpfel', '-mcpu=v3', '-O2', '-g', '-c', '/home/fin/apps/fingolfin/integration/ubpf/program.bpf.c', '-o', '/tmp/fingolfin-ubpf-build/program.o']
+Command: ['clang', '-target', 'bpfel', '-mcpu=v3', '-O2', '-g', '-c', '/home/fin/apps/fingolfin/integration/ubpf/oob.bpf.c', '-o', '/tmp/fingolfin-ubpf-build/oob.o']
+Command: ['clang', '-target', 'bpfel', '-mcpu=v3', '-O2', '-g', '-DFG_NAMED_HELPER', '-c', '/home/fin/apps/fingolfin/integration/ubpf/program.bpf.c', '-o', '/tmp/fingolfin-ubpf-build/named.o']
+Command: ['clang', '-std=c11', '-Wall', '-Wextra', '-Werror', '-I', '/tmp/fingolfin-ubpf/vm/inc', '-I', '/tmp/fingolfin-ubpf-build/vm', '/home/fin/apps/fingolfin/integration/ubpf/probe.c', '/tmp/fingolfin-ubpf-build/lib/libubpf.a', '-lm', '-o', '/tmp/fingolfin-ubpf-build/probe']
+Command: ['/tmp/fingolfin-ubpf-build/probe', '/tmp/fingolfin-ubpf-build/program.o', '/tmp/fingolfin-ubpf-build/oob.o', '/tmp/fingolfin-ubpf-build/named.o']
+KNOWN LIMITATION (Clang 23 named helper): relocated target of a function call does not point to a known function
+Error: Instruction limit exceeded.
+uBPF error: out of bounds memory load at PC 0, addr 0x7fff89cae520, size 8
+mem 0x7fff89cae4d8/24 stack 0x7fff89cad450/4096
+uBPF safe mode error: load is out of bounds at PC 0
+PASS: ELF loading/helper IDs, bounded loops, local calls, 32 interpreter/JIT comparisons, missing helper rejection, interpreter budget/OOB rejection, safe-profile OOB/JIT refusal

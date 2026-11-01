@@ -1,0 +1,124 @@
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/home/fin/apps/fingolfin/integration/state-helpers/record.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::record", "--output", "/tmp/fg-c-vm-fixtures-3/record.fgo"]
+{
+  "clang_version": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "entries": [
+    {
+      "dependencies": [
+        "builtin.counter_add",
+        "builtin.emit"
+      ],
+      "elf_bytes": 904,
+      "elf_hash": "31db4919572768084546770f6d1bf270faa885c68ee0be1bf2f53642c34f593f",
+      "frame_hash": "3c6adcfabdb4859520994b0018f70e6b623bea1104286c476d1dfb01c74059df",
+      "frame_schema_bytes": 200,
+      "frame_schema_hash": "b9d71721d3fe8267e5fbbb0b473fc8a152d76ae7c7dfc1700fcb83f737bcdaea",
+      "function": "program::record",
+      "gate": {
+        "predicate": "True",
+        "reads": [],
+        "version": 1
+      },
+      "helpers": [
+        1,
+        2
+      ],
+      "hook": null,
+      "signature": {
+        "bindings": {},
+        "hook": null,
+        "parameters": [
+          {
+            "Integer": {
+              "bits": 32,
+              "signed": false
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          }
+        ],
+        "returns": null
+      },
+      "signature_hash": "1cb0e329a821d23febafff85dbf3a9f8e28819fc0b8f69b34a678f8f33dcb045"
+    }
+  ],
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "profile": "development-function-frames",
+  "program_source_hash": "c408735beb61c29b24ce8616b33b89868622b07c8b15caa992a2577fa50e6fdf",
+  "target": "bpfel-v3",
+  "version": 3
+}
+{
+  "bytes": 7904,
+  "output": "/tmp/fg-c-vm-fixtures-3/record.fgo",
+  "profile": "development-function-frames",
+  "sha256": "acce7e059417955f118b9131e9c20703d737b1cb1a009718707b194c6932caa2"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/home/fin/apps/fingolfin/integration/aggregate-helpers/aggregate.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::aggregate", "--output", "/tmp/fg-c-vm-fixtures-3/aggregate.fgo"]
+{
+  "clang_version": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "entries": [
+    {
+      "dependencies": [
+        "builtin.histogram_add",
+        "builtin.map_add"
+      ],
+      "elf_bytes": 920,
+      "elf_hash": "301277809bcb2f77541113f2f13d697126be1f490e58383bec4eadfbf1a18d1c",
+      "frame_hash": "c86388eb4e0df74c230ae7970dc5f041381da892ddfd491b63d97363b759f5f8",
+      "frame_schema_bytes": 268,
+      "frame_schema_hash": "4c6246d443b58af2e8ae7e005c0546b8d0b0d18c3875a209ff8fef4f10f25e6d",
+      "function": "program::aggregate",
+      "gate": {
+        "predicate": "True",
+        "reads": [],
+        "version": 1
+      },
+      "helpers": [
+        3,
+        4
+      ],
+      "hook": null,
+      "signature": {
+        "bindings": {},
+        "hook": null,
+        "parameters": [
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": true
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          }
+        ],
+        "returns": null
+      },
+      "signature_hash": "ee1e904ca29226c975fcbe254b30ea83255c91b32518c51a251336aeed02968d"
+    }
+  ],
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "profile": "development-function-frames",
+  "program_source_hash": "e21742652d9f2ef8201df3b4eddecffa53891a9d0e45226ab5281c50b41161bd",
+  "target": "bpfel-v3",
+  "version": 3
+}
+{
+  "bytes": 8556,
+  "output": "/tmp/fg-c-vm-fixtures-3/aggregate.fgo",
+  "profile": "development-function-frames",
+  "sha256": "aae28f3fd56e003d35054b281221f2ca9b0609a00edfc588b8aea4c6f395e63b"
+}

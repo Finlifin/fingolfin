@@ -1,0 +1,5 @@
+{
+  "ubpf_revision": "8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521",
+  "status": "passed",
+  "result": "PASS: map/histogram helpers, signed boundaries, instance isolation, capacity, counter/total overflow"
+}

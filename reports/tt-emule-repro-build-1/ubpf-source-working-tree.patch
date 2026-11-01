@@ -1,0 +1,112 @@
+diff --git a/vm/inc/ubpf.h b/vm/inc/ubpf.h
+index ab8b946..1031d7e 100644
+--- a/vm/inc/ubpf.h
++++ b/vm/inc/ubpf.h
+@@ -525,6 +525,16 @@ extern "C"
+      * @retval 0 Success.
+      * @retval -1 Failure.
+      */
++    /* Fingolfin extension v1: exclusive reusable storage for the safe interpreter.
++     * Allocate before execution; do not share concurrently or destroy while in use.
++     * Each execution clears stack and all shadow/spill metadata. */
++#define UBPF_FG_SCRATCH_API 1
++    struct ubpf_safe_scratch;
++    struct ubpf_safe_scratch* ubpf_safe_scratch_create(void);
++    void ubpf_safe_scratch_destroy(struct ubpf_safe_scratch* scratch);
++    int ubpf_exec_safe_scratch(const struct ubpf_vm* vm, void* mem, size_t mem_len,
++                              uint64_t* result, struct ubpf_safe_scratch* scratch);
++
+     int
+     ubpf_exec_ex(
+         const struct ubpf_vm* vm,
+diff --git a/vm/ubpf_safe.c b/vm/ubpf_safe.c
+index 6e31865..c1ece40 100644
+--- a/vm/ubpf_safe.c
++++ b/vm/ubpf_safe.c
+@@ -706,14 +706,34 @@ ubpf_register_safe_region_impl(struct ubpf_vm* vm, const struct ubpf_safe_region
+     return 0;
+ }
+ 
+-int
+-ubpf_exec_ex_safe(
++/* Fingolfin extension: retained per-slot scratch, original entry preserved. */
++struct ubpf_safe_scratch {
++    uint64_t stack[UBPF_EBPF_STACK_SIZE / sizeof(uint64_t)];
++    uint8_t shadow[(UBPF_EBPF_STACK_SIZE + 7) / 8];
++    struct ubpf_safe_spill_slot spills[(UBPF_EBPF_STACK_SIZE + 7) / 8];
++};
++
++struct ubpf_safe_scratch*
++ubpf_safe_scratch_create(void)
++{
++    return calloc(1, sizeof(struct ubpf_safe_scratch));
++}
++
++void
++ubpf_safe_scratch_destroy(struct ubpf_safe_scratch* scratch)
++{
++    free(scratch);
++}
++
++static int
++ubpf_exec_safe_impl(
+     const struct ubpf_vm* vm,
+     void* mem,
+     size_t mem_len,
+     uint64_t* bpf_return_value,
+     uint8_t* stack_start,
+-    size_t stack_length)
++    size_t stack_length,
++    struct ubpf_safe_scratch* scratch)
+ {
+     uint16_t pc = 0;
+     const struct ebpf_inst* insts = vm->insts;
+@@ -752,14 +772,14 @@ ubpf_exec_ex_safe(
+     struct ubpf_stack_frame stack_frames[UBPF_MAX_CALL_DEPTH] = {0};
+ 
+     if (vm->undefined_behavior_check_enabled) {
+-        shadow_stack = calloc(shadow_stack_size == 0 ? 1 : shadow_stack_size, 1);
++        shadow_stack = scratch ? scratch->shadow : calloc(shadow_stack_size == 0 ? 1 : shadow_stack_size, 1);
+         if (!shadow_stack) {
+             return_value = -1;
+             goto cleanup;
+         }
+     }
+ 
+-    safe_spill_slots = calloc(spill_slot_count == 0 ? 1 : spill_slot_count, sizeof(*safe_spill_slots));
++    safe_spill_slots = scratch ? scratch->spills : calloc(spill_slot_count == 0 ? 1 : spill_slot_count, sizeof(*safe_spill_slots));
+     if (!safe_spill_slots) {
+         return_value = -1;
+         goto cleanup;
+@@ -1666,7 +1686,29 @@ ubpf_exec_ex_safe(
+     }
+ 
+ cleanup:
+-    free(safe_spill_slots);
+-    free(shadow_stack);
++    if (!scratch) {
++        free(safe_spill_slots);
++        free(shadow_stack);
++    }
+     return return_value;
+ }
++
++/* Original ABI retains allocation behavior for upstream/reference consumers. */
++int
++ubpf_exec_ex_safe(const struct ubpf_vm* vm, void* mem, size_t mem_len,
++                  uint64_t* result, uint8_t* stack, size_t stack_length)
++{
++    return ubpf_exec_safe_impl(vm, mem, mem_len, result, stack, stack_length, NULL);
++}
++
++int
++ubpf_exec_safe_scratch(const struct ubpf_vm* vm, void* mem, size_t mem_len,
++                       uint64_t* result, struct ubpf_safe_scratch* scratch)
++{
++    if (!vm || !result || !scratch || (!mem && mem_len) ||
++        vm->execution_profile != UBPF_EXECUTION_PROFILE_SAFE)
++        return -1;
++    memset(scratch, 0, sizeof(*scratch));
++    return ubpf_exec_safe_impl(vm, mem, mem_len, result, (uint8_t*)scratch->stack,
++                              sizeof(scratch->stack), scratch);
++}

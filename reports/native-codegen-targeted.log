@@ -1,0 +1,11 @@
+   Compiling fingolfin v0.1.0 (/home/fin/apps/fingolfin)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.86s
+     Running tests/codegen.rs (target/debug/build/fingolfin/eb4322f4a1900a90/out/codegen-eb4322f4a1900a90)
+
+running 3 tests
+test generated_code_checks_extremes_division_budget_and_depth ... ok
+test generated_struct_enum_pointer_and_entry_binding_code_compiles ... ok
+test generated_arithmetic_and_control_flow_match_reference ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+

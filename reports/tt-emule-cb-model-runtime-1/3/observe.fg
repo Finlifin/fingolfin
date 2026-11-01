@@ -1,0 +1,6 @@
+use tt_emule.types.{Observation, Core};
+fn observe on tt_emule.device.core.cb.cb_wait_front(call: Observation, core: Core, cb_id: u32, n: u32) {
+ if call.phase == 0 { builtin.counter_add(0, 1); } else { builtin.counter_add(1, 1); }
+ if core.x == 0 && core.y == 0 && cb_id == 0 && call.thread > 0 && n > 0 { builtin.counter_add(2, 1); }
+ builtin.emit(call.phase, call.sequence);
+}

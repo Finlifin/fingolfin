@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/noc-model-runtime/build.py", "--compiler", "/home/fin/apps/fingolfin/target/debug/fingolfin", "--runtime-build", "/tmp/fg-repro-verify-2/runtime-build", "--ubpf-build", "/tmp/fg-repro-verify-2/ubpf-build", "--catalog", "/tmp/fg-repro-verify-2/catalog.json", "--output", "/tmp/fg-repro-verify-2/noc"]
+/tmp/fg-repro-verify-2/noc

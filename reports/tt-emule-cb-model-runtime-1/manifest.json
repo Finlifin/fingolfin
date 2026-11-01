@@ -1,0 +1,32 @@
+[
+  {
+    "hook": 1,
+    "name": "cb_reserve_back",
+    "has_count": true
+  },
+  {
+    "hook": 2,
+    "name": "cb_push_back",
+    "has_count": true
+  },
+  {
+    "hook": 3,
+    "name": "cb_wait_front",
+    "has_count": true
+  },
+  {
+    "hook": 4,
+    "name": "cb_pop_front",
+    "has_count": true
+  },
+  {
+    "hook": 5,
+    "name": "get_write_ptr",
+    "has_count": false
+  },
+  {
+    "hook": 6,
+    "name": "get_read_ptr",
+    "has_count": false
+  }
+]

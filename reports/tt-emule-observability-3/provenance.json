@@ -1,0 +1,26 @@
+{
+  "emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb",
+  "instrumented_points": 39,
+  "hit_points": 39,
+  "events": 8890,
+  "dropped": 0,
+  "sha256": {
+    "integration/tt-emule/observability/prepare.py": "c769b734060fdc8e99afe4867e882615630775c17ca379c34b097b10431f1d74",
+    "integration/tt-emule/observability/trace.c": "1f397e0d6173c39077b80586087f8c789bbb19032bcc9597facbebe1f8cadb8b",
+    "integration/tt-emule/observability/report.py": "0f595ac99d007d10a8cfea07709d47580df0b81620ac229f6f07c3a04d3b0766",
+    "integration/tt-emule/observability/run.py": "63f38fffeec7332f39e1c0870707f8acf83df68ab8c4af9be48edc398f58616b",
+    "integration/tt-emule/observability/README.md": "b34126789595ca570bc62b3afd1dd957f223f541e488b2d28a2a81fe0e3652a0",
+    "integration/tt-emule/observability/noc_scenario.cpp": "4ed824fc55bf0760282b157cc1f1962d7b4844e1f9fbcab5c0446ebdb5ea9f7e",
+    "integration/tt-emule/observability/noc-scenario.patch": "9c78f3898c6fa832350b74cd7bdfbaef9416a66521378ae3b1613e1be108188a",
+    "integration/tt-emule/observability/compute_scenario.cpp": "d39455726910c8df7bdcaca2b05d80d003f5e403a7c644964beb1231a1bd927f",
+    "integration/tt-emule/observability/compute-scenario.patch": "32688923e915671b3b2183bfb63ec41b208e62da2f01334cbaad641927291b87",
+    "integration/tt-emule/observability/exp-sqrt-compat.patch": "b805270d7cb88d180a08f5682d9f9c412ce0f4d60b68dc512c281546f869d45d",
+    "integration/tt-emule/observability/layout_scenario.cpp": "d8a463759a499cbae0372484ef6a5034b77fbd1dd9855b237d188395a5bb5682",
+    "integration/tt-emule/observability/layout-scenario.patch": "8f950f779254cb8ff17be4d42fbe5030ec928d15892c0a78cb4dbc798a37832c",
+    "integration/tt-emule/observability/multicast_scenario.cpp": "0eacb78d4f8e9c46fb09b4e86b82bf07a5888360db16199b6abd239ccf0089f2",
+    "integration/tt-emule/observability/multicast-scenario.patch": "28d3c2916116203bea05d497f2b3cf057583762130e53eea99aef9a1fa571479",
+    "integration/tt-emule/cb-wide-count.patch": "ec7141eccfabcff140cc5382bf421998ae8b2d8ad3013b9df7a7f527cd162515"
+  },
+  "scenarios": 6
+}

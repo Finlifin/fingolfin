@@ -1,0 +1,9 @@
+{
+  "rust_tests_passed": 120,
+  "c_tests_passed": 24,
+  "clippy": "passed",
+  "format": "passed",
+  "tt_emule_stages": 18,
+  "device1_first_and_cached": "passed",
+  "whole_emulator_sanitizer": "not run"
+}

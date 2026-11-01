@@ -1,0 +1,19 @@
+Start testing: Nov 01 20:17 CST
+----------------------------------------------------------
+13/16 Testing: generated_adapter
+13/16 Test: generated_adapter
+Command: "/tmp/fg-c-vm-asan-1/generated_adapter_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"generated_adapter" start time: Nov 01 20:17 CST
+Output:
+----------------------------------------------------------
+compiler-generated native frame/encoder -> SDK route -> Attachment -> C VM passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"generated_adapter" end time: Nov 01 20:17 CST
+"generated_adapter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:17 CST

@@ -1,0 +1,816 @@
+{
+  "source_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "source_state": "instrumented working tree",
+  "points": [
+    {
+      "id": 1,
+      "name": "cb_reserve_back",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 155,
+          "signature": "inline void cb_reserve_back( uint32_t cb_id, uint32_t n, const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        },
+        {
+          "line": 290,
+          "signature": "inline void cb_reserve_back( uint32_t cb_id, int32_t n, const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "cb_push_back",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 186,
+          "signature": "inline void cb_push_back(uint32_t cb_id, uint32_t n) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        },
+        {
+          "line": 296,
+          "signature": "inline void cb_push_back(uint32_t cb_id, int32_t n) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "cb_wait_front",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 228,
+          "signature": "inline void cb_wait_front( uint32_t cb_id, uint32_t n, const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        },
+        {
+          "line": 298,
+          "signature": "inline void cb_wait_front( uint32_t cb_id, int32_t n, const char* site_file = __builtin_FILE(), uint32_t site_line = __builtin_LINE()) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "cb_pop_front",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 263,
+          "signature": "inline void cb_pop_front(uint32_t cb_id, uint32_t n) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        },
+        {
+          "line": 304,
+          "signature": "inline void cb_pop_front(uint32_t cb_id, int32_t n) {",
+          "fields": [
+            "cb_id",
+            "n",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "get_write_ptr",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 340,
+          "signature": "inline uint32_t get_write_ptr(uint32_t cb_id) {",
+          "fields": [
+            "cb_id",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "get_read_ptr",
+      "category": "cb",
+      "source": "include/jit_hw/api/cb_api.h",
+      "source_sha256": "b1defe2c995d6dc992fe8b40310d2e5fb27c9d7054390cdc35b9f31fb2abf16d",
+      "variants": [
+        {
+          "line": 346,
+          "signature": "inline uint32_t get_read_ptr(uint32_t cb_id) {",
+          "fields": [
+            "cb_id",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "noc_async_read",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 318,
+          "signature": "inline void noc_async_read(uint64_t src_noc_addr, uint32_t dst_local_l1_addr, uint32_t size, uint8_t noc = noc_index, uint32_t vc = 0) {",
+          "fields": [
+            "src_noc_addr",
+            "dst_local_l1_addr",
+            "size"
+          ]
+        },
+        {
+          "line": 468,
+          "signature": "inline void noc_async_read(uint64_t src_noc_addr, uint32_t dst_local_l1_addr, uint32_t size, uint8_t noc = noc_index, uint32_t vc = NOC_UNICAST_WRITE_VC) {",
+          "fields": [
+            "src_noc_addr",
+            "dst_local_l1_addr",
+            "size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "noc_async_write",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 347,
+          "signature": "inline void noc_async_write(uint32_t src_local_l1_addr, uint64_t dst_noc_addr, uint32_t size, uint8_t noc = noc_index, uint32_t vc = 0) {",
+          "fields": [
+            "src_local_l1_addr",
+            "dst_noc_addr",
+            "size"
+          ]
+        },
+        {
+          "line": 474,
+          "signature": "inline void noc_async_write(uint32_t src_local_l1_addr, uint64_t dst_noc_addr, uint32_t size, uint8_t noc = noc_index, uint32_t vc = NOC_UNICAST_WRITE_VC) {",
+          "fields": [
+            "src_local_l1_addr",
+            "dst_noc_addr",
+            "size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "noc_async_read_barrier",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 543,
+          "signature": "inline void noc_async_read_barrier(uint8_t noc = noc_index) {",
+          "fields": [
+            "noc",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "noc_async_write_barrier",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 547,
+          "signature": "inline void noc_async_write_barrier(uint8_t noc = noc_index) {",
+          "fields": [
+            "noc",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "noc_async_writes_flushed",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 549,
+          "signature": "inline void noc_async_writes_flushed(uint8_t noc = noc_index) {",
+          "fields": [
+            "noc",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "noc_async_atomic_barrier",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 572,
+          "signature": "inline void noc_async_atomic_barrier(uint8_t noc = noc_index) {",
+          "fields": [
+            "noc",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "noc_semaphore_inc",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 792,
+          "signature": "FORCE_INLINE void noc_semaphore_inc(uint64_t noc_addr, uint32_t incr, uint8_t noc = noc_index, uint8_t vc = NOC_UNICAST_WRITE_VC) {",
+          "fields": [
+            "noc_addr",
+            "incr",
+            "noc"
+          ]
+        },
+        {
+          "line": 798,
+          "signature": "inline void noc_semaphore_inc(uint64_t noc_addr, uint32_t incr, uint8_t noc, uint8_t vc) {",
+          "fields": [
+            "noc_addr",
+            "incr",
+            "noc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "noc_semaphore_set",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 738,
+          "signature": "inline void noc_semaphore_set(volatile tt_l1_ptr uint32_t* sem_addr, uint32_t val) {",
+          "fields": [
+            "val",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "noc_semaphore_wait",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 746,
+          "signature": "inline void noc_semaphore_wait(volatile tt_l1_ptr uint32_t* sem_addr, uint32_t val) {",
+          "fields": [
+            "val",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "noc_semaphore_wait_min",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 769,
+          "signature": "inline void noc_semaphore_wait_min(volatile tt_l1_ptr uint32_t* sem_addr, uint32_t min_val) {",
+          "fields": [
+            null,
+            "min_val",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "noc_async_write_multicast",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 486,
+          "signature": "inline void noc_async_write_multicast( uint32_t src_local_l1_addr, uint64_t dst_mcast_noc_addr, uint32_t size, uint32_t num_dests, bool linked = false, uint8_t noc = noc_index, uint8_t /*vc*/ = NOC_MULTICAST_WRITE_VC) {",
+          "fields": [
+            "src_local_l1_addr",
+            "dst_mcast_noc_addr",
+            "size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "noc_async_read_one_packet",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 381,
+          "signature": "inline void noc_async_read_one_packet(uint64_t src_noc_addr, uint32_t dst_local_l1_addr, uint32_t size, uint8_t noc = noc_index) {",
+          "fields": [
+            "src_noc_addr",
+            "dst_local_l1_addr",
+            "size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "noc_async_write_one_packet",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 386,
+          "signature": "inline void noc_async_write_one_packet(uint32_t src_local_l1_addr, uint64_t dst_noc_addr, uint32_t size, uint8_t noc = noc_index) {",
+          "fields": [
+            "src_local_l1_addr",
+            "dst_noc_addr",
+            "size"
+          ]
+        },
+        {
+          "line": 582,
+          "signature": "FORCE_INLINE void noc_async_write_one_packet( uint32_t src_local_l1_addr, uint64_t dst_noc_addr, uint32_t size, uint8_t noc = noc_index, uint32_t vc = NOC_UNICAST_WRITE_VC) {",
+          "fields": [
+            "src_local_l1_addr",
+            "dst_noc_addr",
+            "size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "noc_inline_dw_write",
+      "category": "noc",
+      "source": "include/jit_hw/api/dataflow/dataflow_api.h",
+      "source_sha256": "2733efb3b791412da739ce0816687181ddcff9085916dfa21149970f3a21fb2e",
+      "variants": [
+        {
+          "line": 1006,
+          "signature": "inline void noc_inline_dw_write( uint64_t addr, uint32_t val, uint8_t be = 0xF, uint8_t noc = noc_index, uint8_t vc = NOC_UNICAST_WRITE_VC, uint32_t customized_src_addr = 0) {",
+          "fields": [
+            "addr",
+            "val",
+            "be"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "tile_regs_acquire",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/reg_api.h",
+      "source_sha256": "a1fb6065625c25fa2436e50449743bbc097391a84c6fbc1d31327dd99a6ab333",
+      "variants": [
+        {
+          "line": 27,
+          "signature": "ALWI void tile_regs_acquire() {",
+          "fields": [
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "tile_regs_commit",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/reg_api.h",
+      "source_sha256": "a1fb6065625c25fa2436e50449743bbc097391a84c6fbc1d31327dd99a6ab333",
+      "variants": [
+        {
+          "line": 39,
+          "signature": "ALWI void tile_regs_commit() {",
+          "fields": [
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "tile_regs_wait",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/reg_api.h",
+      "source_sha256": "a1fb6065625c25fa2436e50449743bbc097391a84c6fbc1d31327dd99a6ab333",
+      "variants": [
+        {
+          "line": 41,
+          "signature": "ALWI void tile_regs_wait() {",
+          "fields": [
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "tile_regs_release",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/reg_api.h",
+      "source_sha256": "a1fb6065625c25fa2436e50449743bbc097391a84c6fbc1d31327dd99a6ab333",
+      "variants": [
+        {
+          "line": 43,
+          "signature": "ALWI void tile_regs_release() {",
+          "fields": [
+            null,
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "add_tiles",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 772,
+          "signature": "ALWI void add_tiles(uint32_t icb0, uint32_t icb1, uint32_t itile0, uint32_t itile1, uint32_t idst) {",
+          "fields": [
+            "icb0",
+            "icb1",
+            "idst"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "sub_tiles",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 791,
+          "signature": "ALWI void sub_tiles(uint32_t icb0, uint32_t icb1, uint32_t itile0, uint32_t itile1, uint32_t idst) {",
+          "fields": [
+            "icb0",
+            "icb1",
+            "idst"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "mul_tiles",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 810,
+          "signature": "ALWI void mul_tiles(uint32_t icb0, uint32_t icb1, uint32_t itile0, uint32_t itile1, uint32_t idst) {",
+          "fields": [
+            "icb0",
+            "icb1",
+            "idst"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "pack_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 833,
+          "signature": "ALWI void pack_tile(uint32_t idst, uint32_t ocb) {",
+          "fields": [
+            "idst",
+            "ocb",
+            null
+          ]
+        },
+        {
+          "line": 855,
+          "signature": "ALWI void pack_tile(uint32_t idst, uint32_t ocb, uint32_t output_offset = 0) {",
+          "fields": [
+            "idst",
+            "ocb",
+            "output_offset"
+          ]
+        },
+        {
+          "line": 878,
+          "signature": "ALWI void pack_tile(uint32_t idst, uint32_t ocb, uint32_t output_offset) {",
+          "fields": [
+            "idst",
+            "ocb",
+            "output_offset"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "pack_tile_block",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 884,
+          "signature": "ALWI void pack_tile_block(uint32_t ifrom_dst, uint32_t ocb, uint32_t ntiles) {",
+          "fields": [
+            "ifrom_dst",
+            "ocb",
+            "ntiles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "copy_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/common.h",
+      "source_sha256": "afc7cc1c85cd74187dfec585333c623043ca7fd8cb1bc734870f1869850747bf",
+      "variants": [
+        {
+          "line": 980,
+          "signature": "ALWI void copy_tile(uint32_t icb, uint32_t itile, uint32_t idst) {",
+          "fields": [
+            "icb",
+            "itile",
+            "idst"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "tilize_block",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/tilize.h",
+      "source_sha256": "b4763fe3d3596a9795168924e2e507d8c72610cc7b3f0b5a985bff1653848792",
+      "variants": [
+        {
+          "line": 68,
+          "signature": "inline void tilize_block(uint32_t icb, uint32_t ntiles, uint32_t ocb) {",
+          "fields": [
+            "icb",
+            "ntiles",
+            "ocb"
+          ]
+        },
+        {
+          "line": 214,
+          "signature": "inline void tilize_block(uint32_t icb, uint32_t num_tiles, uint32_t ocb, uint32_t /*itile_start*/, uint32_t /*otile_start*/) {",
+          "fields": [
+            "icb",
+            "num_tiles",
+            "ocb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "untilize_block",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/untilize.h",
+      "source_sha256": "f106278822ceb922f955d56cd7197f8e6643acef4d6943088277bad45c6f86fa",
+      "variants": [
+        {
+          "line": 49,
+          "signature": "inline void untilize_block(uint32_t icb, uint32_t ntiles, uint32_t ocb) {",
+          "fields": [
+            "icb",
+            "ntiles",
+            "ocb"
+          ]
+        },
+        {
+          "line": 60,
+          "signature": "inline void untilize_block(uint32_t icb, uint32_t ntiles, uint32_t ocb) {",
+          "fields": [
+            "icb",
+            "ntiles",
+            "ocb"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "exp_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/exp.h",
+      "source_sha256": "1b635717b36019e7b4423ceb0db05f2328bf3c0adc2a0fb0fb57c568a886e613",
+      "variants": [
+        {
+          "line": 138,
+          "signature": "ALWI void exp_tile(uint32_t idst, VectorMode vector_mode = VectorMode::RC, uint16_t scale = p_sfpu::kCONST_1_FP16B) {",
+          "fields": [
+            "idst",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "recip_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/recip.h",
+      "source_sha256": "63dddb42b0d35286afd6e261e4e11c7330d6a6cb191d5340efb6e54174d2bbcd",
+      "variants": [
+        {
+          "line": 29,
+          "signature": "ALWI void recip_tile(uint32_t idst, VectorMode vector_mode = VectorMode::RC) {",
+          "fields": [
+            "idst",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "sqrt_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/sqrt.h",
+      "source_sha256": "d65424f1f7c19ab4c15652462e14ee74a201352823b8090d2a8acffa31a0e03e",
+      "variants": [
+        {
+          "line": 43,
+          "signature": "ALWI void sqrt_tile(uint32_t idst) {",
+          "fields": [
+            "idst",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "relu_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/relu.h",
+      "source_sha256": "e28deae565fe8ea71e1019fd6d68fb665033ac58ebaddae30f62678621bdfd94",
+      "variants": [
+        {
+          "line": 18,
+          "signature": "ALWI void relu_tile(uint32_t idst) {",
+          "fields": [
+            "idst",
+            null,
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "relu_max_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/relu.h",
+      "source_sha256": "e28deae565fe8ea71e1019fd6d68fb665033ac58ebaddae30f62678621bdfd94",
+      "variants": [
+        {
+          "line": 34,
+          "signature": "ALWI void relu_max_tile(uint32_t idst, uint32_t param0) {",
+          "fields": [
+            "idst",
+            "param0",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "relu_min_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/relu.h",
+      "source_sha256": "e28deae565fe8ea71e1019fd6d68fb665033ac58ebaddae30f62678621bdfd94",
+      "variants": [
+        {
+          "line": 72,
+          "signature": "ALWI void relu_min_tile(uint32_t idst, uint32_t param0) {",
+          "fields": [
+            "idst",
+            "param0",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "leaky_relu_tile",
+      "category": "compute",
+      "source": "include/jit_hw/api/compute/eltwise_unary/relu.h",
+      "source_sha256": "e28deae565fe8ea71e1019fd6d68fb665033ac58ebaddae30f62678621bdfd94",
+      "variants": [
+        {
+          "line": 93,
+          "signature": "ALWI void leaky_relu_tile(uint32_t idst, uint32_t slope = 0) {",
+          "fields": [
+            "idst",
+            null,
+            "slope"
+          ]
+        }
+      ]
+    }
+  ]
+}

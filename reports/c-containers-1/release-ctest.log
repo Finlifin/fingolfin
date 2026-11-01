@@ -1,0 +1,19 @@
+Start testing: Nov 01 19:11 CST
+----------------------------------------------------------
+1/1 Testing: containers
+1/1 Test: containers
+Command: "/tmp/fingolfin-c-runtime-release/containers_test"
+Directory: /tmp/fingolfin-c-runtime-release
+"containers" start time: Nov 01 19:11 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:11 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:11 CST

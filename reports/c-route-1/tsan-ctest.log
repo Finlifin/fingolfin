@@ -1,0 +1,19 @@
+Start testing: Nov 01 19:29 CST
+----------------------------------------------------------
+3/3 Testing: route
+3/3 Test: route
+Command: "/tmp/fg-c-route-tsan-1/route_test"
+Directory: /tmp/fg-c-route-tsan-1
+"route" start time: Nov 01 19:29 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 19:29 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:29 CST

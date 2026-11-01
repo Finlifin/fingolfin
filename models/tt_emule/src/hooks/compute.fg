@@ -1,0 +1,39 @@
+use tt_emule.types.{Observation, Core};
+-- include/jit_hw/api/compute/reg_api.h:26
+pub hook tt_emule.device.core.compute.tile_regs_acquire(call: Observation, core: Core);
+-- include/jit_hw/api/compute/reg_api.h:37
+pub hook tt_emule.device.core.compute.tile_regs_commit(call: Observation, core: Core);
+-- include/jit_hw/api/compute/reg_api.h:38
+pub hook tt_emule.device.core.compute.tile_regs_wait(call: Observation, core: Core);
+-- include/jit_hw/api/compute/reg_api.h:39
+pub hook tt_emule.device.core.compute.tile_regs_release(call: Observation, core: Core);
+-- include/jit_hw/api/compute/common.h:771
+pub hook tt_emule.device.core.compute.add_tiles(call: Observation, core: Core, icb0: u32, icb1: u32, idst: u32);
+-- include/jit_hw/api/compute/common.h:789
+pub hook tt_emule.device.core.compute.sub_tiles(call: Observation, core: Core, icb0: u32, icb1: u32, idst: u32);
+-- include/jit_hw/api/compute/common.h:807
+pub hook tt_emule.device.core.compute.mul_tiles(call: Observation, core: Core, icb0: u32, icb1: u32, idst: u32);
+-- include/jit_hw/api/compute/common.h:829
+pub hook tt_emule.device.core.compute.pack_tile(call: Observation, core: Core, idst: u32, ocb: u32);
+-- include/jit_hw/api/compute/common.h:877
+pub hook tt_emule.device.core.compute.pack_tile_block(call: Observation, core: Core, ifrom_dst: u32, ocb: u32, ntiles: u32);
+-- include/jit_hw/api/compute/common.h:972
+pub hook tt_emule.device.core.compute.copy_tile(call: Observation, core: Core, icb: u32, itile: u32, idst: u32);
+-- include/jit_hw/api/compute/tilize.h:67
+pub hook tt_emule.device.core.compute.tilize_block(call: Observation, core: Core, icb: u32, ntiles: u32, ocb: u32);
+-- include/jit_hw/api/compute/untilize.h:48
+pub hook tt_emule.device.core.compute.untilize_block(call: Observation, core: Core, icb: u32, ntiles: u32, ocb: u32);
+-- include/jit_hw/api/compute/eltwise_unary/exp.h:136
+pub hook tt_emule.device.core.compute.exp_tile(call: Observation, core: Core, idst: u32);
+-- include/jit_hw/api/compute/eltwise_unary/recip.h:28
+pub hook tt_emule.device.core.compute.recip_tile(call: Observation, core: Core, idst: u32);
+-- include/jit_hw/api/compute/eltwise_unary/sqrt.h:42
+pub hook tt_emule.device.core.compute.sqrt_tile(call: Observation, core: Core, idst: u32);
+-- include/jit_hw/api/compute/eltwise_unary/relu.h:17
+pub hook tt_emule.device.core.compute.relu_tile(call: Observation, core: Core, idst: u32);
+-- include/jit_hw/api/compute/eltwise_unary/relu.h:32
+pub hook tt_emule.device.core.compute.relu_max_tile(call: Observation, core: Core, idst: u32, param0: u32);
+-- include/jit_hw/api/compute/eltwise_unary/relu.h:69
+pub hook tt_emule.device.core.compute.relu_min_tile(call: Observation, core: Core, idst: u32, param0: u32);
+-- include/jit_hw/api/compute/eltwise_unary/relu.h:89
+pub hook tt_emule.device.core.compute.leaky_relu_tile(call: Observation, core: Core, idst: u32, slope: u32);

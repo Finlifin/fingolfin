@@ -1,0 +1,146 @@
+Start testing: Nov 01 21:54 CST
+----------------------------------------------------------
+1/9 Testing: objects
+1/9 Test: objects
+Command: "/tmp/fg-objects-1/objects_test"
+Directory: /tmp/fg-objects-1
+"objects" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"objects" end time: Nov 01 21:54 CST
+"objects" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/9 Testing: facts
+2/9 Test: facts
+Command: "/tmp/fg-objects-1/facts_test"
+Directory: /tmp/fg-objects-1
+"facts" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+C facts: i128 bounds, typed comparisons, UTF-8/NUL, unknown, budget and unaligned snapshots passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"facts" end time: Nov 01 21:54 CST
+"facts" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/9 Testing: gate
+3/9 Test: gate
+Command: "/tmp/fg-objects-1/gate_test"
+Directory: /tmp/fg-objects-1
+"gate" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+C gate: three-valued truth tables, stages, stale identity, invalid facts/plan and bounded deep topology passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"gate" end time: Nov 01 21:54 CST
+"gate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/9 Testing: containers
+4/9 Test: containers
+Command: "/tmp/fg-objects-1/containers_test"
+Directory: /tmp/fg-objects-1
+"containers" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 21:54 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/9 Testing: host
+5/9 Test: host
+Command: "/tmp/fg-objects-1/host_test"
+Directory: /tmp/fg-objects-1
+"host" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 21:54 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/9 Testing: quiescence
+6/9 Test: quiescence
+Command: "/tmp/fg-objects-1/quiescence_test"
+Directory: /tmp/fg-objects-1
+"quiescence" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+Port quiescence: all generations/candidate callbacks drain, ticket ownership, replacement-before-resume passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"quiescence" end time: Nov 01 21:54 CST
+"quiescence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/9 Testing: route
+7/9 Test: route
+Command: "/tmp/fg-objects-1/route_test"
+Directory: /tmp/fg-objects-1
+"route" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 21:54 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/9 Testing: elf
+8/9 Test: elf
+Command: "/tmp/fg-objects-1/elf_test"
+Directory: /tmp/fg-objects-1
+"elf" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"elf" end time: Nov 01 21:54 CST
+"elf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/9 Testing: schema
+9/9 Test: schema
+Command: "/tmp/fg-objects-1/schema_test"
+Directory: /tmp/fg-objects-1
+"schema" start time: Nov 01 21:54 CST
+Output:
+----------------------------------------------------------
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"schema" end time: Nov 01 21:54 CST
+"schema" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 21:54 CST

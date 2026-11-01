@@ -1,0 +1,22 @@
+Start testing: Nov 01 21:11 CST
+----------------------------------------------------------
+18/23 Testing: mount
+18/23 Test: mount
+Command: "/tmp/fg-pool-tsan/mount_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"mount" start time: Nov 01 21:11 CST
+Output:
+----------------------------------------------------------
+batch mount: 64 subscribers, atomic preparation, isolation, independent gates and partial errors passed
+mount selection: generations, old leases, disable/resume state and bounded retirement passed
+mount concurrent selection: 500 publications / 4000 observations, counters and output agree
+mount: generated adapter, registry independence, detach with live lease, output drain and cleanup passed
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"mount" end time: Nov 01 21:11 CST
+"mount" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 21:11 CST

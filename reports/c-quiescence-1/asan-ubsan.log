@@ -1,0 +1,326 @@
+Start testing: Nov 01 20:40 CST
+----------------------------------------------------------
+1/20 Testing: facts
+1/20 Test: facts
+Command: "/tmp/fg-c-vm-asan-1/facts_test"
+Directory: /tmp/fg-c-vm-asan-1
+"facts" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+C facts: i128 bounds, typed comparisons, UTF-8/NUL, unknown, budget and unaligned snapshots passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"facts" end time: Nov 01 20:40 CST
+"facts" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/20 Testing: gate
+2/20 Test: gate
+Command: "/tmp/fg-c-vm-asan-1/gate_test"
+Directory: /tmp/fg-c-vm-asan-1
+"gate" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+C gate: three-valued truth tables, stages, stale identity, invalid facts/plan and bounded deep topology passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"gate" end time: Nov 01 20:40 CST
+"gate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/20 Testing: containers
+3/20 Test: containers
+Command: "/tmp/fg-c-vm-asan-1/containers_test"
+Directory: /tmp/fg-c-vm-asan-1
+"containers" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 20:40 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/20 Testing: host
+4/20 Test: host
+Command: "/tmp/fg-c-vm-asan-1/host_test"
+Directory: /tmp/fg-c-vm-asan-1
+"host" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 20:40 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/20 Testing: quiescence
+5/20 Test: quiescence
+Command: "/tmp/fg-c-vm-asan-1/quiescence_test"
+Directory: /tmp/fg-c-vm-asan-1
+"quiescence" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+Port quiescence: all generations/candidate callbacks drain, ticket ownership, replacement-before-resume passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"quiescence" end time: Nov 01 20:40 CST
+"quiescence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/20 Testing: route
+6/20 Test: route
+Command: "/tmp/fg-c-vm-asan-1/route_test"
+Directory: /tmp/fg-c-vm-asan-1
+"route" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 20:40 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/20 Testing: elf
+7/20 Test: elf
+Command: "/tmp/fg-c-vm-asan-1/elf_test"
+Directory: /tmp/fg-c-vm-asan-1
+"elf" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"elf" end time: Nov 01 20:40 CST
+"elf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/20 Testing: schema
+8/20 Test: schema
+Command: "/tmp/fg-c-vm-asan-1/schema_test"
+Directory: /tmp/fg-c-vm-asan-1
+"schema" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"schema" end time: Nov 01 20:40 CST
+"schema" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/20 Testing: schema_agreement
+9/20 Test: schema_agreement
+Command: "/tmp/fg-c-vm-asan-1/schema_test" "/tmp/fg-schema-c-491/corpus.bin"
+Directory: /tmp/fg-c-vm-asan-1
+"schema_agreement" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: 22143 Rust/C schema agreement cases
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"schema_agreement" end time: Nov 01 20:40 CST
+"schema_agreement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/20 Testing: scratch
+10/20 Test: scratch
+Command: "/tmp/fg-c-vm-asan-1/scratch_test"
+Directory: /tmp/fg-c-vm-asan-1
+"scratch" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+2000 legacy/scratch comparisons; stale stack initialization rejected
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"scratch" end time: Nov 01 20:40 CST
+"scratch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/20 Testing: vm_alloc
+11/20 Test: vm_alloc
+Command: "/tmp/fg-c-vm-asan-1/vm_alloc_test" "/tmp/fg-c-vm-fixtures-3/record.o"
+Directory: /tmp/fg-c-vm-asan-1
+"vm_alloc" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+allocation attempts: 0; frees: 0
+20000 VM runs: success/helper failure/frame budget/size/instruction failure
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"vm_alloc" end time: Nov 01 20:40 CST
+"vm_alloc" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/20 Testing: pool
+12/20 Test: pool
+Command: "/tmp/fg-c-vm-asan-1/pool_test" "/tmp/fg-c-vm-fixtures-3/record.o"
+Directory: /tmp/fg-c-vm-asan-1
+"pool" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+C VM pool: lifecycle, exhaustion, token ownership and 40000 concurrent executions passed
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"pool" end time: Nov 01 20:40 CST
+"pool" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/20 Testing: vm
+13/20 Test: vm
+Command: "/tmp/fg-c-vm-asan-1/vm_test" "/tmp/fg-c-vm-fixtures-3/record.o" "/tmp/fg-c-vm-fixtures-3/aggregate.o" "/tmp/fg-c-vm-fixtures-3/record.schema"
+Directory: /tmp/fg-c-vm-asan-1
+"vm" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+PASS: generated ELF -> C VM -> C Host; isolation, allowlist, frame/capacity/overflow/budget, partial success
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"vm" end time: Nov 01 20:40 CST
+"vm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/20 Testing: package
+14/20 Test: package
+Command: "/tmp/fg-c-vm-asan-1/package_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"package" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+C package/hash checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"package" end time: Nov 01 20:40 CST
+"package" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/20 Testing: package_corpus
+15/20 Test: package_corpus
+Command: "/tmp/fg-c-vm-asan-1/package_test" "/tmp/fg-c-vm-fixtures-3/record.fgo" "/tmp/fg-package-corpus.bin"
+Directory: /tmp/fg-c-vm-asan-1
+"package_corpus" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+package corpus: 380 cases
+C package/hash checks passed
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"package_corpus" end time: Nov 01 20:40 CST
+"package_corpus" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/20 Testing: gated_binding
+16/20 Test: gated_binding
+Command: "/tmp/fg-c-vm-asan-1/gated_binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"gated_binding" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+gated binding: false skips factory/VM; unknown/stale/budget/invalid allow; copied facts and old leases passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"gated_binding" end time: Nov 01 20:40 CST
+"gated_binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/20 Testing: generated_adapter
+17/20 Test: generated_adapter
+Command: "/tmp/fg-c-vm-asan-1/generated_adapter_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"generated_adapter" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+compiler-generated native frame/encoder -> SDK route -> Attachment -> C VM passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"generated_adapter" end time: Nov 01 20:40 CST
+"generated_adapter" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/20 Testing: binding
+18/20 Test: binding
+Command: "/tmp/fg-c-vm-asan-1/binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"binding" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+SDK route -> binding -> Attachment -> C VM: old generations, failed publication, frame validation and lifetime pins passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"binding" end time: Nov 01 20:40 CST
+"binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/20 Testing: attachment
+19/20 Test: attachment
+Command: "/tmp/fg-c-vm-asan-1/attachment_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"attachment" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+Attachment: 40000 concurrent attempts, 3215 successes; identity, budget, isolation and close/drain passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"attachment" end time: Nov 01 20:40 CST
+"attachment" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/20 Testing: program
+20/20 Test: program
+Command: "/tmp/fg-c-vm-asan-1/program_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-c-vm-asan-1
+"program" start time: Nov 01 20:40 CST
+Output:
+----------------------------------------------------------
+C Program: ownership, helper policy, error recovery, 10000 calls and executor isolation passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"program" end time: Nov 01 20:40 CST
+"program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:40 CST

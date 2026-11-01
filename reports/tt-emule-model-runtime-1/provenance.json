@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "integration/tt-emule/model-runtime/push.fg": "c7e6fb2b303b7de7a8ce44e9310a52eab9da0a3ef4112903baff28f7fb84ba86",
+    "integration/tt-emule/model-runtime/build.py": "3a50c22f6688305cbc6a971e545aeae669bc3d6bc111f3f192bd639bbd6ebb67",
+    "integration/tt-emule/model-runtime/runtime.c": "4705be13852171f53207586c56c8ef5fb28f30852fc2812c3f0be996618ea46d",
+    "integration/tt-emule/model-runtime/run.py": "27a306cfda979c62f474a42ca56e42641c6bde2f3ad534ec83761299f8c78f3d",
+    "integration/tt-emule/model-runtime/README.md": "6ec028c317708a3c80944acff77317c489dad35ac1dc4a22be22b01f60eb3583",
+    "integration/tt-emule/model-runtime/check-boundary.py": "93d28760d119f743e078e01572b9aaf508b29d1088734c649815479cd6bf83f8",
+    "models/tt_emule/src/lib.fg": "e25daa430c176a4617d21a130e9cd2716a62e5cf6c2f215c19d90af2df7aa6c3",
+    "models/tt_emule/src/types.fg": "37e3b590728be4b6b01e609f0dba2ce83967a29e9b1c636f7a06b5002b844983",
+    "models/tt_emule/src/objects.fg": "eb5fe946a663eaaa1c20ec95c7b3f9b7536136f13d283fba6ef49120d90b3646",
+    "models/tt_emule/src/hooks/cb.fg": "c28809b7960edd882fd9b2829942df254cd1071ff4db456d5634204a6693a6cc",
+    "models/tt_emule/src/hooks/noc.fg": "08f46efca95154c567fd9c2dcf714f428ade5b70b60627eac7b3d9931b40c4bf",
+    "models/tt_emule/src/hooks/compute.fg": "29fce7c268ca21fe129f0feed971bc9b7580fc291f3fc8526c640d175acc38b2"
+  },
+  "emule_revision": "07f1bd8301544403c8bc1faa4038f6cbf69909f1",
+  "metal_revision": "d48d09dee19de51f694a52fdf75d569950d38ceb"
+}

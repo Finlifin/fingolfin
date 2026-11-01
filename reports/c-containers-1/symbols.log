@@ -1,0 +1,25 @@
+
+util.c.o:
+                 U aligned_alloc
+                 U free
+
+containers.c.o:
+                 U __stack_chk_fail
+                 U fg_allocator_default
+                 U fg_size_add
+                 U fg_size_align
+                 U fg_size_mul
+                 U memcpy
+                 U memmove
+                 U memset
+
+state.c.o:
+                 U __stack_chk_fail
+                 U fg_allocator_default
+                 U fg_map_at
+                 U fg_map_create
+                 U fg_map_destroy
+                 U fg_map_find
+                 U fg_map_length
+                 U fg_map_put
+                 U fg_map_remove

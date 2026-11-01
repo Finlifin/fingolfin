@@ -1,0 +1,4 @@
+   Compiling fingolfin v0.1.0 (/home/fin/apps/fingolfin)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s
+     Running `target/debug/examples/bounded_state`
+{"bytes":512,"evicted":2,"evidence":[256,64],"size_buckets":[2,1,1]}

@@ -1,0 +1,2 @@
+-- Source modules and hook object paths are independent.
+pub use types.{ObsCall, CbHandle};

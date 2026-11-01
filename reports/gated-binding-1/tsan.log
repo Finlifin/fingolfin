@@ -1,0 +1,35 @@
+Start testing: Nov 01 20:26 CST
+----------------------------------------------------------
+12/16 Testing: gated_binding
+12/16 Test: gated_binding
+Command: "/tmp/fg-pool-tsan/gated_binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"gated_binding" start time: Nov 01 20:26 CST
+Output:
+----------------------------------------------------------
+gated binding: false skips factory/VM; unknown/stale/budget/invalid allow; copied facts and old leases passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"gated_binding" end time: Nov 01 20:26 CST
+"gated_binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/16 Testing: binding
+14/16 Test: binding
+Command: "/tmp/fg-pool-tsan/binding_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-pool-tsan
+"binding" start time: Nov 01 20:26 CST
+Output:
+----------------------------------------------------------
+SDK route -> binding -> Attachment -> C VM: old generations, failed publication, frame validation and lifetime pins passed
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"binding" end time: Nov 01 20:26 CST
+"binding" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 20:26 CST

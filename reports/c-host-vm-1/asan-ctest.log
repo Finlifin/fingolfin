@@ -1,0 +1,51 @@
+Start testing: Nov 01 19:23 CST
+----------------------------------------------------------
+1/3 Testing: containers
+1/3 Test: containers
+Command: "/tmp/fg-c-vm-asan-1/containers_test"
+Directory: /tmp/fg-c-vm-asan-1
+"containers" start time: Nov 01 19:23 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:23 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/3 Testing: host
+2/3 Test: host
+Command: "/tmp/fg-c-vm-asan-1/host_test"
+Directory: /tmp/fg-c-vm-asan-1
+"host" start time: Nov 01 19:23 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 19:23 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: vm
+3/3 Test: vm
+Command: "/tmp/fg-c-vm-asan-1/vm_test" "/tmp/fg-c-vm-fixtures-1/record.o" "/tmp/fg-c-vm-fixtures-1/aggregate.o"
+Directory: /tmp/fg-c-vm-asan-1
+"vm" start time: Nov 01 19:23 CST
+Output:
+----------------------------------------------------------
+PASS: generated ELF -> C VM -> C Host; isolation, allowlist, frame/capacity/overflow/budget, partial success
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"vm" end time: Nov 01 19:23 CST
+"vm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:23 CST

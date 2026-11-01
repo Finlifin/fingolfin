@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="1" failures="0" disabled="0" errors="0" time="0.56" timestamp="2026-11-01T22:19:29.302" name="AllTests">
+  <testsuite name="MeshDeviceFixture" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0.56" timestamp="2026-11-01T22:19:29.302">
+    <testcase name="Fingolfin_NocTransferAndSemaphore_Observed" file="/tmp/fingolfin-tt-metal/tests/tt_metal/tt_metal/api/emule/test_write_beyond_res_pages.cpp" line="383" status="run" result="completed" time="0.56" timestamp="2026-11-01T22:19:29.302" classname="MeshDeviceFixture" />
+  </testsuite>
+</testsuites>

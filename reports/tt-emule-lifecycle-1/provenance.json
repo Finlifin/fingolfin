@@ -1,0 +1,34 @@
+{
+  "command": [
+    "cc",
+    "-shared",
+    "-fPIC",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-I/home/fin/apps/fingolfin/runtime/include",
+    "-I/home/fin/apps/fingolfin/sdk/include",
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/runtime.c",
+    "/home/fin/apps/fingolfin/runtime/src/objects.c",
+    "-pthread",
+    "-o",
+    "/tmp/fg-lifecycle-suite-1/runtime.so"
+  ],
+  "sha256": {
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/launch.patch": "b25d0118da59606c6af68ed005c07863bcac9ce81f855d185698685b667cc0b7",
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/repeated_scenario.cpp": "d20a471d69dcb94498510494a11e044383af58fbdb38eafee9ed04f7b37aa94c",
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/repeated-scenario.patch": "3bcffe3b9ae6c85b345e75c94f6fd3389257c826fc181a5b1f1b2d961e107b92",
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/runtime.c": "0d4c6882b9f7b91ca33529c144072f656e02e428a0b1920fa09d23a84ecadcd9",
+    "/home/fin/apps/fingolfin/integration/tt-emule/lifecycle/run.py": "261ccb982c7246cb5b252d26c8a43e0623694a22d53d1a8258fa0c09bf1a880b",
+    "/home/fin/apps/fingolfin/runtime/src/objects.c": "814973368225fcccb1e1a3ee7bf303cb2deaca764b60e61019d2ed5983592038",
+    "/home/fin/apps/fingolfin/runtime/include/fingolfin/objects.h": "57aed5078db7dd2fd72e9d9d3e4e3f19f7b2f6fec669b8c678069a17d8ecb064",
+    "/tmp/fg-lifecycle-suite-1/runtime.so": "29ee287971779b02924069202fce8d5b92203c07306ae34c6cce0e5ac897d9af",
+    "integration/tt-emule/lifecycle/launch.patch": "b25d0118da59606c6af68ed005c07863bcac9ce81f855d185698685b667cc0b7",
+    "integration/tt-emule/lifecycle/repeated_scenario.cpp": "d20a471d69dcb94498510494a11e044383af58fbdb38eafee9ed04f7b37aa94c",
+    "integration/tt-emule/lifecycle/repeated-scenario.patch": "3bcffe3b9ae6c85b345e75c94f6fd3389257c826fc181a5b1f1b2d961e107b92",
+    "integration/tt-emule/lifecycle/runtime.c": "0d4c6882b9f7b91ca33529c144072f656e02e428a0b1920fa09d23a84ecadcd9",
+    "integration/tt-emule/lifecycle/run.py": "261ccb982c7246cb5b252d26c8a43e0623694a22d53d1a8258fa0c09bf1a880b",
+    "integration/tt-emule/lifecycle/README.md": "d7b950b1cf95cc773d4a9f41cdd5a1062b8e62aaf07caf06ebe8d9a12ecb7e10"
+  }
+}

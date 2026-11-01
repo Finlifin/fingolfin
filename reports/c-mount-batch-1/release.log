@@ -1,0 +1,2 @@
+batch mount: 64 subscribers, atomic preparation, isolation, independent gates and partial errors passed
+mount: generated adapter, registry independence, detach with live lease, output drain and cleanup passed

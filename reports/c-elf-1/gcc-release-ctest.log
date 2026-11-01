@@ -1,0 +1,67 @@
+Start testing: Nov 01 19:35 CST
+----------------------------------------------------------
+1/4 Testing: containers
+1/4 Test: containers
+Command: "/tmp/fingolfin-c-runtime-release/containers_test"
+Directory: /tmp/fingolfin-c-runtime-release
+"containers" start time: Nov 01 19:35 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:35 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: host
+2/4 Test: host
+Command: "/tmp/fingolfin-c-runtime-release/host_test"
+Directory: /tmp/fingolfin-c-runtime-release
+"host" start time: Nov 01 19:35 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 19:35 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: route
+3/4 Test: route
+Command: "/tmp/fingolfin-c-runtime-release/route_test"
+Directory: /tmp/fingolfin-c-runtime-release
+"route" start time: Nov 01 19:35 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 19:35 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: elf
+4/4 Test: elf
+Command: "/tmp/fingolfin-c-runtime-release/elf_test"
+Directory: /tmp/fingolfin-c-runtime-release
+"elf" start time: Nov 01 19:35 CST
+Output:
+----------------------------------------------------------
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"elf" end time: Nov 01 19:35 CST
+"elf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:35 CST

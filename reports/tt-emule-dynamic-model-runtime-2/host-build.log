@@ -1,0 +1,5 @@
+[0/2] Re-checking globbed directories...
+[1/4] Generating RPC stub for /tmp/fingolfin-tt-metal/tt_metal/impl/debug/inspector/rpc.capnp
+Cannot generate stub file for Inspector. If you need python autocomplete/static analysis, install with: pip install pycapnp
+[2/4] Building CXX object tests/tt_metal/tt_metal/api/CMakeFiles/unit_tests_api_lib.dir/Unity/unity_10_cxx.cxx.o
+[3/4] Linking CXX executable test/tt_metal/unit_tests_api

@@ -1,0 +1,268 @@
+[
+  {
+    "hook": 7,
+    "name": "noc_async_read",
+    "params": [
+      [
+        "src_noc_addr",
+        "u64"
+      ],
+      [
+        "dst_local_l1_addr",
+        "u32"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4
+  },
+  {
+    "hook": 8,
+    "name": "noc_async_write",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4
+  },
+  {
+    "hook": 9,
+    "name": "noc_async_read_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9
+  },
+  {
+    "hook": 10,
+    "name": "noc_async_write_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9
+  },
+  {
+    "hook": 11,
+    "name": "noc_async_writes_flushed",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9
+  },
+  {
+    "hook": 12,
+    "name": "noc_async_atomic_barrier",
+    "params": [
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 9
+  },
+  {
+    "hook": 13,
+    "name": "noc_semaphore_inc",
+    "params": [
+      [
+        "noc_addr",
+        "u64"
+      ],
+      [
+        "incr",
+        "u32"
+      ],
+      [
+        "noc",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 11
+  },
+  {
+    "hook": 14,
+    "name": "noc_semaphore_set",
+    "params": [
+      [
+        "val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 2
+  },
+  {
+    "hook": 15,
+    "name": "noc_semaphore_wait",
+    "params": [
+      [
+        "val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0
+    ],
+    "records_per_event": 2
+  },
+  {
+    "hook": 16,
+    "name": "noc_semaphore_wait_min",
+    "params": [
+      [
+        "min_val",
+        "u32"
+      ]
+    ],
+    "slots": [
+      1
+    ],
+    "records_per_event": 2
+  },
+  {
+    "hook": 17,
+    "name": "noc_async_write_multicast",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_mcast_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4
+  },
+  {
+    "hook": 18,
+    "name": "noc_async_read_one_packet",
+    "params": [
+      [
+        "src_noc_addr",
+        "u64"
+      ],
+      [
+        "dst_local_l1_addr",
+        "u32"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4
+  },
+  {
+    "hook": 19,
+    "name": "noc_async_write_one_packet",
+    "params": [
+      [
+        "src_local_l1_addr",
+        "u32"
+      ],
+      [
+        "dst_noc_addr",
+        "u64"
+      ],
+      [
+        "size",
+        "u32"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 4
+  },
+  {
+    "hook": 20,
+    "name": "noc_inline_dw_write",
+    "params": [
+      [
+        "addr",
+        "u64"
+      ],
+      [
+        "val",
+        "u32"
+      ],
+      [
+        "be",
+        "u8"
+      ]
+    ],
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "records_per_event": 11
+  }
+]

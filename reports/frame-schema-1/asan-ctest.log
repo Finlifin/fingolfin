@@ -1,0 +1,116 @@
+Start testing: Nov 01 19:46 CST
+----------------------------------------------------------
+1/7 Testing: containers
+1/7 Test: containers
+Command: "/tmp/fg-c-vm-asan-1/containers_test"
+Directory: /tmp/fg-c-vm-asan-1
+"containers" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:46 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: host
+2/7 Test: host
+Command: "/tmp/fg-c-vm-asan-1/host_test"
+Directory: /tmp/fg-c-vm-asan-1
+"host" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 19:46 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: route
+3/7 Test: route
+Command: "/tmp/fg-c-vm-asan-1/route_test"
+Directory: /tmp/fg-c-vm-asan-1
+"route" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 19:46 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: elf
+4/7 Test: elf
+Command: "/tmp/fg-c-vm-asan-1/elf_test"
+Directory: /tmp/fg-c-vm-asan-1
+"elf" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"elf" end time: Nov 01 19:46 CST
+"elf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: schema
+5/7 Test: schema
+Command: "/tmp/fg-c-vm-asan-1/schema_test"
+Directory: /tmp/fg-c-vm-asan-1
+"schema" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"schema" end time: Nov 01 19:46 CST
+"schema" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: schema_agreement
+6/7 Test: schema_agreement
+Command: "/tmp/fg-c-vm-asan-1/schema_test" "/tmp/fg-schema-c-491/corpus.bin"
+Directory: /tmp/fg-c-vm-asan-1
+"schema_agreement" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: 22143 Rust/C schema agreement cases
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"schema_agreement" end time: Nov 01 19:46 CST
+"schema_agreement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: vm
+7/7 Test: vm
+Command: "/tmp/fg-c-vm-asan-1/vm_test" "/tmp/fg-c-vm-fixtures-3/record.o" "/tmp/fg-c-vm-fixtures-3/aggregate.o" "/tmp/fg-c-vm-fixtures-3/record.schema"
+Directory: /tmp/fg-c-vm-asan-1
+"vm" start time: Nov 01 19:46 CST
+Output:
+----------------------------------------------------------
+PASS: generated ELF -> C VM -> C Host; isolation, allowlist, frame/capacity/overflow/budget, partial success
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"vm" end time: Nov 01 19:46 CST
+"vm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:46 CST

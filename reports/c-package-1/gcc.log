@@ -1,0 +1,116 @@
+Start testing: Nov 01 19:59 CST
+----------------------------------------------------------
+1/7 Testing: containers
+1/7 Test: containers
+Command: "/tmp/fg-package-build/containers_test"
+Directory: /tmp/fg-package-build
+"containers" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+PASS: C util/containers, failure cleanup, 10000 allocation-free iterations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"containers" end time: Nov 01 19:59 CST
+"containers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/7 Testing: host
+2/7 Test: host
+Command: "/tmp/fg-package-build/host_test"
+Directory: /tmp/fg-package-build
+"host" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+PASS: C Host four helpers, isolation/errors, all allocation failures, 10000 allocation-free calls each
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"host" end time: Nov 01 19:59 CST
+"host" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: route
+3/7 Test: route
+Command: "/tmp/fg-package-build/route_test"
+Directory: /tmp/fg-package-build
+"route" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+PASS: C SDK v2 leases, generation coherence, drain/reentrancy, 10000 publications + 40000 calls, no observation allocations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"route" end time: Nov 01 19:59 CST
+"route" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/7 Testing: elf
+4/7 Test: elf
+Command: "/tmp/fg-package-build/elf_test"
+Directory: /tmp/fg-package-build
+"elf" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+PASS: ELF structure/truncation/helpers + 30000 unaligned deterministic mutations
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"elf" end time: Nov 01 19:59 CST
+"elf" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/7 Testing: schema
+5/7 Test: schema
+Command: "/tmp/fg-package-build/schema_test"
+Directory: /tmp/fg-package-build
+"schema" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+PASS: C frame schema ranges/slots + 10000 unaligned mutations
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"schema" end time: Nov 01 19:59 CST
+"schema" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/7 Testing: package
+6/7 Test: package
+Command: "/tmp/fg-package-build/package_test" "/tmp/fg-c-vm-fixtures-3/record.fgo"
+Directory: /tmp/fg-package-build
+"package" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+C package/hash checks passed
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"package" end time: Nov 01 19:59 CST
+"package" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/7 Testing: package_corpus
+7/7 Test: package_corpus
+Command: "/tmp/fg-package-build/package_test" "/tmp/fg-c-vm-fixtures-3/record.fgo" "/tmp/fg-package-corpus.bin"
+Directory: /tmp/fg-package-build
+"package_corpus" start time: Nov 01 19:59 CST
+Output:
+----------------------------------------------------------
+package corpus: 380 cases
+C package/hash checks passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"package_corpus" end time: Nov 01 19:59 CST
+"package_corpus" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 19:59 CST

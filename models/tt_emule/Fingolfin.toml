@@ -1,0 +1,69 @@
+[package]
+name = "tt_emule"
+version = "0.1.0"
+source = "src"
+
+[[availability]]
+object = "tt_emule"
+fields = []
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["id"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "id"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "x"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "y"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "cb"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "cb", "id"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "noc"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "noc", "id"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "compute"]
+stage = "Object"
+
+[[availability]]
+object = "tt_emule"
+fields = ["device", "core", "compute", "id"]
+stage = "Object"

@@ -1,0 +1,40 @@
+TEST_F(MeshDeviceFixture, Fingolfin_TwoDeviceIdentity_Observed) {
+    ASSERT_GE(this->devices_.size(), 2u);
+    CoreCoord core = {0, 0};
+    Program first = CreateProgram(), second = CreateProgram();
+    std::string kernel = R"(
+        #include "api/dataflow/dataflow_api.h"
+        void kernel_main() {
+            cb_reserve_back(0,uint32_t(1));
+            auto* words=reinterpret_cast<volatile uint32_t*>(get_write_ptr(0));
+            uint32_t value=get_compile_time_arg_val(0);
+            for(uint32_t i=0;i<512;i++) words[i]=value+i;
+            cb_push_back(0,uint32_t(1));
+            cb_wait_front(0,uint32_t(1));
+            auto* queued=reinterpret_cast<volatile uint32_t*>(get_read_ptr(0));
+            for(uint32_t i=0;i<512;i++) if(queued[i]!=value+i) __builtin_trap();
+            cb_pop_front(0,uint32_t(1));
+        }
+    )";
+    auto *d0 = this->devices_.at(0)->get_devices()[0];
+    auto *d1 = this->devices_.at(1)->get_devices()[0];
+    ASSERT_NE(d0->id(), d1->id());
+    Program *programs[2] = {&first, &second};
+    for (uint32_t i = 0; i < 2; i++) {
+        CreateCircularBuffer(
+            *programs[i], core,
+            CircularBufferConfig(2048, {{0, tt::DataFormat::Float16_b}}).set_page_size(0, 2048));
+        CreateKernelFromString(*programs[i], kernel, core,
+                               DataMovementConfig{.processor = DataMovementProcessor::RISCV_0,
+                                                  .noc = NOC::RISCV_0_default,
+                                                  .compile_args = {100u + i * 1000u}});
+    }
+    // Register both devices before driving their fibers in one scheduler run.
+    // Repeating also exercises per-device state retirement and slot reuse.
+    for (uint32_t i = 0; i < 2; i++) {
+        emule::begin_mesh_dispatch();
+        detail::LaunchProgram(d0, first);
+        detail::LaunchProgram(d1, second);
+        emule::run_mesh_dispatch();
+    }
+}

@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/observability/catalog.py", "--emule", "/tmp/fingolfin-tt-emule", "--output", "/tmp/fg-typed-device-1/catalog.json"]
+39 hooks, 51 installed variants: /tmp/fg-typed-device-1/catalog.json

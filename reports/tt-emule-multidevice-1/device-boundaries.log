@@ -1,0 +1,2 @@
+["/usr/bin/python3", "/home/fin/apps/fingolfin/integration/tt-emule/multidevice/check-boundary.py", "--artifacts", "/tmp/fg-multidevice-full-1/dynamic", "--output", "/tmp/fg-multidevice-full-1/results/multidevice/boundary"]
+/tmp/fg-multidevice-full-1/results/multidevice/boundary/summary.json

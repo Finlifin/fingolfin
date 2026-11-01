@@ -1,0 +1,3 @@
+use fixture.types.{ObsCall, CbHandle};
+pub hook fixture.device.core.cb.post_push(call: *ObsCall, cb: CbHandle, pages: u32);
+pub hook fixture.device.core.cb.post_pop(call: *ObsCall, cb: CbHandle, pages: u32);

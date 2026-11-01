@@ -1,0 +1,16 @@
+{
+  "fixture": {
+    "Record": {
+      "device": {
+        "Record": {
+          "id": {"Integer": 0},
+          "core": {
+            "Record": {
+              "cb": {"Record": {"id": {"Integer": 16}}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

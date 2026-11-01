@@ -1,0 +1,31 @@
+{
+  "initial": {
+    "dc9e927dfd43b4db.so": {
+      "sha256": "4bf8e2c857619a72de82f060421e1c9207dd626c5acd95e051c346866faadf24",
+      "mtime_ns": 1793543730666121444
+    },
+    "2a36629f7334186d.so": {
+      "sha256": "457b6cd204df3ad2f9cb86a7637f4df951b42612fbd48013398145877112c42a",
+      "mtime_ns": 1793543730135487466
+    }
+  },
+  "final": {
+    "16ebdf5782b986d0.so": {
+      "sha256": "76e3632bf75fd655eb447485629c2454ce8b294bd3f51b2e4cce820cdb5be136",
+      "mtime_ns": 1793543877747341405
+    },
+    "13bdfc879b2bd795.so": {
+      "sha256": "6d18c114789c404cbcacaf88bb1e3f672208cc53f299883f1ebc5d2ed6c6a445",
+      "mtime_ns": 1793543876695609960
+    },
+    "dc9e927dfd43b4db.so": {
+      "sha256": "4bf8e2c857619a72de82f060421e1c9207dd626c5acd95e051c346866faadf24",
+      "mtime_ns": 1793543730666121444
+    },
+    "2a36629f7334186d.so": {
+      "sha256": "457b6cd204df3ad2f9cb86a7637f4df951b42612fbd48013398145877112c42a",
+      "mtime_ns": 1793543730135487466
+    }
+  },
+  "warm_unchanged": true
+}

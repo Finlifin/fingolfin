@@ -1,0 +1,4 @@
+#define FG_MODEL_FIELDS 10u
+static int fg_model_valid(uint64_t a,uint64_t b,uint64_t c) { (void)a;(void)b;(void)c; return b<=UINT32_MAX && c<=UINT8_MAX; }
+static void fg_model_records(uint64_t *values,uint32_t *tags,uint64_t sequence,uint64_t a,uint64_t b,uint64_t c) { (void)sequence;(void)a;(void)b;(void)c;values[0]=a;tags[0]=16;values[1]=sequence;tags[1]=(uint32_t)b;values[2]=(c>>0)&1u;tags[2]=48;values[3]=(c>>1)&1u;tags[3]=49;values[4]=(c>>2)&1u;tags[4]=50;values[5]=(c>>3)&1u;tags[5]=51;values[6]=(c>>4)&1u;tags[6]=52;values[7]=(c>>5)&1u;tags[7]=53;values[8]=(c>>6)&1u;tags[8]=54;values[9]=(c>>7)&1u;tags[9]=55; }
+static void fg_model_fill(struct FgNativeFrame *frame,uint64_t a,uint64_t b,uint64_t c) { (void)a;(void)b;(void)c;frame->arg2=(uint64_t)a;frame->arg3=(uint32_t)b;frame->arg4=(uint8_t)c; }

@@ -1,0 +1,65 @@
+["git", "-C", "/tmp/fingolfin-ubpf", "rev-parse", "HEAD"]
+8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521
+["cargo", "build", "--offline"]
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.02s
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/home/fin/apps/fingolfin/integration/state-helpers/record.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::record", "--output", "/tmp/fg-state-helpers-2/program.fgo"]
+{
+  "bytes": 7374,
+  "output": "/tmp/fg-state-helpers-2/program.fgo",
+  "profile": "development-function-frames",
+  "sha256": "bc901f99fd658e92604222b07c27655b2a8c8fd9c9f2e3a27a86589a22bf5d22"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "explain", "/tmp/fg-state-helpers-2/program.fgo"]
+{
+  "clang_version": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "entries": [
+    {
+      "dependencies": [
+        "builtin.counter_add",
+        "builtin.emit"
+      ],
+      "elf_bytes": 904,
+      "elf_hash": "31db4919572768084546770f6d1bf270faa885c68ee0be1bf2f53642c34f593f",
+      "frame_hash": "3c6adcfabdb4859520994b0018f70e6b623bea1104286c476d1dfb01c74059df",
+      "function": "program::record",
+      "gate": {
+        "predicate": "True",
+        "reads": [],
+        "version": 1
+      },
+      "helpers": [
+        1,
+        2
+      ],
+      "hook": null,
+      "signature": {
+        "bindings": {},
+        "hook": null,
+        "parameters": [
+          {
+            "Integer": {
+              "bits": 32,
+              "signed": false
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          }
+        ],
+        "returns": null
+      },
+      "signature_hash": "1cb0e329a821d23febafff85dbf3a9f8e28819fc0b8f69b34a678f8f33dcb045"
+    }
+  ],
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "profile": "development-function-frames",
+  "program_source_hash": "c408735beb61c29b24ce8616b33b89868622b07c8b15caa992a2577fa50e6fdf",
+  "target": "bpfel-v3",
+  "version": 2
+}
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-state-helpers-2", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/state-helpers/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-state-helpers-2/runner"]
+["/tmp/fg-state-helpers-2/runner", "/tmp/fg-state-helpers-2/program.o"]
+PASS: missing-helper rejection, counter/emit, per-invocation state isolation, capacity, overflow, unknown counter

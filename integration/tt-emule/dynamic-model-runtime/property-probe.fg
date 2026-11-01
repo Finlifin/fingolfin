@@ -1,0 +1,4 @@
+use tt_emule.types.{Observation, Core};
+fn observe on tt_emule.device.core.cb.cb_push_back(call: Observation, core: Core, cb_id: u32, n: u32)
+where tt_emule: { device: { id: 0, core: { x: 0, y: 0, cb: { id: 0 } } } }
+{ builtin.counter_add(0, 1); }

@@ -1,0 +1,13 @@
+use tt_emule.types.{Observation, Core};
+-- include/jit_hw/api/cb_api.h:154
+pub hook tt_emule.device.core.cb.cb_reserve_back(call: Observation, core: Core, cb_id: u32, n: u32);
+-- include/jit_hw/api/cb_api.h:184
+pub hook tt_emule.device.core.cb.cb_push_back(call: Observation, core: Core, cb_id: u32, n: u32);
+-- include/jit_hw/api/cb_api.h:225
+pub hook tt_emule.device.core.cb.cb_wait_front(call: Observation, core: Core, cb_id: u32, n: u32);
+-- include/jit_hw/api/cb_api.h:259
+pub hook tt_emule.device.core.cb.cb_pop_front(call: Observation, core: Core, cb_id: u32, n: u32);
+-- include/jit_hw/api/cb_api.h:307
+pub hook tt_emule.device.core.cb.get_write_ptr(call: Observation, core: Core, cb_id: u32);
+-- include/jit_hw/api/cb_api.h:312
+pub hook tt_emule.device.core.cb.get_read_ptr(call: Observation, core: Core, cb_id: u32);

@@ -1,0 +1,7 @@
+{
+  "case": "mismatched host emulator source",
+  "passed": true,
+  "exit_code": 1,
+  "output_created": false,
+  "diagnostic": "Traceback (most recent call last):\n  File \"/home/fin/apps/fingolfin/integration/tt-emule/verify.py\", line 23, in <module>\n    raise RuntimeError(f'host build {key} does not match --{name}')\nRuntimeError: host build TT_EMULE_PATH does not match --emule\n"
+}

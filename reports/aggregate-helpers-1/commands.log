@@ -1,0 +1,71 @@
+["git", "-C", "/tmp/fingolfin-ubpf", "rev-parse", "HEAD"]
+8d2dd3580ab80f9b4a79a9d2fa2420aa38fc7521
+["cargo", "build", "--offline"]
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "build", "/home/fin/apps/fingolfin/integration/aggregate-helpers/aggregate.fg", "--model", "/home/fin/apps/fingolfin/models/fixture", "--function", "program::aggregate", "--output", "/tmp/fg-aggregate-helpers-1/program.fgo"]
+{
+  "bytes": 7882,
+  "output": "/tmp/fg-aggregate-helpers-1/program.fgo",
+  "profile": "development-function-frames",
+  "sha256": "4bfb566f10a21c14ca4564d1f40bfe385b850398a3f70b9fe185f98ebbe3bf65"
+}
+["/home/fin/apps/fingolfin/target/debug/fingolfin", "explain", "/tmp/fg-aggregate-helpers-1/program.fgo"]
+{
+  "clang_version": "clang version 23.1.4\nTarget: x86_64-pc-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin",
+  "entries": [
+    {
+      "dependencies": [
+        "builtin.histogram_add",
+        "builtin.map_add"
+      ],
+      "elf_bytes": 920,
+      "elf_hash": "301277809bcb2f77541113f2f13d697126be1f490e58383bec4eadfbf1a18d1c",
+      "frame_hash": "c86388eb4e0df74c230ae7970dc5f041381da892ddfd491b63d97363b759f5f8",
+      "function": "program::aggregate",
+      "gate": {
+        "predicate": "True",
+        "reads": [],
+        "version": 1
+      },
+      "helpers": [
+        3,
+        4
+      ],
+      "hook": null,
+      "signature": {
+        "bindings": {},
+        "hook": null,
+        "parameters": [
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": true
+            }
+          },
+          {
+            "Integer": {
+              "bits": 64,
+              "signed": false
+            }
+          }
+        ],
+        "returns": null
+      },
+      "signature_hash": "ee1e904ca29226c975fcbe254b30ea83255c91b32518c51a251336aeed02968d"
+    }
+  ],
+  "model_source_hash": "402ad5b0311b285d066e481471c4b505030902e946fa26222ef0ffcad5a43759",
+  "profile": "development-function-frames",
+  "program_source_hash": "e21742652d9f2ef8201df3b4eddecffa53891a9d0e45226ab5281c50b41161bd",
+  "target": "bpfel-v3",
+  "version": 2
+}
+["clang", "-std=c11", "-Wall", "-Wextra", "-Werror", "-I", "/tmp/fg-aggregate-helpers-1", "-I", "/tmp/fingolfin-ubpf/vm/inc", "-I", "/tmp/fingolfin-ubpf-build/vm", "/home/fin/apps/fingolfin/integration/aggregate-helpers/runner.c", "/tmp/fingolfin-ubpf-build/lib/libubpf.a", "-lm", "-o", "/tmp/fg-aggregate-helpers-1/runner"]
+["/tmp/fg-aggregate-helpers-1/runner", "/tmp/fg-aggregate-helpers-1/program.o"]
+PASS: map/histogram helpers, signed boundaries, instance isolation, capacity, counter/total overflow
