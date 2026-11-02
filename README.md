@@ -45,3 +45,5 @@ ctest --test-dir build/runtime --output-on-failure
 这是当前需求对应的开发基线。开发包尚非稳定发布格式；通用远端挂载、可变属性维护、并发 launch 等边界集中记录于能力范围文档，避免把历史计划当作已交付功能。
 
 详细实操入口：[构建依赖](docs/build.md) · [可运行的 C 接入教程](docs/c-walkthrough.md) · [39 点参数目录](docs/tt-emule-hooks.md) · [报告读法](docs/tt-emule-reports.md) · [排错手册](docs/troubleshooting.md)。
+
+原理与方法：[工作原理](docs/principles.md) → [对象模型](docs/object-model.md) → [ABI 心智模型](docs/abi-model.md) → [建模指导](docs/modeling-guide.md) → [观测指导](docs/observation-guide.md)。

@@ -1,5 +1,7 @@
 # tt-emule 使用指南
 
+概念与设计方法先读 [观测指导](observation-guide.md)，本页提供具体实现约束与操作。
+
 ## 观测范围
 
 模型包含 39 个 API 观测点：CB 6、NOC 14、compute 19，对应 51 处实现插桩。entry/exit 是同一观测点的两个阶段，exit 不表示操作成功。模型与 hook 名称见 [模型目录](../models/tt_emule/README.md)。

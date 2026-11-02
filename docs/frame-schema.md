@@ -1,8 +1,10 @@
 # 调用帧 schema v1 与开发包 v3
 
+先读 [ABI 心智模型](abi-model.md) 理解 native frame、BPF frame 和 schema 的关系；本章用于查二进制细节。
+
 Rust 编译器保留 `.fg` 前端；用户态 C 不依赖 CheckedProgram 或解析 C 头文件获取帧布局。开发 `.fgo` version 3 为每个 Entry 增加 `frame_schema` 字节数组及 `frame_schema_hash`（SHA-256）。原 frame_header、signature 与各自哈希保留；外层完整性涵盖全部字段。`explain` 显示 schema 字节数与哈希。
 
-version 1/2 开发包必须重建。此版本仍为 `development-function-frames`，不是正式可挂载发布包；状态/输出 schema、simulator 身份和完整模型契约仍未齐备。
+version 1/2 开发包必须重建。此版本仍为 `development-function-frames`，可由当前 C Session/Mount 接入链加载，但不是承诺稳定兼容的正式发布格式；状态/输出 schema、simulator 身份和完整模型契约仍未齐备。
 
 ## Wire 格式
 
@@ -48,7 +50,7 @@ schema 描述结构 ABI。名义类型身份仍由原 signature/模型身份契�
 - `fg_frame_schema_slot/type/member` 提供布局及名字视图。仅可用于已校验 view，底层字节必须保持不变并存活。
 - `fg_frame_schema_init` 要求精确 frame 大小，清零数据和 padding，初始化 steps/max_depth；不分配。
 
-C VM 测试现已读取编译器输出 `.schema`，查询参数偏移、构帧并执行 BPF，更新 C Host。完整 JSON 包解析仍未接入 C；当前集成准备脚本在离线阶段提取 ELF/schema。结构化 payload 的自动验证、生成模型 adapter 和状态/输出 schema 继续开发。
+C package loader 已接入开发 v3 包解析；Session/Mount 可选择包内入口及对应 ELF/schema，生成 encoder 完成 native 到 BPF frame 转换并验证输入。C VM 测试也可直接读取离线提取的 `.schema`/ELF 构帧执行，这是一条测试路径，不是所有用户都必须手动拆包。完整状态/输出 schema 和稳定发布兼容契约仍未完成。
 
 ## 复现
 
